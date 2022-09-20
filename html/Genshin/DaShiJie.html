@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大世界</title>
+    <link rel="icon" type="image/x-icon" href="image\原神logo.ico"/><!--网页图标-->
+    <link rel="stylesheet" href="static/css/index.css"/>
+    <link rel="stylesheet" href="static/css/font-index..css">
+    <link rel="stylesheet" href="static/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="static/css/city.css">
+    <link rel="stylesheet" href="static/css/footer.css">
+    <link rel="stylesheet" href="static/css/login.css">
+
+    <link rel="stylesheet" href="https://www.fcwqmc.cn/elsta/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.fcwqmc.cn/elsta/css/animate.min.css">
+    <link rel="stylesheet" href="https://www.fcwqmc.cn/elsta/css/vegas.min.css">
+    <link rel="stylesheet" href="static/css/home.css">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="../package/swiper-bundle.min.css"/>
+
+    <!-- Demo styles -->
+    <style>
+
+        .swiper {
+            position: relative;
+            left: -320px;
+            width: 640px;
+            height: 400px;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: rgba(38, 18, 12, 0.62);
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swiper-pagination-bullet {
+            height: 18px;
+            width: 18px;
+            background-color: white;
+
+        }
+    </style>
+</head>
+<body>
+<section class="preloader">
+    <div class="sk-circle">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+</section>
+<div class="header">
+    <div class="audio-controller" id="audiu_on" style="display: none;">
+        <img src="static/image/播放开.png" style="width: 100%;" id="audio_headerimg"/>
+        <audio id="bgMusic">
+            <source src="static/audio/final.mp4" type="audio/mp4">
+        </audio>
+    </div>
+    <div class="audio-controller" id="audio_off">
+        <img src="static/image/播放关.png" style="width: 100%;" id="audio_headerimg"/>
+        <audio id="bgMusic">
+            <source src="static/audio/final.mp4" type="audio/mp4">
+        </audio>
+    </div>
+    <div class="header__logo--cut">
+        <img src="static/image/原神主页logo.png">
+    </div>
+    <div class="header__navbar">
+        <div class="header_Cloud"></div>
+        <div class="header_navitem">
+            <a href="index.html">首&nbsp页</a>
+            <a href="role.html">秘&nbsp境</a>
+            <a class="header_hover" href="DaShiJie.html">大&nbsp世&nbsp界</a>
+            <a href="role.html">周&nbsp本</a>
+            <a href="KongZhiTai.html">控&nbsp制&nbsp台</a>
+            <a href="javascript:window.location='https://github.com/MrOwenovo?tab=repositories'">联&nbsp系</a>
+        </div>
+    </div>
+</div>
+
+<!-- 地名介绍 -->
+<div class="city">
+    <ul>
+        <li>
+            <div class="city__list-item">
+                <a>
+                    <img src="static/image/蒙德.jpg" class="city_img">
+                    <img src="static/image/宝石.png" class="city_imgs">
+                    <p>蒙德城</p>
+                </a>
+                <div class="city__list-char" style="background-image: url(static/image/西风骑士团琴.png);"></div>
+            </div>
+        </li>
+        <li>
+            <div class="city__list-item">
+                <a>
+                    <img src="static/image/璃月.jpg" class="city_img">
+                    <img src="static/image/宝石.png" class="city_imgs">
+                    <p>璃月城</p>
+                </a>
+                <div class="city__list-char" style="background-image: url(static/image/魈.png);"></div>
+            </div>
+        </li>
+        <li>
+            <div class="city__list-item">
+                <a>
+                    <img src="static/image/稻妻.jpg" class="city_img">
+                    <img src="static/image/宝石.png" class="city_imgs">
+                    <p>稻妻城</p>
+                </a>
+                <div class="city__list-char" style="background-image: url(static/image/神里.png);"></div>
+            </div>
+        </li>
+        <div class="city__list-item_last">
+            <a>
+                <img src="static/image/lastpng.jpg" class="city_img">
+                <p>敬请期待</p>
+            </a>
+        </div>
+    </ul>
+</div>
+
+<footer style="margin-top: 74px">
+    <div class="container">
+        <div class="row">
+            <svg class="svgcolor-light" preserveAspectRatio="none" viewBox="0 0 100 102" height="100" width="100%"
+                 version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0 L50 100 L100 0 Z"></path>
+            </svg>
+            <div class="col-md-4 col-sm-6">
+                <h2 style="color: gray;">原神脚本声明</h2>
+                <div class="wow fadeInUp" data-wow-delay="0.3s">
+                    <p style="color: #000000;">
+                        本软件自发布后所有用户均可免费使用。用户应当遵守各项法律法规，禁止篡改、出售、二次修改本软件。本软件所用UI、图标、Logo均为个人设计，部分背景来自互联网。软件版权归MrOwenovo所有。
+                    </p>
+                    <p class="copyright-text" style="color: #000000;">&copy 2022 KaGoBang 版权所有 <a
+                            href="https://beian.miit.gov.cn/" target="_blank"
+                            style="color: black;">湘ICP备2022002291号-1</a><br>
+                        Software Design by MrOwenovo<br>
+                        Web Design by <img class="mk" src="static/image/tk.png"><br>
+                        特别鸣谢 Elsta Studio 提供网页技术支持</p>
+                </div>
+            </div>
+            <div class="col-md-1 col-sm-1"></div>
+            <div class="col-md-4 col-sm-5">
+                <h2 style="color: gray;">联系方式</h2>
+                <p class="wow fadeInUp" data-wow-delay="0.6s" style="color: #000000;">
+                    QQ群：639227600<br>
+                    合作QQ：1251031190<br>
+                    邮箱：lmq122677@qq.com<br>
+                    <img class="kachat" src="static/image/kachat.png"/>
+                    <img class="elsta" src="static/image/elsta.png">
+
+                </p>
+
+                <style>
+                    .elsta {
+                        width: 180px;
+                        height: 50px;
+                    }
+
+                    .kachat {
+                        width: 50px;
+                        height: 50px;
+                    }
+
+                    .mk {
+                        width: 150px;
+                        height: 20px;
+                    }
+                </style>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+<!-- Swiper JS -->
+<script src="static/js/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
+<script src="static/js/header.js"></script>
+<script src="static/js/index.js"></script>
+<script src="static/js/move.js"></script>
+<script src="static/js/jquery.js"></script>
+<script src="static/js/tab_con.js"></script>
+<script src="static/js/movers.js"></script>
+<a href="#back-top" class="go-top"><i class="fa fa-angle-up"></i></a>
+<script src="https://www.fcwqmc.cn/elsta/js/jquery.js"></script>
+<script src="https://www.fcwqmc.cn/elsta/js/bootstrap.min.js"></script>
+<script src="https://www.fcwqmc.cn/elsta/js/vegas.min.js"></script>
+<script src="https://www.fcwqmc.cn/elsta/js/wow.min.js"></script>
+<script src="https://www.fcwqmc.cn/elsta/js/smoothscroll.js"></script>
+<script src="static/js/custom.js"></script>
+
+</html>
