@@ -1,3 +1,3 @@
 # nginx-Genshin
-原神前端代理
-![image](https://user-images.githubusercontent.com/98574507/191294352-3bcdab38-9023-4df5-9c0e-d1aabbff14d2.png)
+原神前端代理 <br>
+[网站: https://d1izb3sh3.neiwangyun.net]( https://d1izb3sh3.neiwangyun.net)
