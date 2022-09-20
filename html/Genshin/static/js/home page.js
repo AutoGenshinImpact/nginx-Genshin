@@ -883,19 +883,19 @@ var light = document.getElementById("light");
 var flag = false;
 btn.onclick = function() {
     if (flag) {
-        light.src = "../原神官方网站制作.仿照/image/newsimg/c717bbb4cf45f2d6a618fad81d0fabe4_5648732020738209033.png";
+        light.src = "static/image/newsimg/c717bbb4cf45f2d6a618fad81d0fabe4_5648732020738209033.png";
         flag = false;
     } else {
-        light.src = "../原神官方网站制作.仿照/image/newsimg/2a540dfc13e22f4731fe293e082a488f_2196928527429176668.png";
+        light.src = "static/image/newsimg/2a540dfc13e22f4731fe293e082a488f_2196928527429176668.png";
         flag = true;
     }
 }
 jk.onclick = function() {
         if (flag) {
-            light.src = "../原神官方网站制作.仿照/image/newsimg/c717bbb4cf45f2d6a618fad81d0fabe4_5648732020738209033.png";
+            light.src = "static/image/newsimg/c717bbb4cf45f2d6a618fad81d0fabe4_5648732020738209033.png";
             flag = false;
         } else {
-            light.src = "../原神官方网站制作.仿照/image/newsimg/2a540dfc13e22f4731fe293e082a488f_2196928527429176668.png";
+            light.src = "static/image/newsimg/2a540dfc13e22f4731fe293e082a488f_2196928527429176668.png";
             flag = true;
         }
 
