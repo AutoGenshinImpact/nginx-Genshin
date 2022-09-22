@@ -1024,20 +1024,27 @@ img {
 }
 
 #leftdan {
+    width: 13%;
+
     top: 45%;
     left: 12%;
     position: absolute;
 }
 
 #btn {
+    width: 13%;
+
     top: 45%;
     left: 12%;
     position: absolute;
     opacity: 0;
     cursor: pointer;
+    z-index: 10;
 }
 
 #rightdan {
+    width: 13%;
+
     top: 45%;
     left: 74%;
     position: absolute;
@@ -1047,18 +1054,63 @@ img {
     opacity: 1;
 }
 
-#light {
+.light {
+    width:45% ;
+    height:56.5%;
     top: 26.2%;
     left: 27.2%;
     position: absolute;
 }
+.light2 {
+    top: 44.2%;
+    left: 27.5%;
+    position: absolute;
+    z-index: 9;
+}
+.light3 {
+    top: 44.2%;
+    left: 49.2%;
+    position: absolute;
+    z-index: 9;
 
+}
+.light4 {
+    top: 49.5%;
+    left: 28%;
+    position: absolute;
+    z-index: 9;
+
+}
+.light5 {
+
+    top: 88.5%;
+    left: 46.5%;
+    position: absolute;
+}
+.bu {
+    top: 59%;
+    left: 44.2%;
+    position: absolute;
+    z-index: 11;
+}
+.open {
+    top: 26.2%;
+    left: 9.5%;
+    position: absolute;
+}
+.tip {
+    visibility: hidden;
+    top: 0px;
+}
 #jk {
+    width: 13%;
     top: 45%;
     left: 74%;
     position: absolute;
     opacity: 0;
     cursor: pointer;
+    z-index: 10;
+
 }
 
 #jk:hover {
