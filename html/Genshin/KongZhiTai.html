@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>《原神》官方网站-米哈游开放冒险世界RPG</title>
+    <title>《原神》脚本</title>
     <style>
         .imgq {
             position: absolute;
@@ -57,13 +57,13 @@
     <div class="audio-controller" id="audiu_on" style="display: none;">
         <img src="static/image/播放开.png" style="width: 100%;" id="audio_headerimg"/>
         <audio id="bgMusic">
-            <source src="static/audio/final.mp4" type="audio/mp4">
+            <source src="static/audio/final3.mp4" type="audio/mp4">
         </audio>
     </div>
     <div class="audio-controller" id="audio_off">
         <img src="static/image/播放关.png" style="width: 100%;" id="audio_headerimg"/>
         <audio id="bgMusic">
-            <source src="static/audio/final.mp4" type="audio/mp4">
+            <source src="static/audio/final3.mp4" type="audio/mp4">
         </audio>
     </div>
     <div class="header__logo--cut">
@@ -189,13 +189,17 @@
 <div class="container" data-num='5'>
     <!--  <input type="text" class="txtb" placeholder="Add a task">-->
     <div class="notcomp">
-        <h3>未执行的秘境</h3>
+        <h3>未执行的秘境
+            <i class='fas fa-times-circle delete1'></i>
+        </h3>
+
 
 
     </div>
 
     <div class="comp">
-        <h3>已执行的秘境</h3>
+        <h3>已执行的秘境
+        </h3>
     </div>
     <a href="javascript:execTask()" class="btn btn3">开  始  执  行  秘  境</a>
 </div>
@@ -213,6 +217,8 @@
                 var del = $("<i class='fas fa-trash-alt'></i>").click(function () {
                     $(this).attr("id", value);
                     var p = $(this).parent();
+                    p.attr("id", value);
+
 
                     deleteCookie($(this).attr("id"));
                     p.fadeOut(function () {
@@ -265,6 +271,15 @@
             $(this).attr("data-num", numbers[index]);
         });
     }
+
+    $(".delete1").click(function () {
+        $(".task").each(function (value,index) {
+            deleteCookie($(this).text());
+            $(this).fadeOut(function () {
+                $(this).remove();
+            });
+        });
+    });
 
 </script>
 

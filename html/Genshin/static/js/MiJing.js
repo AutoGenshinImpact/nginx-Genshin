@@ -411,6 +411,7 @@ function execTask() {
         execTip("当前没有可执行的任务!");
     } else {
         execTip("即将开始执行任务: " + execTasks);
+        execTasks.length = 0;
     }
 }
 
