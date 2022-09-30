@@ -488,9 +488,9 @@ function getStatus() {
                 let fin = result.fin;
                 finKey = Object.keys(fin);
                 setCookieKeyAndValue(names[cur].concat("doing"), -2);
-                if (getCookie(names[cur] > 1)) {
+                if (getCookie(names[cur])>1) {
                     setCookieValueMinus(names[cur]);
-                } else if (names[cur] === 1) {
+                } else if (getCookie(names[cur]) == 1) {
                     deleteCookie(names[cur]);
                 }
                 finKey.forEach(function (value,index,array) {
@@ -520,6 +520,39 @@ function getStatus() {
     });
 }
 
+/**
+ * 查看是否正在执行秘境,如果正在执行则不能修改
+ */
+function checkIsStarting() {
+    $.ajax({  //验证身份
+        type: "get",
+        url: '/api/MiJing/checkIsStarting',
+        async: false,
+        dataType: "json",
+        traditional: true,
+        xhrFields: {
+            withCredentials: true,
+        },
+        success: function (data) {
+            if (data.code === 200) {
+                // execTip("脚本正在运行!");
+                return true;
+
+            } else if (data.code === 401) {
+                execTip("请先登录!");
+
+            } else if (data.code !== 200) {
+                // execTip(data.message);
+                return false;
+
+            }
+        },
+        error: function () {
+            window.location = "../../500page.html";
+        },
+    });
+
+}
 function storeList(list, numberList) {
     $.ajax({  //验证身份
         type: "post",
@@ -562,11 +595,10 @@ function selectList() {
             withCredentials: true,
         },
         success: function (data) {
-            MiJingDetail = data.data;
-            list = MiJingDetail.toList;
-            numberList = MiJingDetail.toNumberList;
             if (data.code === 200) {
-
+                MiJingDetail = data.data;
+                list = MiJingDetail.toList;
+                numberList = MiJingDetail.toNumberList;
                 popup2.classList.toggle("show");
                 execTip("已获取用户存储的秘境列表!");
                 list.forEach(function (value, index, array) {
@@ -594,17 +626,20 @@ function selectList() {
 function refrushTask() {
 
     $(".task").each(function (value,index) {
-        $(this).remove();
-        // $(this).fadeOut(function () {
-        //     $(this).remove();
-        // });
+        $(this).fadeOut(function () {
+            $(this).remove();
+        });
+    });
+    $(".doingTask").each(function (value,index) {
+        // $(this).remove();
+        $(this).fadeOut(function () {
+            $(this).remove();
+        });
     });
 
+
+
     numbers.length = 0;
-    // numbersFinish.length = 0;
-    // mapKey.length=0;
-    // mapValue.length=0;
-    // init = 0;
 
     names.forEach(function (value, index, array) {
         let cookie = getCookie(value);
@@ -615,29 +650,44 @@ function refrushTask() {
 
             var task = $("<div class='task' data-num='1'></div>").text(value);
             var del = $("<i class='fas fa-trash-alt'></i>").click(function () {
-                $(this).attr("id", value);
-                var p = $(this).parent();
-                p.attr("id", value);
+                if (!checkIsStarting) {
+
+                    $(this).attr("id", value);
+                    var p = $(this).parent();
+                    p.attr("id", value);
 
 
-                deleteCookie($(this).attr("id"));
-                p.fadeOut(function () {
-                    p.remove();
-                });
+                    deleteCookie($(this).attr("id"));
+                    p.fadeOut(function () {
+                        p.remove();
+                    });
+                } else {
+                    execTip("当前脚本正在进行，请结束脚本并重试!");
+
+                }
             });
 
 
             var plus = $("<i class='fas fa-plus'></i>").click(function () {
-                setCookieValueAdd(value);
-                refreshTaskNumber();
+                if (!checkIsStarting) {
+
+                    setCookieValueAdd(value);
+                    refreshTaskNumber();
+                } else {
+                    execTip("当前脚本正在进行，请结束脚本并重试!");
+                }
             });
             var minus = $("<i class='fas fa-minus'></i>").click(function () {
-                setCookieValueMinus(value);
-                refreshTaskNumber();
+                if (!checkIsStarting) {
+
+                    setCookieValueMinus(value);
+                    refreshTaskNumber();
+                } else {
+                    execTip("当前脚本正在进行，请结束脚本并重试!");
+
+                }
             });
-            var doing = $("<i class='fas fa-minus doing' style='display: none'></i>").click(function () {
-                taskDoing(index);
-            });
+
 
             if (cookie !== "" && cookie === "-1") {
                 task.append(del);
@@ -655,35 +705,12 @@ function refrushTask() {
         if (cookie !== "" ) {
             numbers.push(cookie);
 
-            var task = $("<div class='task' data-num='1'></div>").text(value);
-            var del = $("<i class='fas fa-trash-alt'></i>").click(function () {
-                $(this).attr("id", value);
-                var p = $(this).parent();
-                p.attr("id", value.concat("doing"));
-
-
-                deleteCookie($(this).attr("id"));
-                p.fadeOut(function () {
-                    p.remove();
-                });
-            });
-
-
-            var plus = $("<i class='fas fa-plus'></i>").click(function () {
-                setCookieValueAdd(value.concat("doing"));
-                refreshTaskNumber();
-            });
-            var minus = $("<i class='fas fa-minus'></i>").click(function () {
-                setCookieValueMinus(value.concat("doing"));
-                refreshTaskNumber();
-            });
-
+            var task = $("<div class='doingTask'></div>").text(value);
 
             if (cookie !== "" && cookie === "-1") {
                 task.append(del);
                 $(".comp").append(task);
             } else {
-                task.append(del, plus, minus);
                 $(".doing").append(task);
             }
         }
@@ -697,42 +724,45 @@ function refrushTask() {
 
             var task = $("<div class='task' data-num='1'></div>").text(value);
             var del = $("<i class='fas fa-trash-alt'></i>").click(function () {
-                $(this).attr("id", value);
-                var p = $(this).parent();
-                p.attr("id", value.concat("finish"));
+                if (!checkIsStarting) {
+
+                    $(this).attr("id", value);
+                    var p = $(this).parent();
+                    p.attr("id", value.concat("finish"));
 
 
-                deleteCookie($(this).attr("id"));
-                p.fadeOut(function () {
-                    p.remove();
-                });
+                    deleteCookie($(this).attr("id"));
+                    p.fadeOut(function () {
+                        p.remove();
+                    });
+                } else {
+                    execTip("当前脚本正在进行，请结束脚本并重试!");
+
+                }
             });
 
-
-            var plus = $("<i class='fas fa-plus'></i>").click(function () {
-                setCookieValueAdd(value.concat("finish"));
-                refreshTaskNumber();
-            });
-            var minus = $("<i class='fas fa-minus'></i>").click(function () {
-                setCookieValueMinus(value.concat("finish"));
-                refreshTaskNumber();
-            });
 
 
             if (cookie !== "" && cookie === "-1") {
                 task.append(del);
                 $(".comp").append(task);
             } else {
-                task.append(del, plus, minus);
-                task.fadeOut();
+                task.append(del);
+                // task.fadeOut();
                 $(".comp").append(task);
-                task.fadeIn();
+                // task.fadeIn();
             }
         }
     });
     console.log(numbers);
-    $(".task").each(function (index) {
-        $(this).attr("data-num", numbers[index]);
-        console.info(index + ": " + numbers[index]);
-    });
+    setTimeout(function () {
+        $(".task").each(function (index) {
+            if (numbers[index] != -2) {
+                $(this).attr("data-num", numbers[index]);
+            } else {
+                // $(this).attr("class", "doingTask");
+            }
+            // console.info(index + ": " + numbers[index]);
+        });
+    },500);
 }

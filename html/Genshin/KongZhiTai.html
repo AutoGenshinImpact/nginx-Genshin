@@ -337,25 +337,38 @@
                 numbers.push(cookie);
                 var task = $("<div class='task' data-num='1'></div>").text(value);
                 var del = $("<i class='fas fa-trash-alt'></i>").click(function () {
-                    $(this).attr("id", value);
-                    var p = $(this).parent();
-                    p.attr("id", value);
+                    if (!checkIsStarting) {
+
+                        $(this).attr("id", value);
+                        var p = $(this).parent();
+                        p.attr("id", value);
 
 
-                    deleteCookie($(this).attr("id"));
-                    p.fadeOut(function () {
-                        p.remove();
-                    });
+                        deleteCookie($(this).attr("id"));
+                        p.fadeOut(function () {
+                            p.remove();
+                        });
+                    } else {
+                        execTip("当前脚本正在进行，请结束脚本并重试!");
+                    }
                 });
 
 
                 var plus = $("<i class='fas fa-plus'></i>").click(function () {
-                    setCookieValueAdd(value);
-                    refreshTaskNumber();
+                    if (!checkIsStarting) {
+                        setCookieValueAdd(value);
+                        refreshTaskNumber();
+                    } else {
+                        execTip("当前脚本正在进行，请结束脚本并重试!");
+                    }
                 });
                 var minus = $("<i class='fas fa-minus'></i>").click(function () {
-                    setCookieValueMinus(value);
-                    refreshTaskNumber();
+                    if (!checkIsStarting) {
+                        setCookieValueMinus(value);
+                        refreshTaskNumber();
+                    } else {
+                        execTip("当前脚本正在进行，请结束脚本并重试!");
+                    }
                 });
 
                 var demo = $("<i class='fas fa-minus doing' style='display: none'></i>");
@@ -375,16 +388,109 @@
                 }
             }
         });
-        $(".task").each(function (index) {
-            $(this).attr("data-num", numbers[index]);
+
+        names.forEach(function (value, index, array) {
+            let cookie = getCookie(value.concat("doing"));
+            if (cookie !== "" ) {
+                numbers.push(cookie);
+
+                var task = $("<div class='doingTask' ></div>").text(value);
+
+                if (cookie !== "" && cookie === "-1") {
+                    task.append(del);
+                    $(".comp").append(task);
+                } else {
+                    // task.append(del, plus, minus);
+                    $(".doing").append(task);
+                }
+            }
         });
+
+
+        names.forEach(function (value, index, array) {
+            let cookie = getCookie(value.concat("finish"));
+            if (cookie !== "" ) {
+                numbers.push(cookie);
+
+                var task = $("<div class='task' data-num='1'></div>").text(value);
+                var del = $("<i class='fas fa-trash-alt'></i>").click(function () {
+                    if (!checkIsStarting) {
+
+                        $(this).attr("id", value);
+                        var p = $(this).parent();
+                        p.attr("id", value.concat("finish"));
+
+
+                        deleteCookie($(this).attr("id"));
+                        p.fadeOut(function () {
+                            p.remove();
+                        });
+                    } else {
+                        execTip("当前脚本正在进行，请结束脚本并重试!");
+                    }
+                });
+
+
+                // var plus = $("<i class='fas fa-plus'></i>").click(function () {
+                //     setCookieValueAdd(value.concat("finish"));
+                //     refreshTaskNumber();
+                // });
+                // var minus = $("<i class='fas fa-minus'></i>").click(function () {
+                //     setCookieValueMinus(value.concat("finish"));
+                //     refreshTaskNumber();
+                // });
+
+
+                if (cookie !== "" && cookie === "-1") {
+                    task.append(del);
+                    $(".comp").append(task);
+                } else {
+                    task.append(del);
+                    // task.fadeOut();
+                    $(".comp").append(task);
+                    // task.fadeIn();
+                }
+            }
+        });
+
+        setTimeout(function () {
+            $(".task").each(function (index) {
+                if (numbers[index] != -2) {
+                    $(this).attr("data-num", numbers[index]);
+
+                }
+            });
+        },500);
         console.log(numbers);
 
         if (numbers.length === 0) {
             //当前没有任何秘境，尝试从用户数据库中获取
-            popup2.classList.toggle("show");
+            $.ajax({  //验证身份
+                type: "get",
+                url: '/api/auth/guest/isGuest',
+                async: false,
+                dataType: "json",
+                xhrFields: {
+                    withCredentials: true,
+                },
+                success: function (data) {
+                    if (data.code === 200) {
+                        popup2.classList.toggle("show");
 
-            selectList();
+                        selectList();
+                    } else if (data.code === 401) {
+
+
+                    } else if (data.code !== 200) {
+                        execTip(data.message);
+
+                    }
+                },
+                error: function () {
+                    window.location = "../../500page.html";
+                },
+            });
+
         }
 
         //查看正在执行的秘境
@@ -409,12 +515,22 @@
     }
 
     $(".delete1").click(function () {
-        $(".task").each(function (value,index) {
-            deleteCookie($(this).text());
-            $(this).fadeOut(function () {
-                $(this).remove();
+        if (!checkIsStarting()) {
+            $(".task").each(function (value, index) {
+                deleteCookie($(this).text());
+                $(this).fadeOut(function () {
+                    $(this).remove();
+                });
             });
-        });
+            $(".doingTask").each(function (value, index) {
+                deleteCookie($(this).text());
+                $(this).fadeOut(function () {
+                    $(this).remove();
+                });
+            });
+        } else {
+            execTip("当前脚本正在进行，请结束脚本并重试!");
+        }
     });
 
 </script>
