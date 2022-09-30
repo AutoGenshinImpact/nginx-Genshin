@@ -12,18 +12,10 @@ window.addEventListener('load', function () {
   let social__btn_off = document.querySelector('.social__btn_off')
   let social__btn_on_img1 = document.querySelector('.social__btn_on_img1')
   let social__btn_on_img2 = document.querySelector('.social__btn_on_img2')
-	social__btn_off.addEventListener('click',function(){
-	social__btn_off.style.display = 'none'
-	social__btn_on.style.display = 'block'
-    animaters(social,1520);
-	social__btn_on_img2.classList = 'socialrotate'
-  })
-  
-  social__btn_on.addEventListener('click',function(){
-	 social__btn_off.style.display = 'block'
-	 social__btn_on.style.display = 'none'
-    animaters(social,1345);
-  })
+
+
+
+
 
   //登录
   let header__login = this.document.querySelector('.header__login')
@@ -31,6 +23,7 @@ window.addEventListener('load', function () {
   let x2 = this.document.getElementById('x2')
   let login = this.document.getElementById('login')
   let mimalogin = this.document.getElementById('mimalogin')
+  let login1 = this.document.getElementById('login1')
   let yzmloginer = this.document.getElementById('yzmloginer')
   let mimaloginer = this.document.getElementById('mimaloginer')//第一个
   let mimaloginers = this.document.getElementById('mimaloginers')//第二个
@@ -38,29 +31,57 @@ window.addEventListener('load', function () {
   let error_text = this.document.querySelector('.error-text')
   let MobilePhoneFormat = this.document.getElementById('MobilePhoneFormat')
   let mhy_toast = this.document.querySelector('.mhy-toast')
+
   header__login.addEventListener('click',function(){
     login.style.display = 'block'
   })
   close.addEventListener('click',function(){
     login.style.display = 'none'
+    // $("#resister").style.display = 'none'
+    $("#resister").css("display",'none')
   })
   mimaloginers.addEventListener('click',function(){
-    mimalogin.style.display = 'block'
+    $(".active").removeClass("active");
+    $(".tab-item:nth-child(2)").addClass("active");
+    $("#mimaInput").attr("placeholder", "密码");
+    $(".captcha-login-inner-btn").css("display", "none");
+    $(".register-bar").css("display", "block");
+    $("#LoginFirst").attr("onclick", "toLoginSecond()");
+
+
   })
-  mimaloginer.addEventListener('click',function(){
-    login.style.display = 'none'
-  })
-  yzmloginer.addEventListener('click',function(){
-    mimalogin.style.display = 'none'
-  })
-  x2.addEventListener('click',function(){
-    login.style.display = 'none'
+  yzmloginers.addEventListener('click',function(){
+    $(".active").removeClass("active");
+    $(".tab-item:nth-child(1)").addClass("active");
+    $(".register-bar").css("display", "none");
+    $(".captcha-login-inner-btn").css("display", "block");
+    $("#LoginFirst").attr("onclick", "toLoginFirst()");
+
+
+    $("#mimaInput").attr("placeholder", "验证码");
+
   })
 
- 
+
+  // mimaloginer.addEventListener('click',function(){
+  //   mimalogin.style.display = 'block'
+  //   login1.style.display = 'none'
+  // })
+  // yzmloginer.addEventListener('click',function(){
+  //   mimalogin.style.display = 'none'
+  // })
+  // x2.addEventListener('click',function(){
+  //   login.style.display = 'none'
+  // })
+
+
 
   	//判断用户在输入手机号格式是否正确
-		let regtel = /^(13[0-9]|14[5|7]|15[0|1|2|3|4|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
+  // var myforms = document.forms;
+  // var myemail = myforms[0].email.value;
+  var regtel = /^[a-zA-Z0-9_-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/;
+
+		// let regtel = /^(13[0-9]|14[5|7]|15[0|1|2|3|4|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
 
     containerinput.onblur = function() {
 			if(regtel.test(this.value)) {
@@ -79,7 +100,7 @@ window.addEventListener('load', function () {
         VerificationCode.disabled = true;
         VerificationCode.innerHTML = '发送验证码'
         time = 59; //这个数需要重新开始
-      } 
+      }
       else {
         VerificationCode.innerHTML = '已发送'+ time +'(S)';
         VerificationCode.disabled = false;
@@ -103,10 +124,10 @@ window.addEventListener('load', function () {
       mhy_toast.style.display = 'none'
     },5000)
 
-    
 
-    
-  
+
+
+
   //footer
   let socialitemImg1 = this.document.getElementById('socialitemImg1')
   let socialitemImg2 = this.document.getElementById('socialitemImg2')
@@ -115,34 +136,34 @@ window.addEventListener('load', function () {
   let share__wrap = this.document.querySelector('.share__wrap')
   let qxtc = this.document.querySelector('.qxtc')
 
-  socialitemImg1.addEventListener('mousemove',function(){
-    socialitemImg1.src = 'static/image/新浪微博 (2).png'
-  })
-  socialitemImg1.addEventListener('mouseout',function(){
-    socialitemImg1.src = 'static/image/新浪微博1..png'
-  })
-  socialitemImg2.addEventListener('mousemove',function(){
-    socialitemImg2.src = 'static/image/微信 (5).png'
-  })
-  socialitemImg2.addEventListener('mouseout',function(){
-    socialitemImg2.src = 'static/image/微信 (2).png'
-  })
-  socialitemImg3.addEventListener('mousemove',function(){
-    socialitemImg3.src = 'static/image/qq (1).png'
-  })
-  socialitemImg3.addEventListener('mouseout',function(){
-    socialitemImg3.src = 'static/image/qq.png'
-  })
-  socialitemImg4.addEventListener('mousemove',function(){
-    socialitemImg4.src = 'static/image/分享方式 (1).png'
-    share__wrap.style.display = 'block'
-  })
-  socialitemImg4.addEventListener('mouseout',function(){
-    socialitemImg4.src = 'static/image/分享方式.png'
-  })
-  qxtc.addEventListener('mouseout',function(){
-    share__wrap.style.display = 'none'
-  })
+  // socialitemImg1.addEventListener('mousemove',function(){
+  //   socialitemImg1.src = 'static/image/新浪微博 (2).png'
+  // })
+  // socialitemImg1.addEventListener('mouseout',function(){
+  //   socialitemImg1.src = 'static/image/新浪微博1..png'
+  // })
+  // socialitemImg2.addEventListener('mousemove',function(){
+  //   socialitemImg2.src = 'static/image/微信 (5).png'
+  // })
+  // socialitemImg2.addEventListener('mouseout',function(){
+  //   socialitemImg2.src = 'static/image/微信 (2).png'
+  // })
+  // socialitemImg3.addEventListener('mousemove',function(){
+  //   socialitemImg3.src = 'static/image/qq (1).png'
+  // })
+  // socialitemImg3.addEventListener('mouseout',function(){
+  //   socialitemImg3.src = 'static/image/qq.png'
+  // })
+  // socialitemImg4.addEventListener('mousemove',function(){
+  //   socialitemImg4.src = 'static/image/分享方式 (1).png'
+  //   share__wrap.style.display = 'block'
+  // })
+  // socialitemImg4.addEventListener('mouseout',function(){
+  //   socialitemImg4.src = 'static/image/分享方式.png'
+  // })
+  // qxtc.addEventListener('mouseout',function(){
+  //   share__wrap.style.display = 'none'
+  // })
 
 
 

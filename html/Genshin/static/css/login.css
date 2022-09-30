@@ -19,17 +19,20 @@
   font-size: 14px;
   font-family: Microsoft YaHei, \\5fae\8f6f\96c5\9ed1, miui, Helvetica, Arial,
     sans-serif;
+
 }
 .mhy-account-flow-dialog-content {
   width: 400px;
-  height: 466px;
+  height: 346px;
   background-color: #fff;
   border-radius: 4px;
   padding: 20px 25px;
   position: relative;
   top: 100px;
-  left: 500px;
+  left: 38.5%;
   margin-top: 58px;
+
+  /*margin:0 auto*/
 }
 .mhy-account-flow-login {
   background-color: #fff;
@@ -157,6 +160,7 @@
   cursor: pointer;
   line-height: 1;
 }
+
 .mhy-account-flow.is-pc
   .mhy-account-flow-form-input
   .input-container
@@ -207,7 +211,7 @@
 }
 .to-register {
   position: relative;
-  left: 240px;
+  left: 42%;
 }
 .mhy-account-flow.is-pc .mhy-account-flow-login .login-tip,
 .mhy-account-flow.is-pc .mhy-account-flow-login .register-bar {

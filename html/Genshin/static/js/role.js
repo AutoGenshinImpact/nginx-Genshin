@@ -1,10 +1,10 @@
 var img_arr = [
-    "static/image/newsimg/2022012718113218873.png",
-    "static/image/newsimg/2022012718135119594.png",
+    "static/image/ZhouBen/GongZi.png",
+    "static/image/ZhouBen/fengMoLong.png",
     "static/image/newsimg/2019092620183491239.png",
-    "static/image/newsimg/2019092620194519600.png",
-    "static/image/newsimg/babala.png",
-    "static/image/newsimg/diluke.png"
+    "static/image/ZhouBen/fengMoLong.png",
+    "static/image/ZhouBen/fengMoLong.png",
+    "static/image/ZhouBen/fengMoLong.png",
 ];
 var avatar_arr = [
     "static/image/newsimg/2022012718344593599.png",
@@ -15,8 +15,8 @@ var avatar_arr = [
     "static/image/newsimg/2020030617015669833.png",
 ];
 var intro_arr = [
-    "身为西风骑士团的代理团长，琴一直忠于职守，为人们带来安宁。虽然并非天赋异宗，但通过刻苦训练，如今的她已然能够独当一面。当风魔龙的威胁开始临近，这位可靠的代理团长早已做好了准备，誓要守护蒙德。",
-    "活泼率直的少女，是蒙德城中唯一的侦察骑士。擅长使用风之翼的安柏，连续三年蝉联蒙德城的「飞行冠军」。作为西风骑士团的新星，今天的安柏依然活跃在第一线。",
+    "公子",
+    "风魔龙",
     "她是钟情于睡眠的知性魔女。作为西风骑士团图书馆的管理员，聪明的丽莎总能以最有效的方式将遇到的问题统统解决。虽然看似慵懒，但处变不惊的她似乎早已将一切尽数掌控。",
     "在西风骑士团里，凯亚是代理团长最信任的副手。凡是交托于他的任务，总能得到解决。在蒙德城中，风趣幽默的他同样深受人们的喜爱，然而这位谈吐不凡的骑士隐约有着什么不为人知的秘密。",
     "既是西风教会的祈礼牧师，又是蒙德城的闪耀偶像。对于习惯了传统吟游诗人的蒙德来说，「偶像」是还不习惯的新生事物。但在蒙德，人人都爱芭芭拉。这就是自由之都的自由精神——对大家投来的喜爱，芭芭拉是这样满怀感激地总结的。",
