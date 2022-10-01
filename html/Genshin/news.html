@@ -5,542 +5,353 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>《原神》官网-踏入充满冒险的神奇世界</title>
-    <link rel="icon" type="static/image/x-icon" href="image\原神logo.ico" /><!--网页图标-->
-    <link rel="stylesheet" href="css\index.css" />
-	<link rel="stylesheet" href="static/css/font-index..css">
-	<link rel="stylesheet" href="static/css/swiper-bundle.min.css">
-	<link rel="stylesheet" href="static/css/city.css">
-	<link rel="stylesheet" href="static/css/footer.css">
-	<link rel="stylesheet" href="static/css/login.css">
-    <link rel="stylesheet" href="static/css/news.css">
-    <link rel="stylesheet" href="static/css/tip.css">
-    <link rel="stylesheet" href="static/css/chunk-element.b496abee.css">
-    <link rel="stylesheet" href="static/css/openWindow.css">
+    <link rel="icon" type="static/image/x-icon" href="image\原神logo.ico"/><!--网页图标-->
+
 </head>
-<script>
-    $(function () {
-        var system = {};
-        var p = navigator.platform;
-        system.win = p.indexOf("Win") == 0;
-        system.mac = p.indexOf("Mac") == 0;
-        system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
-        if (system.win || system.mac || system.xll) {//如果是电脑跳转到
-            //电脑登录
-        } else {  //如果是手机,跳转到
-            window.alert("当前暂时支持电脑使用，请使用电脑打开!")
-            window.location.href = "#";
-        }
-    });
-</script>
+
 <body>
-    <div class="header">
-		<div class="audio-controller" id="audiu_on">
-			<img src="static/image/播放开.png" style="width: 100%;" id="audio_headerimg"/>
-			<audio id="bgMusic">
-				<source src="static/audio/原神官网视频 - 1.最终版(Av55055298,P1).mp3" type="audio/mp3">
-			</audio>
-		</div>
-		<div class="audio-controller" id="audio_off" style="display: none;">
-			<img src="static/image/播放关.png" style="width: 100%;" id="audio_headerimg"/>
-			<audio id="bgMusic">
-				<source src="static/audio/原神官网视频 - 1.最终版(Av55055298,P1).mp3" type="audio/mp3">
-			</audio>
-		</div>
-		<div class="header__logo--cut">
-			<img src="static/image/原神主页logo.png">
-		</div>
-		<div class="header__navbar">
-			<div class="header_Cloud"></div>
-			<div class="header_navitem">
-				<a class="header_hover" href="index.html">首&nbsp页</a>
-				<a>新&nbsp闻</a>
-				<a>角&nbsp色</a>
-				<a>世&nbsp界</a>
-				<a>漫&nbsp画</a>
-				<a>社&nbsp区</a>
-			</div>
-		</div>
-        <div class="mhy-account-flow mhy-account-flow-dialog ys-theme is-pc" style="display: none;" id="login">
-            <div class="mhy-account-flow-dialog-content" id="login1">
-                <div class="mhy-account-flow-login">
-                    <img src="static/image/mihuayouLOGo.png" class="logo">
-                    <img src="static/image/X.png" class="close-icon">
-                </div>
-                <div class="mhy-account-flow-tabs tabs-flex">
-                    <div class="tab-item active">
-                        <span id="yzmloginers">验证码登录</span>
-                    </div>
-                    <div class="tab-item ">
-                        <span id="mimaloginers">密码登录</span>
-                    </div>
-                </div>
-                <div class="mhy-account-flow-form-input">
-                    <div class="input-container">
-                        <input type="tel" placeholder="邮箱" id="containerinput" maxlength="20">
-                    </div>
-                    <p class="error-text">*邮箱不能为空</p>
-                    <p class="error-text" style="display: none;" id="MobilePhoneFormat">*邮箱格式错误</p>
-                </div>
-                <div class="mhy-account-flow-form-input">
-                    <div class="input-container">
-                        <div class="mhy-toast" style="display: none;">请输入正确的邮箱地址</div>
-                        <input id="mimaInput" type="tel" placeholder="验证码" maxlength="12">
-                        <div onclick="getVerifyCode()" class="input-inner-btn captcha-login-inner-btn" id="VerificationCode">
-                            获取验证码
-                        </div>
-                    </div>
-                </div>
-                <div></div>
-                <div class="mhy-login-button">
-                    <button id="LoginFirst" onclick="toLoginFirst()" type="submit" class="login-btn">登录</button>
-                </div>
-                <div class="register-bar" style="display: none">
-                    <a href="javascript:openRegister()" class="to-register">立即注册</a>
-                </div>
+<div>
+    <div style="font-family: &quot;lucida Grande&quot;, Verdana, &quot;Microsoft YaHei&quot;; background: rgb(94, 123, 254); margin: 0px auto; max-width: 600px;">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation"
+               style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; width: 600px;">
+            <tbody>
+            <tr>
+                <td style="font-size: 0px; -webkit-font-smoothing: subpixel-antialiased; direction: ltr; padding: 0px; text-align: center;">
+                    <div class="mj-column-per-100 mj-outlook-group-fix"
+                         style="text-align: left; direction: ltr; display: inline-block; vertical-align: top; width: 600px;">
+                        <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                            <tbody>
+                            <tr>
+                                <td style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; vertical-align: top; padding: 3px 5px;">
+                                    <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                                        <tbody>
+                                        <tr>
+                                            <td align="left"
+                                                style="font-size: 0px; -webkit-font-smoothing: subpixel-antialiased; padding: 3px 5px; word-break: break-word;">
+                                                <table border="0" cellpadding="0" cellspacing="0" role="presentation"
+                                                       style="border-collapse: collapse; border-spacing: 0px;">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; width: 100px;">
+                                                            <table><tr>
+                                                                <td><img height="auto"
+                                                                         src="https://img.gejiba.com/images/92476aa90946e4dedc4f650f53f27d77.png"
+                                                                         width="100"
+                                                                         style="border: 0px; vertical-align: middle; display: block; outline: none; height: auto; width: 150px;transform: translateX(-30%); font-size: 16px;">
+                                                                </td>
+                                                                <td><h4 style="transform: translateX(-540%);margin: 0;margin-top:6px;font-size: 19px;font-weight: bold;color: #d3d4d6;font-family: 'Adobe Caslon Pro'">G</h4> </td>
+                                                                <td><h4 style="transform: translateX(-1040%);margin: 0;margin-top:6px;font-size: 19px;font-weight: bold;color: #d3d4d6;font-family: 'Adobe Caslon Pro'">e</h4> </td>
+                                                                <td><h4 style="transform: translateX(-840%);margin: 0;margin-top:6px;font-size: 19px;font-weight: bold;color: #d3d4d6;font-family: 'Adobe Caslon Pro'">n</h4> </td>
+                                                                <td><h4 style="transform: translateX(-840%);margin: 0;margin-top:6px;font-size: 19px;font-weight: bold;color: #d3d4d6;font-family: 'Adobe Caslon Pro'">S</h4> </td>
+                                                                <td><h4 style="transform: translateX(-880%);margin: 0;margin-top:6px;font-size: 19px;font-weight: bold;color: #d3d4d6;font-family: 'Adobe Caslon Pro'">h</h4> </td>
+                                                                <td><h4 style="transform: translateX(-1730%);margin: 0;margin-top:6px;font-size: 19px;font-weight: bold;color: #d3d4d6;font-family: 'Adobe Caslon Pro'">i</h4> </td>
+                                                                <td><h4 style="transform: translateX(-910%);margin: 0;margin-top:6px;font-size: 19px;font-weight: bold;color: #d3d4d6;font-family: 'Adobe Caslon Pro'">n</h4> </td>
+                                                            </tr></table>
 
-            </div>
-        </div>
-
-        <div class="mhy-account-flow mhy-account-flow-dialog ys-theme is-pc" style="display: none;" id="resister">
-            <div class="mhy-account-flow-dialog-content" id="login2">
-                <div class="mhy-account-flow-login">
-                    <img src="static/image/mihuayouLOGo.png" class="logo">
-                    <img src="static/image/X.png" class="close-icon">
-                </div>
-                <div class="mhy-account-flow-tabs tabs-flex">
-                    <div class="tab-item active" >
-                        <span id="yzmloginers1">密码注册</span>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
-
-                </div>
-                <!--            <form>-->
-                <div class="mhy-account-flow-form-input">
-                    <div class="input-container">
-                        <input type="tel" placeholder="邮箱" id="containerinput1" maxlength="20">
-                    </div>
-                    <p class="error-text">*邮箱不能为空</p>
-                    <p class="error-text" style="display: none;" id="MobilePhoneFormat1">*邮箱格式错误</p>
-                </div>
-                <div class="mhy-account-flow-form-input">
-                    <div class="input-container">
-                        <div class="mhy-toast" style="display: none;">请输入正确的邮箱地址</div>
-                        <input id="mimaInput1" type="tel" placeholder="密码" maxlength="12">
-                        <div onclick="getVerifyCode()" class="input-inner-btn captcha-login-inner-btn" id="VerificationCode2">
-                            获取验证码
-                        </div>
-                    </div>
-                </div>
-                <div class="mhy-account-flow-form-input">
-                    <div class="input-container">
-                        <div class="mhy-toast" style="display: none;">请输入正确的邮箱地址</div>
-                        <input id="mimaInput2" type="tel" placeholder="验证码" maxlength="6">
-
-                    </div>
-                </div>
-                <div></div>
-                <div class="mhy-login-button">
-                    <button onclick="toRegister()" type="submit" class="login-btn">注册</button>
-                </div>
-                <!--            </form>-->
-                <div class="register-bar" style="display: none">
-                    <a href="javascript:openLogin()" class="to-register">立即登录</a>
-                </div>
-
-            </div>
-        </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </div>
-	<div class="social">
-		<ul class="social_wx">
-			<button class="social__btn_off">
-				<img src="static/image/箭头.png" class="social__btn_on_img1">
-			</button>
-			<button class="social__btn_on" style="display: none;">
-				<img src="static/image/箭头.png" class="social__btn_on_img2">
-				<!-- transform: rotate(-180deg); -->
-			</button>
-			<li class="social_first">
-				<p class="wenzi1">关注我们</p>
-				<img src="static/image/微信二维码.png">
-				<p class="wenzi2">扫描关注微信</p>
-			</li>
-			<li class="social__item">
-				<p>官方微博</p>
-			</li>
-			<li class="social__item">
-				<p>TapTap</p>
-			</li>
-			<li class="social__item">
-				<p>官方社区</p>
-			</li>
-		</ul>
-	</div>
+    <div style="font-family: &quot;lucida Grande&quot;, Verdana, &quot;Microsoft YaHei&quot;; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; margin: 0px auto; max-width: 600px;">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation"
+               style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; width: 600px;">
+            <tbody>
+            <tr>
+                <td style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; direction: ltr; padding: 10px; text-align: center;">
+                    <div class="mj-column-per-100 mj-outlook-group-fix"
+                         style="text-align: left; direction: ltr; display: inline-block; vertical-align: top; width: 580px;">
+                        <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                            <tbody>
+                            <tr>
+                                <td style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; vertical-align: top; padding: 3px 5px;">
+                                    <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                                        <tbody>
+                                        <tr>
+                                            <td align="left"
+                                                style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; padding: 3px 5px 0px; word-break: break-word;">
+                                                <div><h3 style="font-weight: normal; margin: 0px;"><font size="4"
+                                                                                                         style="line-height: 30.6px;"><font
+                                                        color="#3c5061"
+                                                        style="line-height: 30.6px;">GenShin脚本使用者&nbsp;</font><font
+                                                        color="#ff9900"
+                                                        style="line-height: 30.6px;">lmq122677@qq.com</font><font
+                                                        color="#3c5061" style="line-height: 30.6px;">，您好：</font></font>
+                                                </h3></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left"
+                                                style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; padding: 0px 5px 3px; word-break: break-word;">
+                                                <p style="line-height: 23.8px;"><font size="2"
+                                                                                      style="line-height: 22.1px;"><font
+                                                        color="#3c5061" style="line-height: 22.1px;">您在</font><font
+                                                        color="#008080"
+                                                        style="line-height: 22.1px;">2022年10月1日</font><font
+                                                        color="#3c5061"
+                                                        style="line-height: 22.1px;">，完成了一次秘境脚本的执行：</font></font></p>
+                                                <p style="line-height: 23.8px;"><font size="2" color="#3366ff"
+                                                                                      style="line-height: 22.1px;"><b>脚本内容：</b></font>
+                                                </p></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left"
+                                                style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; padding: 3px 5px; word-break: break-word;">
+                                                <table cellpadding="0" cellspacing="0" width="100%" border="0"
+                                                       style="color: rgb(60, 80, 97); font-size: 14px; line-height: 24px; table-layout: auto; width: 560px; border: none;">
+                                                    <tbody>
+                                                    <tr style="transform: translateX(-40%);border-bottom: 1px solid rgb(236, 237, 238);">
+                                                        <th>秘境名称</th>
+                                                        <th>数量</th>
+                                                        <th>脚本编号</th>
 
-    <div class="content-wrap">
-        <div class="news_index content-body" style="background-position-y: 0px;">
-            <img src="static/image/newsimg/newsbg.jpg">
-            <img src="static/image/newsimg/news背景.jpg" class="newsbj">
-            <div class="body">
-                <ul class="recommend">
-                    <li class="recommend__item" title="《原神》微博超话2.2版本第二期签到活动现已上线">
-                        <a class="news__title ellipsis">
-                            <div class="recommend__imgwrap">
-                                <img class="recommend__img coverFit" src="static/image/newsimg/刻晴.png">
-                            </div>
-                            <div class="recommend__title">刻晴生日快乐｜这是…送给我的金丝虾球？</div>
-                            <p class="recommend__summary"></p>
-                        </a>
-                        <div class="recommend__meta">
-                            <span class="recommend__date">2021/11/20</span>
-                            <span class="recommend__category news__cate-2">新闻</span>
-                        </div>
-                    </li>
-                    <li class="recommend__item" title="《原神》微博超话2.2版本第二期签到活动现已上线">
-                        <a class="news__title ellipsis">
-                            <div class="recommend__imgwrap">
-                                <img class="recommend__img coverFit" src="static/image/newsimg/蒙德茶会.jpg">
-                            </div>
-                            <div class="recommend__title">《原神》小剧场——「蒙德茶会」第四期</div>
-                            <p class="recommend__summary"></p>
-                        </a>
-                        <div class="recommend__meta">
-                            <span class="recommend__date">2021/11/19</span>
-                            <span class="recommend__category news__cate-2">新闻</span>
-                        </div>
-                    </li>
-                    <li class="recommend__item" title="《原神》微博超话2.2版本第二期签到活动现已上线">
-                        <a class="news__title ellipsis">
-                            <div class="recommend__imgwrap">
-                                <img class="recommend__img coverFit" src="static/image/newsimg/派梦的十万个为什么.jpg">
-                            </div>
-                            <div class="recommend__title">「派蒙的十万个为什么」答题活动正式开启</div>
-                            <p class="recommend__summary"></p>
-                        </a>
-                        <div class="recommend__meta">
-                            <span class="recommend__date">2021/11/19</span>
-                            <span class="recommend__category news__cate-2">新闻</span>
-                        </div>
-                    </li>
-                </ul>
-               <ul class="category">
-                   <li class="category__item"><a class="category__link">最新</a></li>
-                   <li class="category__item"><a class="category__link">新闻</a></li>
-                   <li class="category__item"><a class="category__link">公告</a></li>
-                   <li class="category__item"><a class="category__link">活动</a></li>
-               </ul>
-               
-               <!-- news区块 -->
-               <ul class="news">
-                 <!-- 最新 -->
-                <ul class="news">
-                    <li class="news__item news__tag-2" >
-                        <a class="news__title news__content ellipsis">
-                            <img class="coverFit" src="static/image/newsimg/刻晴.png">
-                            <div class="news__info">
-                                <h3 class="ellipsis" title="刻晴生日快乐｜这是…送给我的金丝虾球？">刻晴生日快乐｜这是…送给我的金丝虾球？</h3>
-                                <p class="news__summary"></p>
-                            </div>
-                        </a>
-                        <div class="news__meta">
-                            <div class="news__date">2021/11/04</div>
-                            <a class="news__category news__cate-2">新闻</a>
-                        </div>
-                    </li>
-                    <li class="news__item news__tag-2">
-                        <a class="news__title news__content ellipsis">
-                            <img class="coverFit" src="static/image/newsimg/蒙德茶会.jpg">
-                            <div class="news__info">
-                                <h3 class="ellipsis" title="《原神》小剧场——「蒙德茶会」第四期">《原神》小剧场——「蒙德茶会」第四期</h3>
-                                <p class="news__summary"></p>
-                            </div>
-                        </a>
-                        <div class="news__meta">
-                            <div class="news__date">2021/11/04</div>
-                            <a class="news__category news__cate-2">新闻</a>
-                        </div>
-                    </li>
-                    <li class="news__item news__tag-2">
-                        <a class="news__title news__content ellipsis">
-                            <img class="coverFit" src="static/image/newsimg/派梦的十万个为什么.jpg">
-                            <div class="news__info">
-                                <h3 class="ellipsis" title="「派蒙的十万个为什么」答题活动正式开启">「派蒙的十万个为什么」答题活动正式开启</h3>
-                                <p class="news__summary"></p>
-                            </div>
-                        </a>
-                        <div class="news__meta">
-                            <div class="news__date">2021/11/04</div>
-                            <a class="news__category news__cate-2">新闻</a>
-                        </div>
-                    </li>
-                    <li class="news__item news__tag-2" >
-                        <a class="news__title news__content ellipsis">
-                            <img class="coverFit" src="static/image/newsimg/派蒙.jpg">
-                            <div class="news__info">
-                                <h3 class="ellipsis" title="《原神》预下载即将开启">《原神》预下载即将开启</h3>
-                                <p class="news__summary"></p>
-                            </div>
-                        </a>
-                        <div class="news__meta">
-                            <div class="news__date">2021/11/04</div>
-                            <a class="news__category news__cate-2">新闻</a>
-                        </div>
-                    </li>
-                    <li class="news__item news__tag-2" >
-                        <a class="news__title news__content ellipsis">
-                            <img class="coverFit" src="static/image/newsimg/尤拉.png">
-                            <div class="news__info">
-                                <h3 class="ellipsis" title="《原神》「浪沫的旋舞」优菈角色主题同人征集活动今日开启">《原神》「浪沫的旋舞」优菈角色主题同人征集活动今日开启</h3>
-                                <p class="news__summary"></p>
-                            </div>
-                        </a>
-                        <div class="news__meta">
-                            <div class="news__date">2021/11/04</div>
-                            <a class="news__category news__cate-2">新闻</a>
-                        </div>
-                    </li>
-                   </ul>
-                   <!-- 新闻 -->
-                   <ul class="news" style="display: none;">
-                    <li class="news__item news__tag-2" >
-                        <a class="news__title news__content ellipsis">
-                            <img class="coverFit" src="static/image/newsimg/阿贝多.jpg">
-                            <div class="news__info">
-                                <h3 class="ellipsis" title="刻晴生日快乐｜这是…送给我的金丝虾球？">刻晴生日快乐｜这是…送给我的金丝虾球？</h3>
-                                <p class="news__summary"></p>
-                            </div>
-                        </a>
-                        <div class="news__meta">
-                            <div class="news__date">2021/11/04</div>
-                            <a class="news__category news__cate-2">新闻</a>
-                        </div>
-                    </li>
-                    <li class="news__item news__tag-2">
-                        <a class="news__title news__content ellipsis">
-                            <img class="coverFit" src="static/image/newsimg/蒙德茶会.jpg">
-                            <div class="news__info">
-                                <h3 class="ellipsis" title="《原神》小剧场——「蒙德茶会」第四期">《原神》小剧场——「蒙德茶会」第四期</h3>
-                                <p class="news__summary"></p>
-                            </div>
-                        </a>
-                        <div class="news__meta">
-                            <div class="news__date">2021/11/04</div>
-                            <a class="news__category news__cate-2">新闻</a>
-                        </div>
-                    </li>
-                    <li class="news__item news__tag-2">
-                        <a class="news__title news__content ellipsis">
-                            <img class="coverFit" src="static/image/newsimg/派梦的十万个为什么.jpg">
-                            <div class="news__info">
-                                <h3 class="ellipsis" title="「派蒙的十万个为什么」答题活动正式开启">「派蒙的十万个为什么」答题活动正式开启</h3>
-                                <p class="news__summary"></p>
-                            </div>
-                        </a>
-                        <div class="news__meta">
-                            <div class="news__date">2021/11/04</div>
-                            <a class="news__category news__cate-2">新闻</a>
-                        </div>
-                    </li>
-                    <li class="news__item news__tag-2" >
-                        <a class="news__title news__content ellipsis">
-                            <img class="coverFit" src="static/image/newsimg/派蒙.jpg">
-                            <div class="news__info">
-                                <h3 class="ellipsis" title="《原神》预下载即将开启">《原神》预下载即将开启</h3>
-                                <p class="news__summary"></p>
-                            </div>
-                        </a>
-                        <div class="news__meta">
-                            <div class="news__date">2021/11/04</div>
-                            <a class="news__category news__cate-2">新闻</a>
-                        </div>
-                    </li>
-                    <li class="news__item news__tag-2" >
-                        <a class="news__title news__content ellipsis">
-                            <img class="coverFit" src="static/image/newsimg/祈愿概率.png">
-                            <div class="news__info">
-                                <h3 class="ellipsis" title="《原神》「浪沫的旋舞」优菈角色主题同人征集活动今日开启">《原神》「浪沫的旋舞」优菈角色主题同人征集活动今日开启</h3>
-                                <p class="news__summary"></p>
-                            </div>
-                        </a>
-                        <div class="news__meta">
-                            <div class="news__date">2021/11/04</div>
-                            <a class="news__category news__cate-2">新闻</a>
-                        </div>
-                    </li>
-                   </ul>
-                   <!-- 公告 -->
-                   <ul class="news" style="display: none;">
-                    <li class="news__item news__tag-2" >
-                        <a class="news__title news__content ellipsis">
-                            <img class="coverFit" src="static/image/newsimg/祈愿概率.png">
-                            <div class="news__info">
-                                <h3 class="ellipsis" title="《原神》祈愿概率公示">《原神》祈愿概率公示</h3>
-                                <p class="news__summary"></p>
-                            </div>
-                        </a>
-                        <div class="news__meta">
-                            <div class="news__date">2021/11/04</div>
-                            <a class="news__category news__cate-2">新闻</a>
-                        </div>
-                    </li>
-                    <li class="news__item news__tag-2" >
-                        <a class="news__title news__content ellipsis">
-                            <img class="coverFit" src="static/image/newsimg/尤拉.png">
-                            <div class="news__info">
-                                <h3 class="ellipsis" title="《原神》「浪沫的旋舞」优菈角色主题同人征集活动今日开启">《原神》「浪沫的旋舞」优菈角色主题同人征集活动今日开启</h3>
-                                <p class="news__summary"></p>
-                            </div>
-                        </a>
-                        <div class="news__meta">
-                            <div class="news__date">2021/11/04</div>
-                            <a class="news__category news__cate-2">新闻</a>
-                        </div>
-                    </li>
-                    <li class="news__item news__tag-2" >
-                        <a class="news__title news__content ellipsis">
-                            <img class="coverFit" src="static/image/newsimg/祈愿概率.png">
-                            <div class="news__info">
-                                <h3 class="ellipsis" title="《原神》祈愿概率公示">《原神》祈愿概率公示</h3>
-                                <p class="news__summary"></p>
-                            </div>
-                        </a>
-                        <div class="news__meta">
-                            <div class="news__date">2021/11/04</div>
-                            <a class="news__category news__cate-2">新闻</a>
-                        </div>
-                    </li>
-                    <li class="news__item news__tag-2" >
-                        <a class="news__title news__content ellipsis">
-                            <img class="coverFit" src="static/image/newsimg/尤拉.png">
-                            <div class="news__info">
-                                <h3 class="ellipsis" title="《原神》「浪沫的旋舞」优菈角色主题同人征集活动今日开启">《原神》「浪沫的旋舞」优菈角色主题同人征集活动今日开启</h3>
-                                <p class="news__summary"></p>
-                            </div>
-                        </a>
-                        <div class="news__meta">
-                            <div class="news__date">2021/11/04</div>
-                            <a class="news__category news__cate-2">新闻</a>
-                        </div>
-                    </li>
-                    <li class="news__item news__tag-2">
-                        <a class="news__title news__content ellipsis">
-                            <img class="coverFit" src="static/image/newsimg/蒙德茶会.jpg">
-                            <div class="news__info">
-                                <h3 class="ellipsis" title="《原神》小剧场——「蒙德茶会」第四期">《原神》小剧场——「蒙德茶会」第四期</h3>
-                                <p class="news__summary"></p>
-                            </div>
-                        </a>
-                        <div class="news__meta">
-                            <div class="news__date">2021/11/04</div>
-                            <a class="news__category news__cate-2">新闻</a>
-                        </div>
-                    </li>
-                    </ul>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="200"
+                                                            style="transform: translateX(35%);font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;">
+                                                            仲夏庭院
+                                                        </td>
+                                                        <td width="80"
+                                                            style="transform: translateX(39%);font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;">
+                                                            20
+                                                        </td>
+                                                        <td width="100"
+                                                            style="transform: translateX(39%);font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;">
+                                                            0
+                                                        </td>
+                                                        <td width="100"
+                                                            style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;"></td>
+                                                        <td width="100"
+                                                            style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;"></td>
+                                                        <td width="100"
+                                                            style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="200"
+                                                            style="transform: translateX(29%);font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;">
+                                                            铭记之谷山顶
+                                                        </td>
+                                                        <td width="80"
+                                                            style="transform: translateX(39%);font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;">
+                                                            3
+                                                        </td>
+                                                        <td width="100"
+                                                            style="transform: translateX(39%);font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;">
+                                                            2
+                                                        </td>
+                                                        <td width="100"
+                                                            style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;">
+                                                            <br></td>
+                                                        <td width="100"
+                                                            style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;"></td>
+                                                        <td width="100"
+                                                            style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;">
+                                                            -
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="200"
+                                                            style="transform: translateX(35%);font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;">
+                                                            忘却之峡
+                                                        </td>
+                                                        <td width="80"
+                                                            style="transform: translateX(39%);font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;">
+                                                            1
+                                                        </td>
+                                                        <td width="100"
+                                                            style="transform: translateX(39%);font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;">
+                                                            4
+                                                        </td>
+                                                        <td width="100"
+                                                            style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;">
+                                                            <br></td>
+                                                        <td width="100"
+                                                            style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;"></td>
+                                                        <td width="100"
+                                                            style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="200"
+                                                            style="transform: translateX(35%);font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;">
+                                                            山脊守望
+                                                        </td>
+                                                        <td width="80"
+                                                            style="transform: translateX(39%);font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;">
+                                                            1
+                                                        </td>
+                                                        <td width="100"
+                                                            style="transform: translateX(39%);font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;">
+                                                            13
+                                                        </td>
 
-                    <!-- 活动 -->
-                    <ul class="news" style="display: none;">
-                        <li class="news__item news__tag-2">
-                            <a class="news__title news__content ellipsis">
-                                <img class="coverFit" src="static/image/newsimg/岩港奇珍行记.jpg">
-                                <div class="news__info">
-                                    <h3 class="ellipsis" title="《原神》「古时孤影」活动即将开启">《原神》「古时孤影」活动即将开启</h3>
-                                    <p class="news__summary"></p>
-                                </div>
-                            </a>
-                            <div class="news__meta">
-                                <div class="news__date">2021/11/04</div>
-                                <a class="news__category news__cate-2">新闻</a>
-                            </div>
-                        </li>
-                        <li class="news__item news__tag-2" >
-                            <a class="news__title news__content ellipsis">
-                                <img class="coverFit" src="static/image/newsimg/月夕祝颂.jpg">
-                                <div class="news__info">
-                                    <h3 class="ellipsis" title="《原神》「浪沫的旋舞」优菈角色主题同人征集活动今日开启">《原神》「浪沫的旋舞」优菈角色主题同人征集活动今日开启</h3>
-                                    <p class="news__summary"></p>
-                                </div>
-                            </a>
-                            <div class="news__meta">
-                                <div class="news__date">2021/11/04</div>
-                                <a class="news__category news__cate-2">新闻</a>
-                            </div>
-                        </li>
-                        <li class="news__item news__tag-2">
-                            <a class="news__title news__content ellipsis">
-                                <img class="coverFit" src="static/image/newsimg/蒙德茶会.jpg">
-                                <div class="news__info">
-                                    <h3 class="ellipsis" title="《原神》小剧场——「蒙德茶会」第四期">《原神》小剧场——「蒙德茶会」第四期</h3>
-                                    <p class="news__summary"></p>
-                                </div>
-                            </a>
-                            <div class="news__meta">
-                                <div class="news__date">2021/11/04</div>
-                                <a class="news__category news__cate-2">新闻</a>
-                            </div>
-                        </li>
-                        <li class="news__item news__tag-2">
-                            <a class="news__title news__content ellipsis">
-                                <img class="coverFit" src="static/image/newsimg/祈愿概率.png">
-                                <div class="news__info">
-                                    <h3 class="ellipsis" title="《原神》小剧场——「蒙德茶会」第四期">《原神》小剧场——「蒙德茶会」第四期</h3>
-                                    <p class="news__summary"></p>
-                                </div>
-                            </a>
-                            <div class="news__meta">
-                                <div class="news__date">2021/11/04</div>
-                                <a class="news__category news__cate-2">新闻</a>
-                            </div>
-                        </li>
-                       </ul>
-                        
-                   </ul>
-               </ul>
-              <!-- 加载更多 -->
-              <li class="news__more">加载更多</li>
-            </div>
-        </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="200"
+                                                            style="transform: translateX(39%);font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;">
+                                                            砂流庭
+                                                        </td>
+                                                        <td width="80"
+                                                            style="transform: translateX(39%);font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;">
+                                                            5
+                                                        </td>
+                                                        <td width="100"
+                                                            style="transform: translateX(39%);font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;">
+                                                            17
+                                                        </td>
+                                                        <td width="100"
+                                                            style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;">
+                                                            <br></td>
+                                                        <td width="100"
+                                                            style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;"></td>
+                                                        <td width="100"
+                                                            style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; word-break: break-all;"></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </div>
+    <div style="font-family: &quot;lucida Grande&quot;, Verdana, &quot;Microsoft YaHei&quot;; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; margin: 0px auto; max-width: 600px;">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation"
+               style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; width: 600px;">
+            <tbody>
+            <tr>
+                <td style="font-size: 0px; -webkit-font-smoothing: subpixel-antialiased; direction: ltr; padding: 10px; text-align: center;">
+                    <div class="mj-column-per-100 mj-outlook-group-fix"
+                         style="text-align: left; direction: ltr; display: inline-block; vertical-align: top; width: 580px;">
+                        <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                            <tbody>
+                            <tr>
+                                <td style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; vertical-align: top; padding: 3px 5px;">
+                                    <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                                        <tbody>
+                                        <tr>
+                                            <td align="center"
+                                                style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; padding: 3px 5px; word-break: break-word;">
+                                                <p style="line-height: 20.4px; border-top: 1px solid rgb(223, 227, 232); margin: 0px auto; width: 560px;"></p>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="font-family: &quot;lucida Grande&quot;, Verdana, &quot;Microsoft YaHei&quot;; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; margin: 0px auto; max-width: 600px;">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation"
+               style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; width: 600px;">
+            <tbody>
+            <tr>
+                <td style="font-size: 0px; -webkit-font-smoothing: subpixel-antialiased; direction: ltr; padding: 10px; text-align: center;">
+                    <div class="mj-column-per-100 mj-outlook-group-fix"
+                         style="text-align: left; direction: ltr; display: inline-block; vertical-align: top; width: 580px;">
+                        <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                            <tbody>
+                            <tr>
+                                <td style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; vertical-align: top; padding: 3px 5px;">
+                                    <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                                        <tbody>
+                                        <tr>
+                                            <td align="left"
+                                                style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; padding: 3px 5px; word-break: break-word;">
+                                                <p style="line-height: 23.8px;"><font size="2"
+                                                                                      style="line-height: 22.1px;">您好，因为网站可能休眠无法及时提醒，所以冒昧通过邮件提醒您。如果您觉得GenShin脚本的信息对您没有帮助，请<a
+                                                        href=""
+                                                        rel="noopener" target="_blank"
+                                                        style="outline: none; text-decoration-line: none; cursor: pointer; color: rgb(77, 93, 44);">点击取消退订</a>，我们会标记为暂不关心，后续不会再次提示您。</font>
+                                                </p></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left"
+                                                style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; padding: 3px 5px 10px; word-break: break-word;">
+                                                <div><a href="#" size="2" style="line-height: 22.1px;">GenShin脚本网站</a>
+                                                </div>
+                                                <div><a href="https://github.com/AutoGenshinImpact/Genshin-boot" size="2" style="line-height: 22.1px;">联系我们：GitHub</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="font-family: &quot;lucida Grande&quot;, Verdana, &quot;Microsoft YaHei&quot;; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; margin: 0px auto; max-width: 600px;">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation"
+               style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; width: 600px;">
+            <tbody>
+            <tr>
+                <td style="font-size: 0px; -webkit-font-smoothing: subpixel-antialiased; direction: ltr; padding: 30px 10px 10px; text-align: center;">
+                    <div class="mj-column-per-100 mj-outlook-group-fix"
+                         style="text-align: left; direction: ltr; display: inline-block; vertical-align: top; width: 580px;">
+                        <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                            <tbody>
+                            <tr>
+                                <td style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; vertical-align: top; padding: 3px 5px;">
+                                    <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                                        <tbody>
+                                        <tr>
+                                            <td align="left"
+                                                style="font-size: 12px; -webkit-font-smoothing: subpixel-antialiased; padding: 3px 5px; word-break: break-word;">
+                                                <p style="line-height: 23.8px;"><font size="4"
+                                                                                      style="line-height: 30.6px;">GenShin脚本敬上</font>
+                                                </p>
+                                                <p style="line-height: 23.8px;"><font size="4"
+                                                                                      style="line-height: 30.6px;">祝您工作顺利，生活愉快</font>
+                                                </p></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
 
-	<div class="footer" id="footer">
-		<ul class="footer__socialbar">
-			<li class="footer__socialitem"><a>
-				<img src=image/新浪微博1..png alt="" id="socialitemImg1">
-			</a>
-		</li>
-			<li class="footer__socialitem"><a><img src="static/image/微信 (2).png" alt=""id="socialitemImg2"></a></li>
-			<li class="footer__socialitem"><a><img src="static/image/qq.png" alt=""id="socialitemImg3"></a></li>
-			<li class="footer__socialitem">
-				<div class="share__wrap">
-					<p>分享至</p>
-					<ul class="qxtc">
-						<li><img src="static/image/QQ空间.png"></li>
-						<li><img src="static/image/qq (2).png"></li>
-						<li><img src="static/image/微博 (2).png"></li>
-						<li><img src="static/image/social-tieba.png"></li>
-					</ul>
-				</div>
-				<a class="share__wrap_Tc">
-					<img src="static/image/分享方式.png" alt=""id="socialitemImg4">
-				</a>
-			</li>
-        
-		</ul>
-       
-	</div>
-		<img src="static/image/footer.png" class="footerster" id="footerster">
-		<div class="fooer" id="fooer"></div>
-            
-	
 </body>
- <!-- Swiper JS -->
- <script src="static/js/swiper-bundle.min.js"></script>
-<script src="static/js/header.js"></script>
-<script src="static/js/index.js"></script>
-<script src="static/js/move.js"></script>
-<script src="static/js/jquery.js"></script>
-<script src="static/js/tab_con.js"></script>
-<script src="static/js/movers.js"></script>
-<script src="static/js/news.js"></script>
-<script src="static/js/MiJing.js"></script>
-<script src="static/js/login.js"></script>
+
 
 </html>

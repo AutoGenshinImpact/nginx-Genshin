@@ -179,18 +179,22 @@ var names = [
     "有顶塔",
 ]
 $("#btn").click(function () {
-    light_index = (light_index - 1) % 19;
+    light_index = (light_index - 0.5) % 19;
     if (light_index < 0) {
         light_index = light_index + 19;
     }
-    change(light_index);
-    close(false);
+    if (light_index%1==0) {
+        change(light_index);
+        close(false);
+    }
 
 });
 $("#jk").click(function () {
-    light_index = (light_index + 1) % 19;
-    change(light_index);
-    close(false);
+    light_index = (light_index + 0.5) % 19;
+    if (light_index%1==0) {
+        change(light_index);
+        close(false);
+    }
 
 });
 $(".light").click(function () {
@@ -209,7 +213,11 @@ $(".bu").hover(function () {
 
 });
 $(".bu").click(function () {
-    tipIn();
+    if (!checkIsStarting()) {
+        tipIn();
+    } else {
+        execTip("当前脚本正在进行，请结束脚本并重试!");
+    }
 });
 var isFadeOut = true;
 
@@ -426,22 +434,27 @@ var execTasksIndex = [];
 var execTasksNumber = [];
 
 function execTask() {
-    execTasks.length = 0;
-    execTasksIndex.length = 0;
-    execTasksNumber.length = 0;
-    names.forEach(function (value, index, array) {
-        let cookie = getCookie(value);
-        if (cookie !== "" && cookie !== -1) {
-            execTasks.push(value);
-            execTasksIndex.push(index)
-            execTasksNumber.push(cookie);
+    if (!checkIsStarting()) {
+        execTasks.length = 0;
+        execTasksIndex.length = 0;
+        execTasksNumber.length = 0;
+        names.forEach(function (value, index, array) {
+            let cookie = getCookie(value);
+            if (cookie !== "" && cookie !== -1) {
+                execTasks.push(value);
+                execTasksIndex.push(index)
+                execTasksNumber.push(cookie);
+            }
+        });
+        if (execTasks.length === 0) {
+            execTip("当前没有可执行的任务!");
+        } else {
+            storeList(execTasksIndex, execTasksNumber);
+            $(".popup").addClass("show");
+
         }
-    });
-    if (execTasks.length === 0) {
-        execTip("当前没有可执行的任务!");
     } else {
-        storeList(execTasksIndex, execTasksNumber);
-        $(".popup").addClass("show");
+        execTip("当前脚本正在进行，请结束脚本并重试!");
 
     }
 }
@@ -472,6 +485,8 @@ function execTip(text) {
 }
 
 function getStatus() {
+    //判断是否结束
+    checkIsFinish();
     $.ajax({  //验证身份
         type: "get",
         url: '/api/MiJing/checkStatus',
@@ -482,11 +497,13 @@ function getStatus() {
         },
         success: function (data) {
             if (data.code === 200) {
-                execTip(data.data);
                 let result=JSON.parse(data.data);
                 let cur = result.cur;
                 let fin = result.fin;
                 finKey = Object.keys(fin);
+                names.forEach(function (value, index, array) {
+                    deleteCookie(value.concat("doing"));
+                });
                 setCookieKeyAndValue(names[cur].concat("doing"), -2);
                 if (getCookie(names[cur])>1) {
                     setCookieValueMinus(names[cur]);
@@ -500,6 +517,7 @@ function getStatus() {
                         setCookieKeyAndValue(names[value].concat("finish"), fin[value]);
                     }
                 });
+
 
                 refrushTask();
                 //删除redis中的key
@@ -524,9 +542,19 @@ function getStatus() {
  * 查看是否正在执行秘境,如果正在执行则不能修改
  */
 function checkIsStarting() {
+    var html = $(".doingTask").html();
+    if (html !== undefined) {  //有秘境正在执行
+        return true;
+    }
+    return false;
+
+
+}
+
+function checkIsFinish() {
     $.ajax({  //验证身份
         type: "get",
-        url: '/api/MiJing/checkIsStarting',
+        url: '/api/MiJing/checkIsFinish',
         async: false,
         dataType: "json",
         traditional: true,
@@ -535,15 +563,19 @@ function checkIsStarting() {
         },
         success: function (data) {
             if (data.code === 200) {
-                // execTip("脚本正在运行!");
-                return true;
+                execTip("秘境脚本已经结束!");
+                $(".doingTask").each(function (value, index) {
+                    deleteCookie(($(this).text()).concat("doing"));
+                    $(this).fadeOut(function () {
+                        $(this).remove();
+                    });
+                });
 
             } else if (data.code === 401) {
                 execTip("请先登录!");
 
             } else if (data.code !== 200) {
-                // execTip(data.message);
-                return false;
+               //秘境还在执行
 
             }
         },
@@ -553,6 +585,7 @@ function checkIsStarting() {
     });
 
 }
+
 function storeList(list, numberList) {
     $.ajax({  //验证身份
         type: "post",
@@ -603,8 +636,7 @@ function selectList() {
                 execTip("已获取用户存储的秘境列表!");
                 list.forEach(function (value, index, array) {
                     //添加到cookie
-                    setCookieKeyAndValue(value, numberList[index]);
-
+                    setCookieKeyAndValue(names[value], numberList[index]);
                 });
 
                 refrushTask()
@@ -650,7 +682,7 @@ function refrushTask() {
 
             var task = $("<div class='task' data-num='1'></div>").text(value);
             var del = $("<i class='fas fa-trash-alt'></i>").click(function () {
-                if (!checkIsStarting) {
+                if (!checkIsStarting()) {
 
                     $(this).attr("id", value);
                     var p = $(this).parent();
@@ -669,7 +701,7 @@ function refrushTask() {
 
 
             var plus = $("<i class='fas fa-plus'></i>").click(function () {
-                if (!checkIsStarting) {
+                if (!checkIsStarting()) {
 
                     setCookieValueAdd(value);
                     refreshTaskNumber();
@@ -678,7 +710,7 @@ function refrushTask() {
                 }
             });
             var minus = $("<i class='fas fa-minus'></i>").click(function () {
-                if (!checkIsStarting) {
+                if (!checkIsStarting()) {
 
                     setCookieValueMinus(value);
                     refreshTaskNumber();
@@ -724,7 +756,7 @@ function refrushTask() {
 
             var task = $("<div class='task' data-num='1'></div>").text(value);
             var del = $("<i class='fas fa-trash-alt'></i>").click(function () {
-                if (!checkIsStarting) {
+                if (!checkIsStarting()) {
 
                     $(this).attr("id", value);
                     var p = $(this).parent();
