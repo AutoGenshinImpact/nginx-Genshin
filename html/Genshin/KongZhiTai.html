@@ -38,6 +38,41 @@
     <!--    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>-->
 
 </head>
+<style>
+
+    .shell{
+        display: flex;
+        justify-content: center;
+    }
+    .button{
+        /*background-color: #50536e;*/
+        width: 196px;
+        height: 65px;
+        text-align: center;
+        line-height: 65px;
+        transition: .3s;
+        cursor: pointer;
+    }
+
+    .button:hover{
+        /*background-color: #d15a39;*/
+    }
+    .button li:hover{
+        background-color: #ffb29d;
+    }
+    .button ul li{
+        height: 0;
+        transition: .2s;
+        opacity: 0;
+        transform: translateY(-65px);
+        background-color: #464430;
+    }
+    .shell:hover li{
+        height: 65px;
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
 <script>
     $(function () {
         var system = {};
@@ -95,10 +130,19 @@
             <a href="role.html">周&nbsp本</a>
             <a href="KongZhiTai.html" class="header_hover">控&nbsp制&nbsp台</a>
             <a href="javascript:window.location='https://github.com/MrOwenovo?tab=repositories'">联&nbsp系</a>
-            <button class="header__login">
-                <span id="user">登&nbsp录</span>
-                <img src="static/image/登录.png">
-            </button>
+            <ul class="shell">
+                <li class="button header__login" >
+                    <span id="user">登&nbsp录</span>
+                    <ul>
+                        <li onclick="logOut()">退出登录</li>
+                        <li onclick="renew()">续订邮箱推送</li>
+                        <li onclick="{$('.popup2').addClass('show');}">读取储存秘境</li>
+                    </ul>
+                </li>
+                <li class="header__login">
+                    <img src="static/image/登录.png">
+                </li>
+            </ul>
         </div>
     </div>
     <div class="mhy-account-flow mhy-account-flow-dialog ys-theme is-pc" style="display: none;" id="login">
@@ -488,9 +532,6 @@
                         execTip(data.message);
 
                     }
-                },
-                error: function () {
-                    window.location = "../../500page.html";
                 },
             });
 

@@ -484,6 +484,34 @@ function execTip(text) {
     }, 3000);
 }
 
+function renew() {
+    $.ajax({  //验证身份
+        type: "get",
+        url: '/api/email/renew',
+        async: false,
+        dataType: "json",
+        traditional: true,
+        xhrFields: {
+            withCredentials: true,
+        },
+        success: function (data) {
+            if (data.code === 200) {
+                execTip("续订邮箱推送成功!");
+
+            } else if (data.code === 401) {
+                execTip("请先登录!");
+
+            } else if (data.code !== 200) {
+                //秘境还在执行
+                execTip(data.message);
+
+            }
+        },
+        error: function () {
+            window.location = "../../500page.html";
+        },
+    });
+}
 function getStatus() {
     //判断是否结束
     checkIsFinish();

@@ -18,7 +18,7 @@ window.addEventListener('load', function () {
 
 
   //登录
-  let header__login = this.document.querySelector('.header__login')
+  let header__login = this.document.getElementById('user')
   let close = this.document.querySelector('.close-icon')
   let x2 = this.document.getElementById('x2')
   let login = this.document.getElementById('login')

@@ -183,9 +183,6 @@ $(function () {
 
             }
         },
-        error: function () {
-            window.location = "../../500page.html";
-        },
     });
 });
 function getVerifyCode() {
@@ -255,3 +252,32 @@ $(".close-icon").click(function () {
 
 
 });
+
+function logOut() {
+    $.ajax({  //验证身份
+        type: "get",
+        url: '/api/auth/logout',
+        async: false,
+        dataType: "json",
+        xhrFields: {
+            withCredentials: true,
+        },
+        success: function (data) {
+            if (data.code === 200) {
+                execTip("退出登录成功!");
+                $("#user").text("登录");
+
+
+            } else if (data.code === 401) {
+                execTip("请先登录!");
+
+            } else if (data.code !== 200) {
+                execTip(data.message);
+
+            }
+        },
+        error: function () {
+            window.location = "../../500page.html";
+        },
+    });
+}
