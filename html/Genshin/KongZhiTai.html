@@ -38,41 +38,7 @@
     <!--    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>-->
 
 </head>
-<style>
 
-    .shell{
-        display: flex;
-        justify-content: center;
-    }
-    .button{
-        /*background-color: #50536e;*/
-        width: 196px;
-        height: 65px;
-        text-align: center;
-        line-height: 65px;
-        transition: .3s;
-        cursor: pointer;
-    }
-
-    .button:hover{
-        /*background-color: #d15a39;*/
-    }
-    .button li:hover{
-        background-color: #ffb29d;
-    }
-    .button ul li{
-        height: 0;
-        transition: .2s;
-        opacity: 0;
-        transform: translateY(-65px);
-        background-color: #464430;
-    }
-    .shell:hover li{
-        height: 65px;
-        opacity: 1;
-        transform: translateY(0);
-    }
-</style>
 <script>
     $(function () {
         var system = {};
@@ -131,14 +97,34 @@
             <a href="KongZhiTai.html" class="header_hover">控&nbsp制&nbsp台</a>
             <a href="javascript:window.location='https://github.com/MrOwenovo?tab=repositories'">联&nbsp系</a>
             <ul class="shell">
-                <li class="button header__login" >
+                <li class="button header__login">
                     <span id="user">登&nbsp录</span>
-                    <ul>
+                    <ul class="loginSub">
                         <li onclick="logOut()">退出登录</li>
                         <li onclick="renew()">续订邮箱推送</li>
                         <li onclick="{$('.popup2').addClass('show');}">读取储存秘境</li>
+                        <li onclick="{
+                            $('.task').each(function (value, index) {
+                        deleteCookie($(this).text());
+                        deleteCookie(($(this).text()).concat('finish'));
+                        $(this).fadeOut(function () {
+                        $(this).remove();
+                        });
+                        });
+                        $('.doingTask').each(function (value, index) {
+                        deleteCookie(($(this).text()).concat('doing'));
+                        $(this).fadeOut(function () {
+                        $(this).remove();
+                        });
+                        });
+                        deleteCookie('frontResult');
+                        refrushTask();
+
+                        }">强制删除秘境列表
+                        </li>
                     </ul>
                 </li>
+
                 <li class="header__login">
                     <img src="static/image/登录.png">
                 </li>
@@ -298,7 +284,9 @@
     <div class="content">
         <p>是否添加：</p>
         <ul class="icons">
-            <a class="open-a" onclick="selectList()"><i class="fa fa-check"></i></a>
+            <a class="open-a" onclick="{
+                otherGetList();
+            }"><i class="fa fa-check"></i></a>
             <a class="open-a " onclick="closeDownLoad2()" href="#"><i class="fa fa-close"></i></a>
         </ul>
     </div>
@@ -319,17 +307,63 @@
             execTip("请输入脚本环境文件夹路径");
             execTasks.length = 0;
         } else {
-            if (!path.endsWith("\\js")) {
+            if (!path.endsWith("\\environment")) {
                 execTip("脚本环境路径有误，请确保打开的是/environment");
                 execTasks.length = 0;
                 return;
             }
             execTip("即将开始执行任务: " + execTasks);
             execTasks.length = 0;
-            download("start.bat", "d:\n" +
-                "cd " + path + "\n" +
-                "python test.py\n"
-            );
+            if (/.*[\u4e00-\u9fa5]+.*$/.test(path)) {
+                execTip("脚本路径不能存在中文，请移动environment的位置");
+                return;
+            }
+
+            let newPath = "python test.py --json \"{\\\"ins\\\":{"
+            execTasksIndex.forEach(function (value, index) {
+                if (index < execTasksIndex.length - 1) {
+                    newPath = newPath.concat("\\\"" + value + "\\\":\\\"" + execTasksNumber[index] + "\\\",");
+                } else {
+                    newPath = newPath.concat("\\\"" + value + "\\\":\\\"" + execTasksNumber[index] + "\\\"");
+                }
+            });
+
+            $.ajax({  //验证身份
+                type: "get",
+                url: '/api/user/getUserDetails',
+                async: false,
+                dataType: "json",
+                xhrFields: {
+                    withCredentials: true,
+                },
+                success: function (data) {
+                    if (data.code === 200) {
+                        username = data.data.username;
+                        newPath = newPath.concat("},\\\"user\\\": \\\"" + username + "\\\",\\\"pwd\\\": \\\"Lmq1226lmq\\\"}\"\n");
+
+                        if (path.startsWith("C:")) {
+                            download("start.bat",
+                                "cd " + path + "\n" +
+                                newPath
+                            );
+                        } else if (path.startsWith("D:")) {
+                            download("start.bat", "d:\n" +
+                                "cd " + path + "\n" +
+                                newPath
+                            );
+                        }
+                    } else if (data.code === 401) {
+                        execTip("请先登录!")
+                    } else if (data.code !== 200) {
+                        execTip(data.message);
+
+                    }
+                },
+                error: function () {
+                    window.location = "../../500page.html";
+                },
+            });
+
         }
 
 
@@ -439,7 +473,7 @@
         names.forEach(function (value, index, array) {
             let cookie = getCookie(value.concat("doing"));
             if (cookie !== "") {
-                numbers.push(cookie);
+                // numbers.push(cookie);
 
                 var task = $("<div class='doingTask' ></div>").text(value);
 
@@ -511,29 +545,120 @@
 
 
         if (numbers.length === 0) {
-            //当前没有任何秘境，尝试从用户数据库中获取
-            $.ajax({  //验证身份
-                type: "get",
-                url: '/api/auth/guest/isGuest',
-                async: false,
-                dataType: "json",
-                xhrFields: {
-                    withCredentials: true,
-                },
-                success: function (data) {
-                    if (data.code === 200) {
-                        popup2.classList.toggle("show");
 
-                        selectList();
-                    } else if (data.code === 401) {
+            if (numbers.length === 0) {
+                //如果没有正在进行，再从数据库中拿
+                //当前没有任何秘境，尝试从用户数据库中获取
+                $.ajax({  //验证身份
+                    type: "get",
+                    url: '/api/auth/guest/isGuest',
+                    async: false,
+                    dataType: "json",
+                    xhrFields: {
+                        withCredentials: true,
+                    },
+                    success: function (data) {
+                        if (data.code === 200) {
+                            // popup2.classList.toggle("show");
+
+                            //先看有没有正在进行中退出了，读取一下上次的进度
+                            getStatus();
+                            if (numbers.length === 0) {
+                                popup2.classList.toggle("show");
+                                selectList();
+                            } else {
+                                popup2.classList.toggle("show");
+                                $.ajax({  //验证身份
+                                    type: "get",
+                                    url: '/api/MiJing/selectList',
+                                    async: false,
+                                    dataType: "json",
+                                    xhrFields: {
+                                        withCredentials: true,
+                                    },
+                                    success: function (data) {
+                                        if (data.code === 200) {
+                                            MiJingDetail = data.data;
+                                            list = MiJingDetail.toList;
+                                            numberList = MiJingDetail.toNumberList;
+                                            popup2.classList.toggle("show");
+                                            execTip("已获取用户存储的秘境列表!");
+                                            //先将任务标记好
+                                            list.forEach(function (value,index) {
+                                                setCookieKeyAndValue(names[value], numberList[index]);
+                                            });
+                                            //读取已经完成和在进行的任务
+                                            names.forEach(function (nameValue) {
+                                                if (getCookie(nameValue.concat("finish")) !== null && getCookie(nameValue.concat("finish")) !== undefined && getCookie(nameValue.concat("finish")) !== "") {
+                                                    cookie = getCookie(nameValue.concat("finish"));
+                                                    console.info(nameValue + "的cookie: " + cookie);
+                                                    list.forEach(function (value, index, array) {
+                                                        if (names[value] === nameValue) {
+                                                            //先判断是否减为0，减为0就删掉它
+                                                            if (numberList[index] - cookie <= 0) {
+                                                                deleteCookie(names[value]);
+                                                                console.info(names[value] + "被删掉");
+                                                            } else {
+                                                                //添加到cookie
+                                                                setCookieKeyAndValue(names[value], numberList[index] - cookie);
+                                                                console.info(names[value] + "减少了" + cookie);
+
+                                                            }
+                                                        }
+                                                    });
+                                                }
+
+                                            });
+                                            names.forEach(function (nameValue) {
+                                                if (getCookie(nameValue.concat("doing")) !== null && getCookie(nameValue.concat("doing")) !== undefined && getCookie(nameValue.concat("finish")) !== "") {
+                                                    list.forEach(function (value, index, array) {
+                                                        if (names[value] === nameValue) {
+                                                            //先读出cookie
+                                                            cookie = getCookie(nameValue);
+                                                            //先判断是否减为0，减为0就删掉它
+                                                            if (cookie - 1 <= 0) {
+                                                                deleteCookie(names[value]);
+                                                            } else {
+                                                                //添加到cookie
+                                                                setCookieKeyAndValue(names[value], cookie - 1);
+
+                                                            }
+                                                        }
+                                                    });
+                                                }
+
+                                            });
+
+                                            // list.forEach(function (value, index, array) {
+                                            //     //添加到cookie
+                                            //     setCookieKeyAndValue(names[value], numberList[index]);
+                                            // });
+
+                                            refrushTask()
+
+                                        } else if (data.code === 401) {
+                                            execTip("请先登录!");
+
+                                        } else if (data.code !== 200) {
+                                            execTip(data.message);
+
+                                        }
+                                    },
+                                    error: function () {
+                                        window.location = "../../500page.html";
+                                    },
+                                });
+                            }
+                        } else if (data.code === 401) {
 
 
-                    } else if (data.code !== 200) {
-                        execTip(data.message);
+                        } else if (data.code !== 200) {
+                            execTip(data.message);
 
-                    }
-                },
-            });
+                        }
+                    },
+                });
+            }
 
         }
 
@@ -544,10 +669,9 @@
 
         //设置下载按钮
         var downloadButton = $("#download");
-        downloadButton.click(function(){
+        downloadButton.click(function () {
             window.open("/api/download/MiJing");
             popup.classList.remove("show");
-
 
 
         });
@@ -584,6 +708,9 @@
                     $(this).remove();
                 });
             });
+            deleteCookie('frontResult');
+
+            location.reload(true);
         } else {
             execTip("当前脚本正在进行，请结束脚本并重试!");
         }

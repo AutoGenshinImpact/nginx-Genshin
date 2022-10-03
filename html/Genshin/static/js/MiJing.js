@@ -512,9 +512,11 @@ function renew() {
         },
     });
 }
+
+//上一次搜索的结构
+var frontResult;
 function getStatus() {
-    //判断是否结束
-    checkIsFinish();
+
     $.ajax({  //验证身份
         type: "get",
         url: '/api/MiJing/checkStatus',
@@ -525,19 +527,39 @@ function getStatus() {
         },
         success: function (data) {
             if (data.code === 200) {
+                console.log(data.data);
+
                 let result=JSON.parse(data.data);
+
+                //获取cookie中的frontResult
+                let cookie = getCookie("frontResult");
+
+                if (cookie != null&&cookie!=="") {
+                    if (JSON.stringify(result) === cookie) {
+                        console.info("相同");
+                        return;
+                    }
+                }
+
+                setCookieKeyAndValue("frontResult", JSON.stringify(result));
                 let cur = result.cur;
                 let fin = result.fin;
-                finKey = Object.keys(fin);
+                if (fin!==undefined&&fin!==null) {
+                    finKey = Object.keys(fin);
+                }
                 names.forEach(function (value, index, array) {
                     deleteCookie(value.concat("doing"));
                 });
-                setCookieKeyAndValue(names[cur].concat("doing"), -2);
-                if (getCookie(names[cur])>1) {
-                    setCookieValueMinus(names[cur]);
-                } else if (getCookie(names[cur]) == 1) {
-                    deleteCookie(names[cur]);
+                if (cur!==undefined&&cur!==null) {
+
+                    setCookieKeyAndValue(names[cur] + "doing", -2);
+                    if (getCookie(names[cur]) > 1) {
+                        setCookieValueMinus(names[cur]);
+                    } else if (getCookie(names[cur]) == 1) {
+                        deleteCookie(names[cur]);
+                    }
                 }
+                if (fin!==undefined&&fin!==null) {
                 finKey.forEach(function (value,index,array) {
                     if (getCookie(names[value].concat("finish") )===-1) {
                         setCookieKeyAndValue(names[value].concat("finish"), getCookie(names[value].concat("finish")) + fin[value]);
@@ -545,10 +567,20 @@ function getStatus() {
                         setCookieKeyAndValue(names[value].concat("finish"), fin[value]);
                     }
                 });
+                }
+                setTimeout(function () {
+                    //判断是否结束
+                    checkIsFinish();
+
+                    setTimeout(function () {
+                        refrushTask();
+                        //删除redis中的key
+                    },500);
+
+                },500);
 
 
-                refrushTask();
-                //删除redis中的key
+
 
 
             } else if (data.code === 401) {
@@ -557,6 +589,14 @@ function getStatus() {
 
             } else if (data.code !== 200) {
                 // execTip(data.message);
+                setTimeout(function () {
+                    //判断是否结束
+                    checkIsFinish();
+
+
+
+                },500);
+
 
             }
         },
@@ -593,11 +633,21 @@ function checkIsFinish() {
             if (data.code === 200) {
                 execTip("秘境脚本已经结束!");
                 $(".doingTask").each(function (value, index) {
-                    deleteCookie(($(this).text()).concat("doing"));
+                    deleteCookie($(this).attr("id"));
                     $(this).fadeOut(function () {
                         $(this).remove();
                     });
                 });
+                names.forEach(function (value) {
+                    deleteCookie(value.concat("doing"));
+                });
+                $(".notcomp").each(function (value, index) {
+                    deleteCookie($(this).attr("id"));
+                    $(this).fadeOut(function () {
+                        $(this).remove();
+                    });
+                });
+                refrushTask();
 
             } else if (data.code === 401) {
                 execTip("请先登录!");
@@ -608,7 +658,7 @@ function checkIsFinish() {
             }
         },
         error: function () {
-            window.location = "../../500page.html";
+            execTip("发生了未知的错误，无法获取秘境是否结束,后续可能恢复!");
         },
     });
 
@@ -763,7 +813,7 @@ function refrushTask() {
     names.forEach(function (value, index, array) {
         let cookie = getCookie(value.concat("doing"));
         if (cookie !== "" ) {
-            numbers.push(cookie);
+            // numbers.push(cookie);
 
             var task = $("<div class='doingTask'></div>").text(value);
 
@@ -782,7 +832,8 @@ function refrushTask() {
         if (cookie !== "" ) {
             numbers.push(cookie);
 
-            var task = $("<div class='task' data-num='1'></div>").text(value);
+            var task = $("<div class='task' data-num='"+cookie+"'></div>").text(value);
+            console.log(cookie);
             var del = $("<i class='fas fa-trash-alt'></i>").click(function () {
                 if (!checkIsStarting()) {
 
@@ -816,13 +867,153 @@ function refrushTask() {
     });
     console.log(numbers);
     setTimeout(function () {
+        let demo = 0;
         $(".task").each(function (index) {
             if (numbers[index] != -2) {
                 $(this).attr("data-num", numbers[index]);
+                console.log(index + ": " + numbers[index]);
+                demo = demo+1;
             } else {
                 // $(this).attr("class", "doingTask");
             }
             // console.info(index + ": " + numbers[index]);
         });
+        // $(".comp").each(function (index) {
+        //         $(this).attr("data-num", numbers[demo]);
+        //         console.log(index + ": " + numbers[demo]);
+        // });
     },500);
+}
+
+function loginGetList() {
+    if (!checkIsStarting()) {
+        popup2.classList.toggle("show");
+
+        getFrontList();
+    } else {
+        execTip('当前脚本正在进行，请结束脚本并重试!');
+
+    }
+}
+
+function otherGetList() {
+    if (!checkIsStarting()) {
+        getFrontList();
+    } else {
+        execTip('当前脚本正在进行，请结束脚本并重试!');
+
+    }
+}
+function getFrontList() {
+    //如果没有正在进行，再从数据库中拿
+    //当前没有任何秘境，尝试从用户数据库中获取
+    $.ajax({  //验证身份
+        type: "get",
+        url: '/api/auth/guest/isGuest',
+        async: false,
+        dataType: "json",
+        xhrFields: {
+            withCredentials: true,
+        },
+        success: function (data) {
+            if (data.code === 200) {
+
+                //先看有没有正在进行中退出了，读取一下上次的进度
+                getStatus();
+                if (numbers.length === 0) {
+                    $(".popup2").remove("show");
+                    selectList();
+                } else {
+                    $(".popup2").remove("show");
+
+                    $.ajax({  //验证身份
+                        type: "get",
+                        url: '/api/MiJing/selectList',
+                        async: false,
+                        dataType: "json",
+                        xhrFields: {
+                            withCredentials: true,
+                        },
+                        success: function (data) {
+                            if (data.code === 200) {
+                                MiJingDetail = data.data;
+                                list = MiJingDetail.toList;
+                                numberList = MiJingDetail.toNumberList;
+                                popup2.classList.toggle("show");
+                                execTip("已获取用户存储的秘境列表!");
+                                //先将任务标记好
+                                list.forEach(function (value,index) {
+                                    setCookieKeyAndValue(names[value], numberList[index]);
+                                });
+                                //读取已经完成和在进行的任务
+                                names.forEach(function (nameValue) {
+                                    if (getCookie(nameValue.concat("finish")) !== null && getCookie(nameValue.concat("finish")) !== undefined && getCookie(nameValue.concat("finish")) !== "") {
+                                        cookie = getCookie(nameValue.concat("finish"));
+                                        console.info(nameValue + "的cookie: " + cookie);
+                                        list.forEach(function (value, index, array) {
+                                            if (names[value] === nameValue) {
+                                                //先判断是否减为0，减为0就删掉它
+                                                if (numberList[index] - cookie <= 0) {
+                                                    deleteCookie(names[value]);
+                                                    console.info(names[value] + "被删掉");
+                                                } else {
+                                                    //添加到cookie
+                                                    setCookieKeyAndValue(names[value], numberList[index] - cookie);
+                                                    console.info(names[value] + "减少了" + cookie);
+
+                                                }
+                                            }
+                                        });
+                                    }
+
+                                });
+                                names.forEach(function (nameValue) {
+                                    if (getCookie(nameValue.concat("doing")) !== null && getCookie(nameValue.concat("doing")) !== undefined && getCookie(nameValue.concat("finish")) !== "") {
+                                        list.forEach(function (value, index, array) {
+                                            if (names[value] === nameValue) {
+                                                //先读出cookie
+                                                cookie = getCookie(nameValue);
+                                                //先判断是否减为0，减为0就删掉它
+                                                if (cookie - 1 <= 0) {
+                                                    deleteCookie(names[value]);
+                                                } else {
+                                                    //添加到cookie
+                                                    setCookieKeyAndValue(names[value], cookie - 1);
+
+                                                }
+                                            }
+                                        });
+                                    }
+
+                                });
+
+                                // list.forEach(function (value, index, array) {
+                                //     //添加到cookie
+                                //     setCookieKeyAndValue(names[value], numberList[index]);
+                                // });
+
+                                refrushTask()
+
+                            } else if (data.code === 401) {
+                                execTip("请先登录!");
+
+                            } else if (data.code !== 200) {
+                                execTip(data.message);
+
+                            }
+                        },
+                        error: function () {
+                            window.location = "../../500page.html";
+                        },
+                    });
+                }
+            } else if (data.code === 401) {
+
+
+            } else if (data.code !== 200) {
+                execTip(data.message);
+
+            }
+        },
+    });
 }

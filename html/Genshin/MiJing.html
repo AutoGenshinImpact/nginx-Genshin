@@ -60,6 +60,10 @@
             background-color: white;
 
         }
+
+        body{
+            background-color: #af7767
+        }
     </style>
 </head>
 <script>
@@ -119,10 +123,18 @@
             <a href="role.html">周&nbsp本</a>
             <a href="KongZhiTai.html">控&nbsp制&nbsp台</a>
             <a href="javascript:window.location='https://github.com/MrOwenovo?tab=repositories'">联&nbsp系</a>
-            <button class="header__login">
-                <span id="user">登&nbsp录</span>
-                <img src="static/image/登录.png">
-            </button>
+            <ul class="shell">
+                <li class="button header__login" >
+                    <span id="user">登&nbsp录</span>
+                    <ul class="loginSub">
+                        <li onclick="logOut()">退出登录</li>
+                        <li onclick="renew()">续订邮箱推送</li>
+                    </ul>
+                </li>
+                <li class="header__login">
+                    <img src="static/image/登录.png">
+                </li>
+            </ul>
         </div>
     </div>
     <div class="mhy-account-flow mhy-account-flow-dialog ys-theme is-pc" style="display: none;" id="login">
@@ -224,7 +236,7 @@
 
 
     <!-- 第四部分开始 -->
-    <div class="B-f"><img id="back" src="static/image/newsimg/14.png" alt="" width="100%">
+    <div class="B-f" style="background-color: #af7767;transform: translateY(0);height: 100%"><img id="back" src="static/image/newsimg/14.png" alt="" height="100%" width="100%">
         <img src="static/image/newsimg/b62ae3242fed65c007ab66280633c846_3277996223754062266.png" alt="" id="leftdan">
         <img src="static/image/newsimg/d9c30e2c7d3889d489a47be81a439732_988761269808248941.png" alt="" id="btn">
         <img class="light" src="static/image/MiJing/bg1.png" width="45%" height="56.5%">

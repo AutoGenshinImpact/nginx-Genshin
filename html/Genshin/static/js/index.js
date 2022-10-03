@@ -1,24 +1,9 @@
 window.addEventListener('load', function () {
-    const social = this.document.querySelector('.social')
-    window.onscroll = function() { scrollFun() };
-    function scrollFun() {
-      if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-        social.style.display = 'block';
-      } else {
-        social.style.display = 'none';
-      }
-  }
-  let social__btn_on = this.document.querySelector('.social__btn_on')
-  let social__btn_off = document.querySelector('.social__btn_off')
-  let social__btn_on_img1 = document.querySelector('.social__btn_on_img1')
-  let social__btn_on_img2 = document.querySelector('.social__btn_on_img2')
 
-
-
-
+  var loginSubIsClick = false;
 
   //登录
-  let header__login = this.document.getElementById('user')
+  let header__login = this.document.querySelector('.shell')
   let close = this.document.querySelector('.close-icon')
   let x2 = this.document.getElementById('x2')
   let login = this.document.getElementById('login')
@@ -32,8 +17,16 @@ window.addEventListener('load', function () {
   let MobilePhoneFormat = this.document.getElementById('MobilePhoneFormat')
   let mhy_toast = this.document.querySelector('.mhy-toast')
 
+  $(".loginSub").click(function () {
+    loginSubIsClick = true;
+    setTimeout(function () {
+      loginSubIsClick = false;
+    },500);
+  });
   header__login.addEventListener('click',function(){
-    login.style.display = 'block'
+    if (!loginSubIsClick) {
+      login.style.display = 'block'
+    }
   })
   close.addEventListener('click',function(){
     login.style.display = 'none'

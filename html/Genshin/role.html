@@ -94,10 +94,18 @@
             <a class="header_hover" href="role.html">周&nbsp本</a>
             <a href="KongZhiTai.html">控&nbsp制&nbsp台</a>
             <a href="javascript:window.location='https://github.com/MrOwenovo?tab=repositories'">联&nbsp系</a>
-            <button class="header__login">
-                <span id="user">登&nbsp录</span>
-                <img src="static/image/登录.png">
-            </button>
+            <ul class="shell">
+                <li class="button header__login" >
+                    <span id="user">登&nbsp录</span>
+                    <ul class="loginSub">
+                        <li onclick="logOut()">退出登录</li>
+                        <li onclick="renew()">续订邮箱推送</li>
+                    </ul>
+                </li>
+                <li class="header__login">
+                    <img src="static/image/登录.png">
+                </li>
+            </ul>
         </div>
     </div>
     <div class="mhy-account-flow mhy-account-flow-dialog ys-theme is-pc" style="display: none;" id="login">
