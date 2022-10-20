@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="static/css/chunk-element.b496abee.css">
     <link rel="stylesheet" href="static/css/openWindow.css">
 
-    <link rel="stylesheet" href="https://www.fcwqmc.cn/elsta/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://www.fcwqmc.cn/elsta/css/animate.min.css">
     <link rel="stylesheet" href="https://www.fcwqmc.cn/elsta/css/vegas.min.css">
     <link rel="stylesheet" href="static/css/home.css">
@@ -30,7 +30,6 @@
 
     <!-- Demo styles -->
     <style>
-
         .swiper {
             position: relative;
             left: -320px;
@@ -98,18 +97,6 @@
     <p class="el-message__content">已经添加到控制台</p>
 </div>
 <div class="header">
-    <div class="audio-controller" id="audiu_on" style="display: none;">
-        <img src="static/image/播放开.png" style="width: 100%;" id="audio_headerimg"/>
-        <audio id="bgMusic">
-            <source src="static/audio/final3.mp4" type="audio/mp4">
-        </audio>
-    </div>
-    <div class="audio-controller" id="audio_off">
-        <img src="static/image/播放关.png" style="width: 100%;" id="audio_headerimg"/>
-        <audio id="bgMusic">
-            <source src="static/audio/final3.mp4" type="audio/mp4">
-        </audio>
-    </div>
     <div class="header__logo--cut">
         <img src="static/image/原神主页logo.png">
     </div>
@@ -191,7 +178,6 @@
                 </div>
 
             </div>
-<!--            <form>-->
                 <div class="mhy-account-flow-form-input">
                     <div class="input-container">
                         <input type="tel" placeholder="邮箱" id="containerinput1" maxlength="20">
@@ -219,7 +205,6 @@
                 <div class="mhy-login-button">
                     <button onclick="toRegister()" type="submit" class="login-btn">注册</button>
                 </div>
-<!--            </form>-->
             <div class="register-bar" style="display: none">
                 <a href="javascript:openLogin()" class="to-register">立即登录</a>
             </div>
@@ -231,13 +216,12 @@
 
 <div class="bgWrap ">
     <div class="poster__concept">
-        <video loop="loop" muted="muted" autoplay>
-            <source src="static/audio/final3.mp4" type="audio/mp4">
-        </video>
+        <img src="static/audio/final3.jpg" alt="Head background">
     </div>
 </div>
 <!-- 第五部分结束 -->
-<div class="B-g"><img src="static/image/newsimg/1.png" alt="" width="1920vm" height="950px">
+<!-- <div class="B-g">
+    <img src="static/image/newsimg/1.png" alt="" width="1920vm" height="950px">
     <div class="king">
         <ul>
             <li class="current">
@@ -260,71 +244,71 @@
             </li>
         </ul>
     </div>
-    <!-- 手风琴结束 -->
-    <img src="static/image/newsimg/小刀.webp" alt="" class="Xiao-dao">
+</div> -->
+<!-- <img src="static/image/newsimg/1.png" alt="" width="1920vm" height="950px"> -->
+<div class="king">
+    <ul>
+        <li class="current">
+            <a href="#">
+                <img src="static/image/newsimg/12.png" alt="" class="small">
+                <img src="static/image/newsimg/youyoubig.webp" alt="" class="big">
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="static/image/newsimg/13.png" alt="" class="small">
+                <img src="static/image/newsimg/zhengjingbig.webp" alt="" class="big">
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="static/image/newsimg/3.png" alt="" class="small">
+                <img src="static/image/newsimg/huawaibig.webp" alt="" class="big">
+            </a>
+        </li>
+    </ul>
 </div>
 <!-- 第五部分结束 -->
 
 
 <section class="new">
     <div class="news__main">
-        <img src="static/image/第二大块.jpg">
+        <img src="static/image/第二大块.jpg" height="690px" width="1920">
         <h3>
             更新资讯
         </h3>
     </div>
-    <div class="new_Boom">
-        <!-- Swiper -->
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <li><a href="javascript:;"><img src="static/image/bg3.png"></a></li>
-                </div>
-                <div class="swiper-slide">
-                    <li><a href="javascript:;"><img
-                            src="static/image/4fceb0bb8fb414cfa59f43ce2b2c93cf_5579397632421163865.jpg"></a></li>
-                </div>
-                <div class="swiper-slide">
-                    <li><a href="javascript:;"><img src="static/image/bg6.png"></a></li>
-                </div>
-                <div class="swiper-slide">
-                    <li><a href="javascript:;"><img src="static/image/bg5.png"></a></li>
-                </div>
-            </div>
-            <div class="swiper-pagination">
-            </div>
-        </div>
         <div class="news__tab__list">
             <ul class="news__tab__list__ul">
                 <li class="currenters">最新</li>
                 <li>更新</li>
                 <li>修复</li>
-                <li>预告</li>
+                <li>计划</li>
             </ul>
             <div class="tab_con">
                 <div class="item" style="display: block;">
                     <!-- 最新 -->
                     <li>
                         <a>
-                            <p class="item_p">《更新》 完成前后端联查</p>
+                            <p class="item_p">【更新】完成前后端联查</p>
                             <p class="item_p2">2022/9/30</p>
                         </a>
                     </li>
                     <li>
                         <a>
-                            <p class="item_p">《更新》 完成控制台开发</p>
+                            <p class="item_p">【更新】完成控制台开发</p>
                             <p class="item_p2">2022/9/30</p>
                         </a>
                     </li>
                     <li>
                         <a>
-                            <p class="item_p">《更新》 完成网页服务器部署</p>
+                            <p class="item_p">【更新】完成网页服务器部署</p>
                             <p class="item_p2">2022/9/20</p>
                         </a>
                     </li>
                     <li>
                         <a>
-                            <p class="item_p">《更新》 完成副本1怪物的神经网络二分类识别</p>
+                            <p class="item_p">【更新】完成副本1怪物的神经网络二分类识别</p>
                             <p class="item_p2">2022/7/30</p>
                         </a>
                     </li>
@@ -334,19 +318,19 @@
                     <!-- 更新 -->
                     <li>
                         <a>
-                            <p class="item_p">《更新》 完成控制台开发</p>
+                            <p class="item_p">【更新】完成控制台开发</p>
                             <p class="item_p2">2022/9/30</p>
                         </a>
                     </li>
                     <li>
                         <a>
-                            <p class="item_p">《更新》 完成网页服务器部署</p>
+                            <p class="item_p">【更新】完成网页服务器部署</p>
                             <p class="item_p2">2022/9/20</p>
                         </a>
                     </li>
                     <li>
                         <a>
-                            <p class="item_p">《更新》 完成副本1怪物的神经网络二分类识别</p>
+                            <p class="item_p">【更新】完成副本1怪物的神经网络二分类识别</p>
                             <p class="item_p2">2022/7/30</p>
                         </a>
                     </li>
@@ -355,7 +339,7 @@
                     <!-- 修复 -->
                     <li>
                         <a>
-                            <p class="item_p">《更新》 完成前后端联查</p>
+                            <p class="item_p">【修复】完成前后端联查</p>
                             <p class="item_p2">2022/9/30</p>
                         </a>
                     </li>
@@ -365,71 +349,42 @@
                     <!-- 预告 -->
                     <li>
                         <a>
-                            <p class="item_p">《预告》 未来完成全部副本的自动靠近和攻击</p>
+                            <p class="item_p">【预告】未来完成全部副本的自动靠近和攻击</p>
                             <p class="item_p2">2022/10/++</p>
                         </a>
                     </li>
                     <li>
                         <a>
-                            <p class="item_p">《预告》 未来完成全部副本的怪物识别</p>
+                            <p class="item_p">【预告】未来完成全部副本的怪物识别</p>
                             <p class="item_p2">2022/10/++</p>
                         </a>
                     </li>
                 </div>
             </div>
         </div>
-    </div>
-
 </section>
 <footer>
     <div class="container">
         <div class="row">
-            <svg class="svgcolor-light" preserveAspectRatio="none" viewBox="0 0 100 102" height="100" width="100%"
-                 version="1.1" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 0 L50 100 L100 0 Z"></path>
-            </svg>
             <div class="col-md-4 col-sm-6">
-                <h2 style="color: gray;">原神脚本声明</h2>
-                <div class="wow fadeInUp" data-wow-delay="0.3s">
-                    <p style="color: #000000;">
-                        本软件自发布后所有用户均可免费使用。用户应当遵守各项法律法规，禁止篡改、出售、二次修改本软件。本软件所用UI、图标、Logo均为个人设计，部分背景来自互联网。软件版权归MrOwenovo所有。
-                    </p>
-                    <p class="copyright-text" style="color: #000000;">&copy 2022 KaGoBang 版权所有 <a
-                            href="https://beian.miit.gov.cn/" target="_blank"
-                            style="color: black;">湘ICP备2022002291号-1</a><br>
-                        Software Design by MrOwenovo<br>
-                        Web Design by <img class="mk" src="static/image/tk.png"><br>
-                        特别鸣谢 Elsta Studio 提供网页技术支持</p>
-                </div>
+                <h2 style="color: #000000;">原神脚本声明</h2>
+                <p style="color: gray;">
+                    本软件自发布后所有用户均可免费使用。用户应当遵守各项法律法规，禁止篡改、出售、二次修改本软件。本软件所用UI、图标、Logo均为个人设计，部分背景来自互联网。软件版权归MrOwenovo所有。
+                </p>
+                <p class="copyright-text" style="color: gray;">&copy 2022 KaGoBang 版权所有 <a
+                        href="https://beian.miit.gov.cn/" target="_blank"
+                        style="color: gray;">湘ICP备2022002291号-1</a><br>
+                    Software Design by MrOwenovo<br>
+                </p>
             </div>
             <div class="col-md-1 col-sm-1"></div>
             <div class="col-md-4 col-sm-5">
-                <h2 style="color: gray;">联系方式</h2>
-                <p class="wow fadeInUp" data-wow-delay="0.6s" style="color: #000000;">
+                <h2 style="color: #000000;">联系方式</h2>
+                <p style="color: gray;">
                     QQ群：639227600<br>
                     合作QQ：1251031190<br>
                     邮箱：lmq122677@qq.com<br>
-                    <img class="kachat" src="static/image/kachat.png"/>
-                    <img class="elsta" src="static/image/elsta.png">
-
                 </p>
-
-                <style>
-                    .elsta {
-                        width: 180px;
-                        height: 50px;
-                    }
-
-                    .kachat {
-                        width: 50px;
-                        height: 50px;
-                    }
-
-                    .mk {
-                        width: 150px;
-                        height: 20px;
-                    }
-                </style>
             </div>
         </div>
     </div>
@@ -439,25 +394,6 @@
 <!-- Swiper JS -->
 <script src="static/js/swiper-bundle.min.js"></script>
 
-<!-- Initialize Swiper -->
-<script>
-    var swiper = new Swiper(".mySwiper", {
-        spaceBetween: 30,
-        centeredSlides: true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-    });
-</script>
 <script src="static/js/header.js"></script>
 <script src="static/js/index.js"></script>
 <script src="static/js/login.js"></script>

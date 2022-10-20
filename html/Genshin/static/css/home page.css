@@ -1202,12 +1202,11 @@ ul {
 }
 
 .king {
-    width: 1500px;
+    width: 1060px;
     margin: 100px auto;
     padding: 10px;
-    position: absolute;
-    top: 155px;
-    left: 290px;
+    position: relative;
+    top: 780px;
 }
 
 .king ul {
