@@ -10,8 +10,8 @@
     <link rel="icon" type="image/x-icon" href="static/image/原神logo.ico"/><!--网页图标-->
     <link rel="stylesheet" href="static/css/index.css"/>
     <link rel="stylesheet" href="static/css/font-index..css">
-    <link rel="stylesheet" href="static/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="static/css/city.css">
+    <link rel="stylesheet" href="static/css/header.css">
     <link rel="stylesheet" href="static/css/footer.css">
     <link rel="stylesheet" href="static/css/login.css">
     <link rel="stylesheet" href="static/css/tip.css">
@@ -24,39 +24,6 @@
     <link rel="stylesheet" href="static/css/home.css">
     <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="static/css/home page.css">
-
-    <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="../package/swiper-bundle.min.css"/>
-
-    <!-- Demo styles -->
-    <style>
-        .swiper {
-            position: relative;
-            left: -320px;
-            width: 640px;
-            height: 400px;
-        }
-
-        .swiper-slide {
-            text-align: center;
-            font-size: 18px;
-            background: rgba(38, 18, 12, 0.62);
-        }
-
-        .swiper-slide img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .swiper-pagination-bullet {
-            height: 18px;
-            width: 18px;
-            background-color: white;
-
-        }
-    </style>
 </head>
 <script>
     $(function () {
@@ -105,10 +72,9 @@
         <div class="header_navitem">
             <a href="index.html" class="header_hover">首&nbsp页</a>
             <a href="MiJing.html">秘&nbsp境</a>
-            <a href="DaShiJie.html">大&nbsp世&nbsp界</a>
-            <a href="role.html">周&nbsp本</a>
+            <!-- <a href="DaShiJie.html">大&nbsp世&nbsp界</a> -->
             <a href="KongZhiTai.html">控&nbsp制&nbsp台</a>
-            <a href="javascript:window.location='https://github.com/MrOwenovo?tab=repositories'">联&nbsp系</a>
+            <!-- <a href="javascript:window.location='https://github.com/MrOwenovo?tab=repositories'">联&nbsp系</a> -->
             <ul class="shell">
                 <li class="button header__login" >
                     <span id="user">登&nbsp录</span>
@@ -123,7 +89,6 @@
             </ul>
         </div>
     </div>
-
 
     <div class="mhy-account-flow mhy-account-flow-dialog ys-theme is-pc" style="display: none;" id="login">
         <div class="mhy-account-flow-dialog-content" id="login1">
@@ -215,61 +180,30 @@
 
 
 <div class="bgWrap ">
-    <div class="poster__concept">
-        <img src="static/audio/final3.jpg" alt="Head background">
-    </div>
+        <img class="poster__concept" src="static/audio/final3.jpg" alt="Head background">
 </div>
-<!-- 第五部分结束 -->
-<!-- <div class="B-g">
-    <img src="static/image/newsimg/1.png" alt="" width="1920vm" height="950px">
-    <div class="king">
-        <ul>
-            <li class="current">
-                <a href="#">
-                    <img src="static/image/newsimg/12.png" alt="" class="small">
-                    <img src="static/image/newsimg/youyoubig.webp" alt="" class="big">
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="static/image/newsimg/13.png" alt="" class="small">
-                    <img src="static/image/newsimg/zhengjingbig.webp" alt="" class="big">
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="static/image/newsimg/3.png" alt="" class="small">
-                    <img src="static/image/newsimg/huawaibig.webp" alt="" class="big">
-                </a>
-            </li>
-        </ul>
-    </div>
-</div> -->
-<!-- <img src="static/image/newsimg/1.png" alt="" width="1920vm" height="950px"> -->
-<div class="king">
-    <ul>
-        <li class="current">
-            <a href="#">
-                <img src="static/image/newsimg/12.png" alt="" class="small">
-                <img src="static/image/newsimg/youyoubig.webp" alt="" class="big">
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <img src="static/image/newsimg/13.png" alt="" class="small">
-                <img src="static/image/newsimg/zhengjingbig.webp" alt="" class="big">
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <img src="static/image/newsimg/3.png" alt="" class="small">
-                <img src="static/image/newsimg/huawaibig.webp" alt="" class="big">
-            </a>
-        </li>
-    </ul>
-</div>
-<!-- 第五部分结束 -->
 
+<div class="king">
+    <div class="wow slideInLeft row1" data-wow-offset="-100">
+        <a href="#">
+            <img src="static/image/newsimg/12.png" alt="" class="small1 small">
+            <img src="static/image/newsimg/youyoubig.webp" alt="" class="big1 big">
+        </a>
+    </div>
+    <div class="wow slideInRight row2" data-wow-offset="-100">
+        <a href="#">
+            <img src="static/image/newsimg/13.png" alt="" class="small2 small">
+            <img src="static/image/newsimg/zhengjingbig.webp" alt="" class="big2 big">
+        </a>
+    </div>
+    <div class="wow slideInLeft row3" data-wow-offset="-100">
+        <a href="#">
+            <img src="static/image/newsimg/3.png" alt="" class="small3 small">
+            <img src="static/image/newsimg/huawaibig.webp" alt="" class="big3 big">
+        </a>
+    </div>
+</div>
+<!-- 第五部分结束 -->
 
 <section class="new">
     <div class="news__main">
@@ -365,27 +299,25 @@
 </section>
 <footer>
     <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-sm-6">
-                <h2 style="color: #000000;">原神脚本声明</h2>
-                <p style="color: gray;">
-                    本软件自发布后所有用户均可免费使用。用户应当遵守各项法律法规，禁止篡改、出售、二次修改本软件。本软件所用UI、图标、Logo均为个人设计，部分背景来自互联网。软件版权归MrOwenovo所有。
-                </p>
-                <p class="copyright-text" style="color: gray;">&copy 2022 KaGoBang 版权所有 <a
-                        href="https://beian.miit.gov.cn/" target="_blank"
-                        style="color: gray;">湘ICP备2022002291号-1</a><br>
-                    Software Design by MrOwenovo<br>
-                </p>
-            </div>
-            <div class="col-md-1 col-sm-1"></div>
-            <div class="col-md-4 col-sm-5">
-                <h2 style="color: #000000;">联系方式</h2>
-                <p style="color: gray;">
-                    QQ群：639227600<br>
-                    合作QQ：1251031190<br>
-                    邮箱：lmq122677@qq.com<br>
-                </p>
-            </div>
+        <div class="col-md-4 col-sm-6">
+            <h2 style="color: #000000;">原神脚本声明</h2>
+            <p style="color: gray;">
+                本软件自发布后所有用户均可免费使用。用户应当遵守各项法律法规，禁止篡改、出售、二次修改本软件。软件版权归 GenshinAutomata 团队所有。
+            </p>
+            <p class="copyright-text" style="color: gray;">&copy 2022 GenshinAutomata 版权所有 <a
+                    href="https://beian.miit.gov.cn/" target="_blank"
+                    style="color: gray;">湘ICP备2022002291号-1</a><br>
+                Software Design by GenshinAutomata<br>
+            </p>
+        </div>
+        <div class="col-md-1 col-sm-1"></div>
+        <div class="col-md-4 col-sm-5">
+            <h2 style="color: #000000;">联系方式</h2>
+            <p style="color: gray;">
+                QQ群：639227600<br>
+                合作QQ：1251031190<br>
+                邮箱：lmq122677@qq.com<br>
+            </p>
         </div>
     </div>
 </footer>
@@ -409,23 +341,10 @@
 <script src="https://www.fcwqmc.cn/elsta/js/smoothscroll.js"></script>
 <script src="static/js/custom.js"></script>
 <script src="static/js/home page.js"></script>
-<script src="static/js/jquery.js"></script>
 <script src="static/js/MiJing.js"></script>
 
 <script>
-    // 手风琴
-    $(function () {
-        // 鼠标经过某个小li 有两步操作：
-        $(".king li").mouseenter(function () {
-            // 1.当前小li 宽度变为 800px， 同时里面的小图片淡出，大图片淡入
-            $(this).stop().animate({
-                width: 800
-            }).find(".small").stop().fadeOut().siblings(".big").stop().fadeIn();
-            // 2.其余兄弟小li宽度变为105px， 小图片淡入， 大图片淡出
-            $(this).siblings("li").stop().animate({
-                width: 105
-            }).find(".small").stop().fadeIn().siblings(".big").stop().fadeOut();
-        })
-    });
+    new WOW().init();
 </script>
+
 </html>
