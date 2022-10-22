@@ -27,6 +27,7 @@ a {
   border-radius: 70px;
   background-color: #FBFBFB;
   object-fit: cover;
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
 }
 .poster__concept {
   height: 750px;
@@ -42,73 +43,87 @@ a {
   border-radius: 30px;
   background-color: #FFFFFF;
   padding: 30px;
+  box-shadow: 7px 7px 8px 8px rgba(0, 0, 0, 0.1);
 }
 .poster__text h2 {
   text-align: center;
   padding-bottom: 30px;
 }
 .king {
-    margin: 100px auto;
-    padding: 10px;
-    position: relative;
-    top: 200px;
+  background-color: #99CCFF;
+  margin: 20px auto;
+  padding: 90px;
+  position: relative;
+  top: 200px;
+  height: 1980px;
 }
 .king li {
-    position: relative;
-    float: left;
-    width: 105px;
-    height: 600px;
-    margin-right: 10px;
+  position: relative;
+  float: left;
+  width: 105px;
+  height: 600px;
+  margin-right: 10px;
 }
 .king li.current {
-    width: 800px;
-    height: 530px;
+  width: 800px;
+  height: 530px;
 }
 .king li.current .big {
-    display: block;
+  display: block;
 }
 
 .row1 {
-    top: 100px;
-    margin-left: 200px;
-    width: 1000px;
-    height: 600px;
+  float: left;
+  top: 100px;
+  margin-left: 200px;
+  width: 1000px;
+  height: 600px;
 }
 .small1 {
-    float: left;
+  float: left;
+}
+.side__img1 {
+  float: left;
+  position: relative;
+  margin-left: 50px;
+  height: 500px;
+  box-shadow: 10px 15px rgba(0, 0, 0, 0.1);
 }
 .row2 {
-    top: 650px;
-    margin-left: 800px;
-    width: 1000px;
-    height: 600px;
+  float: right;
+  top: 650px;
+  margin-right: 200px;
+  width: 1000px;
+  height: 600px;
 }
 .small2 {
-    float: right;
-    left: -200px;
+  float: right;
+  left: -200px;
 }
 .big2 {
-    float: right;
-    left: -200px;
+  float: right;
+  left: -200px;
+}
+.side__img2 {
+  float: right;
+  position: relative;
+  margin-right: 50px;
+  height: 500px;
+  box-shadow: -10px 15px rgba(0, 0, 0, 0.1);
 }
 .row3 {
-    top: 1300px;
-    margin-left: 200px;
-    width: 1000px;
-    height: 600px;
-}
-.small3 {
-    float: left;
+  float: left;
+  margin-left: 200px;
+  width: 1000px;
+  height: 600px;
 }
 .big {
-    position: relative;
-    width: 800px;
-    height: 530px;
+  width: 800px;
+  height: 530px;
 }
 .small {
-    position: relative;
-    width: 105px;
-    height: 600px;
+  width: 105px;
+  height: 600px;
 }
 
 .item li:hover {
@@ -119,7 +134,7 @@ a {
 .new {
   display: flex;
   flex-direction: column;
-  margin-top: 300px;
+  margin-top: 200px;
   width: 100%;
   height: 690px;
   color: #fff;
