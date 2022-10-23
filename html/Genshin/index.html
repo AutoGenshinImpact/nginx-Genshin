@@ -71,7 +71,7 @@
             <div class="box"><a href="index.html">首&nbsp页</a></div>
             <div class="box"><a href="MiJing.html">秘&nbsp境</a></div>
             <div class="box"> <a href="KongZhiTai.html">控&nbsp制&nbsp台</a></div>
-            <div class="login">
+            <div class="shell login">
                 <div class="login__header box" >
                     <a>登&nbsp录</a> 
                 </div>
@@ -82,22 +82,21 @@
                 <li onclick="renew()">续订邮箱推送</li>
             </div>
         </div>
-    </div>
 
-    <div class="mhy-account-flow mhy-account-flow-dialog ys-theme is-pc" style="display: none;" id="login">
-        <div class="mhy-account-flow-dialog-content" id="login1">
-            <div class="mhy-account-flow-login">
-                <img src="static/image/mihuayouLOGo.png" class="logo">
-                <img src="static/image/X.png" class="close-icon">
-            </div>
-            <div class="mhy-account-flow-tabs tabs-flex">
-                <div class="tab-item active">
-                    <span id="yzmloginers">验证码登录</span>
+        <div class="mhy-account-flow mhy-account-flow-dialog ys-theme is-pc" style="display: none;" id="login">
+            <div class="mhy-account-flow-dialog-content" id="login1">
+                <div class="mhy-account-flow-login">
+                    <img src="static/image/mihuayouLOGo.png" class="logo">
+                    <img src="static/image/X.png" class="close-icon">
                 </div>
-                <div class="tab-item ">
-                    <span id="mimaloginers">密码登录</span>
+                <div class="mhy-account-flow-tabs tabs-flex">
+                    <div class="tab-item active">
+                        <span id="yzmloginers">验证码登录</span>
+                    </div>
+                    <div class="tab-item ">
+                        <span id="mimaloginers">密码登录</span>
+                    </div>
                 </div>
-            </div>
                 <div class="mhy-account-flow-form-input">
                     <div class="input-container">
                         <input type="tel" placeholder="邮箱" id="containerinput" maxlength="20">
@@ -118,25 +117,23 @@
                 <div class="mhy-login-button">
                     <button id="LoginFirst" onclick="toLoginFirst()" type="submit" class="login-btn">登录</button>
                 </div>
-            <div class="register-bar" style="display: none">
-                <a href="javascript:openRegister()" class="to-register">立即注册</a>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="mhy-account-flow mhy-account-flow-dialog ys-theme is-pc" style="display: none;" id="resister">
-        <div class="mhy-account-flow-dialog-content" id="login2">
-            <div class="mhy-account-flow-login">
-                <img src="static/image/mihuayouLOGo.png" class="logo">
-                <img src="static/image/X.png" class="close-icon">
-            </div>
-            <div class="mhy-account-flow-tabs tabs-flex">
-                <div class="tab-item active" >
-                    <span id="yzmloginers1">密码注册</span>
+                <div class="register-bar" style="display: none">
+                    <a href="javascript:openRegister()" class="to-register">立即注册</a>
                 </div>
-
             </div>
+        </div>
+
+        <div class="mhy-account-flow mhy-account-flow-dialog ys-theme is-pc" style="display: none;" id="resister">
+            <div class="mhy-account-flow-dialog-content" id="login2">
+                <div class="mhy-account-flow-login">
+                    <img src="static/image/mihuayouLOGo.png" class="logo">
+                    <img src="static/image/X.png" class="close-icon">
+                </div>
+                <div class="mhy-account-flow-tabs tabs-flex">
+                    <div class="tab-item active" >
+                        <span id="yzmloginers1">密码注册</span>
+                    </div>
+                </div>
                 <div class="mhy-account-flow-form-input">
                     <div class="input-container">
                         <input type="tel" placeholder="邮箱" id="containerinput1" maxlength="20">
@@ -164,13 +161,12 @@
                 <div class="mhy-login-button">
                     <button onclick="toRegister()" type="submit" class="login-btn">注册</button>
                 </div>
-            <div class="register-bar" style="display: none">
-                <a href="javascript:openLogin()" class="to-register">立即登录</a>
+                <div class="register-bar" style="display: none">
+                    <a href="javascript:openLogin()" class="to-register">立即登录</a>
+                </div>
             </div>
-
         </div>
     </div>
-</div>
 
 
 <div class="bgWrap">
@@ -221,73 +217,53 @@
                 <div>
                     <!-- 最新 -->
                     <li>
-                        <a>
-                            <p class="item_p">【更新】完成前后端联查</p>
-                            <p class="item_p2">2022/9/30</p>
-                        </a>
+                        <a><p class="item_p">【更新】完成前后端联查</p>
+                        <p class="item_p2">2022/9/30</p></a>
                     </li>
                     <li>
-                        <a>
-                            <p class="item_p">【更新】完成控制台开发</p>
-                            <p class="item_p2">2022/9/30</p>
-                        </a>
+                        <a><p class="item_p">【更新】完成控制台开发</p>
+                        <p class="item_p2">2022/9/30</p></a>
                     </li>
                     <li>
-                        <a>
-                            <p class="item_p">【更新】完成网页服务器部署</p>
-                            <p class="item_p2">2022/9/20</p>
-                        </a>
+                        <a><p class="item_p">【更新】完成网页服务器部署</p>
+                        <p class="item_p2">2022/9/20</p></a>
                     </li>
                     <li>
-                        <a>
-                            <p class="item_p">【更新】完成副本1怪物的神经网络二分类识别</p>
-                            <p class="item_p2">2022/7/30</p>
-                        </a>
+                        <a><p class="item_p">【更新】完成副本1怪物的神经网络二分类识别</p>
+                        <p class="item_p2">2022/7/30</p></a>
                     </li>
                 </div>
                 <div class="item" style="display: none;">
                     <!-- 更新 -->
                     <li>
-                        <a>
-                            <p class="item_p">【更新】完成控制台开发</p>
-                            <p class="item_p2">2022/9/30</p>
-                        </a>
+                        <a><p class="item_p">【更新】完成控制台开发</p>
+                        <p class="item_p2">2022/9/30</p></a>
                     </li>
                     <li>
-                        <a>
-                            <p class="item_p">【更新】完成网页服务器部署</p>
-                            <p class="item_p2">2022/9/20</p>
-                        </a>
+                        <a><p class="item_p">【更新】完成网页服务器部署</p>
+                        <p class="item_p2">2022/9/20</p></a>
                     </li>
                     <li>
-                        <a>
-                            <p class="item_p">【更新】完成副本1怪物的神经网络二分类识别</p>
-                            <p class="item_p2">2022/7/30</p>
-                        </a>
+                        <a><p class="item_p">【更新】完成副本1怪物的神经网络二分类识别</p>
+                        <p class="item_p2">2022/7/30</p></a>
                     </li>
                 </div>
                 <div class="item" style="display: none;">
                     <!-- 修复 -->
                     <li>
-                        <a>
-                            <p class="item_p">【修复】完成前后端联查</p>
-                            <p class="item_p2">2022/9/30</p>
-                        </a>
+                        <a><p class="item_p">【修复】完成前后端联查</p>
+                        <p class="item_p2">2022/9/30</p></a>
                     </li>
                 </div>
                 <div class="item" style="display: none;">
                     <!-- 预告 -->
                     <li>
-                        <a>
-                            <p class="item_p">【预告】未来完成全部副本的自动靠近和攻击</p>
-                            <p class="item_p2">2022/10/++</p>
-                        </a>
+                        <a><p class="item_p">【预告】未来完成全部副本的自动靠近和攻击</p>
+                        <p class="item_p2">2022/10/++</p></a>
                     </li>
                     <li>
-                        <a>
-                            <p class="item_p">【预告】未来完成全部副本的怪物识别</p>
-                            <p class="item_p2">2022/10/++</p>
-                        </a>
+                        <a><p class="item_p">【预告】未来完成全部副本的怪物识别</p>
+                        <p class="item_p2">2022/10/++</p></a>
                     </li>
                 </div>
             </div>
