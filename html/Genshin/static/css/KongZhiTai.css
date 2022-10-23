@@ -4,23 +4,18 @@
   font-family: "montserrat",sans-serif;
   box-sizing: border-box;
 }
-
-body{
-  background-image: linear-gradient(120deg,#487eb0,#fbc531);
-  min-height: 100vh;
-}
-
-
 .container{
-
+  background: url(../image/global/back2.jpg);
   max-width: 800px;
-  margin: auto;
+  margin: 80px auto 0;
   padding: 10px;
-  /*transform: translateY(40%);*/
+  border-radius: 30px;
+  border: 10px dashed #99CCFF;
 }
-
+.container h3 {
+  color: #FFF;
+}
 .txtb{
-
   width: 100%;
   border: none;
   border-bottom: 2px solid #000;
@@ -29,10 +24,8 @@ body{
   outline: none;
   font-size: 18px;
 }
-
 h3{
   margin: 20px 0;
-
 }
 .tip {
   visibility: hidden;
@@ -60,7 +53,6 @@ h3{
   margin-left: 750px;
   transform: translateY(-240%);
 }
-
 .doingTask {
   width: 100%;
   /*background: rgba(255, 255, 255, 0.5);*/
@@ -73,7 +65,6 @@ h3{
 
   animation: bgAnimation 15s linear infinite;
 }
-
 @keyframes bgAnimation {
   0%{
     background-position: 0% 50%;
@@ -85,8 +76,6 @@ h3{
     background-position: 0% 50%;
   }
 }
-
-
 .task i{
   float: right;
   margin-left: 20px;
@@ -97,10 +86,6 @@ h3{
   background: rgba(0,0,0,.5);
   color: #fff;
 }
-
-
-
-
 .middle{
   position: absolute;
   top: 50%;

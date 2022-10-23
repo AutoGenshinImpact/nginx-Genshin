@@ -7,10 +7,6 @@
   margin: 0;
   padding: 0;
 }
-body {
-  overflow-x: hidden !important;
-  background: url(../image/index/global_back.jpg);
-}
 li {
   list-style: none;
 }
@@ -67,7 +63,7 @@ a {
   position: relative;
   top: 200px;
   height: 1980px;
-  background: url(../image/index/global_back2.jpg);
+  background: url(../image/global/back2.jpg);
 }
 .king li {
   position: relative;

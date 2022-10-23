@@ -20,6 +20,8 @@
 body {
     font-family: 'Rajdhani', sans-serif;
     font-weight: 400;
+    overflow-x: hidden !important;
+    background: url(../image/global/back.jpg);
 }
 html,body {
     width: 100%;
