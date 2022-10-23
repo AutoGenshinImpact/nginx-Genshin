@@ -1,35 +1,59 @@
-
-.shell{
-  display: flex;
-  justify-content: center;
-}
-.button{
-  /*background-color: #50536e;*/
-  width: 196px;
+.login {
+  position: absolute;
+  width: 147px;
+  left: 83%;
   height: 65px;
-  text-align: center;
-  line-height: 65px;
-  transition: .3s;
+  z-index: 100;
+}
+.login__header {
+  position: absolute;
+  font-size: 19px;
+  background: none;
+  margin: 0 !important;
+  z-index: 100;
   cursor: pointer;
 }
-
-.button:hover{
-  /*background-color: #d15a39;*/
+.login__img {
+  position: absolute;
+  left: 120px;
+  top: 20px;
+  width: 27px;
+  height: 27px;
+  opacity: 0.6;
 }
-.button li:hover{
-  background-color: #ffb29d;
-}
-.button ul li{
-  height: 0;
+.login__sub{
+  position: absolute;
+  top: 65px;
+  left: 83%;
+  height: 50px;
+  width: 150px;
   transition: .2s;
   opacity: 0;
-  transform: translateY(-65px);
-  background-color: #464430;
+  transform: translateY(-100px);
+  border-radius: 10px;
+  background-color: #CCCCFF;
+  z-index: 90;
 }
-.shell:hover li{
-  height: 65px;
+.login__sub li {
+    line-height: 50px;
+    letter-spacing: 0px;
+    color: #FFF;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 10px;
+}
+.login:hover + .login__sub, .login__sub:hover {
+  height: 100px;
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(5px);
+}
+.login__sub li:hover {
+  cursor: pointer;
+  transition: box-shadow .2s ease-in-out;
+  box-shadow: 0px 0px 0px rgba(100,100,100,0.1),
+  0px 0px 0px #CCCCFF,
+  inset 18px 18px 30px rgba(100,100,100,0.1),
+  inset -18px -18px 30px #CCCCFF;
 }
 .mhy-account-flow-dialog {
   position: fixed;

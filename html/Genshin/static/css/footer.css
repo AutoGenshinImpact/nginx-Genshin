@@ -8,6 +8,12 @@
   border-radius: 30px;
   padding: 40px;
   border: 10px dashed #CCCCFF;
+  transition: .2s;
+}
+.footer:hover{
+  transition: .2s;
+  top: 270px;
+  box-shadow: 10px 10px 18px 18px rgba(0, 0, 0, 0.3);
 }
 .footer .copyright-text {
     padding-top: 10px;
@@ -31,9 +37,9 @@
     height: 50px;
     line-height: 50px;
     text-align: center;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 .go-top:hover {
-    background: #f1c11a;
+    background: #CCCCFF;
     color: #ffffff;
 }

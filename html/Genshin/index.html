@@ -41,52 +41,46 @@
     });
 </script>
 <body>
-<section class="preloader">
-    <div class="sk-circle">
-        <div class="sk-circle1 sk-child"></div>
-        <div class="sk-circle2 sk-child"></div>
-        <div class="sk-circle3 sk-child"></div>
-        <div class="sk-circle4 sk-child"></div>
-        <div class="sk-circle5 sk-child"></div>
-        <div class="sk-circle6 sk-child"></div>
-        <div class="sk-circle7 sk-child"></div>
-        <div class="sk-circle8 sk-child"></div>
-        <div class="sk-circle9 sk-child"></div>
-        <div class="sk-circle10 sk-child"></div>
-        <div class="sk-circle11 sk-child"></div>
-        <div class="sk-circle12 sk-child"></div>
+    <section class="preloader">
+        <div class="sk-circle">
+            <div class="sk-circle1 sk-child"></div>
+            <div class="sk-circle2 sk-child"></div>
+            <div class="sk-circle3 sk-child"></div>
+            <div class="sk-circle4 sk-child"></div>
+            <div class="sk-circle5 sk-child"></div>
+            <div class="sk-circle6 sk-child"></div>
+            <div class="sk-circle7 sk-child"></div>
+            <div class="sk-circle8 sk-child"></div>
+            <div class="sk-circle9 sk-child"></div>
+            <div class="sk-circle10 sk-child"></div>
+            <div class="sk-circle11 sk-child"></div>
+            <div class="sk-circle12 sk-child"></div>
+        </div>
+    </section>
+    <div role="alert" class="el-message el-message--warning tip" style="z-index: 2112;">
+        <!--    <i class="el-message__icon el-icon-warning">-->
+        <!--        已经添加到控制台-->
+        <!--    </i>-->
+        <p class="el-message__content">已经添加到控制台</p>
     </div>
-</section>
-<div role="alert" class="el-message el-message--warning tip" style="z-index: 2112;">
-    <!--    <i class="el-message__icon el-icon-warning">-->
-    <!--        已经添加到控制台-->
-    <!--    </i>-->
-    <p class="el-message__content">已经添加到控制台</p>
-</div>
-<div class="header">
-    <div class="header__logo--cut">
-        <img src="static/image/原神主页logo.png">
-    </div>
-    <div class="header__navbar">
-        <div class="header_Cloud"></div>
-        <div class="header_navitem">
-            <a href="index.html" class="header_hover">首&nbsp页</a>
-            <a href="MiJing.html">秘&nbsp境</a>
-            <!-- <a href="DaShiJie.html">大&nbsp世&nbsp界</a> -->
-            <a href="KongZhiTai.html">控&nbsp制&nbsp台</a>
-            <!-- <a href="javascript:window.location='https://github.com/MrOwenovo?tab=repositories'">联&nbsp系</a> -->
-            <ul class="shell">
-                <li class="button header__login" >
-                    <span id="user">登&nbsp录</span>
-                    <ul class="loginSub">
-                        <li onclick="logOut()">退出登录</li>
-                        <li onclick="renew()">续订邮箱推送</li>
-                    </ul>
-                </li>
-                <li class="header__login">
-                    <img src="static/image/登录.png">
-                </li>
-            </ul>
+    <div class="header">
+        <div class="header__logo--cut">
+            <img src="static/image/原神主页logo.png">
+        </div>
+        <div class="header__navbar">
+            <div class="box"><a href="index.html">首&nbsp页</a></div>
+            <div class="box"><a href="MiJing.html">秘&nbsp境</a></div>
+            <div class="box"> <a href="KongZhiTai.html">控&nbsp制&nbsp台</a></div>
+            <div class="login">
+                <div class="login__header box" >
+                    <a>登&nbsp录</a> 
+                </div>
+                <img class="login__img" src="static/image/登录.png">
+            </div>
+            <div class="login__sub">
+                <li onclick="logOut()">退出登录</li>
+                <li onclick="renew()">续订邮箱推送</li>
+            </div>
         </div>
     </div>
 
@@ -188,30 +182,30 @@
 </div>
 
 <div class="king">
-    <div class="wow slideInLeft row1" data-wow-offset="-100">
-        <a href="#">
+    <div class="wow slideInLeft row row1" data-wow-offset="-100">
+<!--         <a href="#">
             <img src="static/image/newsimg/12.png" alt="" class="small1 small">
             <img src="static/image/newsimg/youyoubig.webp" alt="" class="big1 big">
-        </a>
+        </a> -->
     </div>
     <img class="side__img1 wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="1s" src="static/image/index/index(1).png" alt="shit">
-    <div class="wow slideInRight row2" data-wow-offset="-100">
-        <a href="#">
+    <div class="wow slideInRight row row2" data-wow-offset="-100">
+<!--         <a href="#">
             <img src="static/image/newsimg/13.png" alt="" class="small2 small">
             <img src="static/image/newsimg/zhengjingbig.webp" alt="" class="big2 big">
-        </a>
+        </a> -->
     </div>
     <img class="side__img2 wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="1s" src="static/image/index/index(3).png" alt="shit">
-    <div class="wow slideInLeft row3" data-wow-offset="-100">
-        <a href="#">
+    <div class="wow slideInLeft row row1" data-wow-offset="-100">
+<!--         <a href="#">
             <img src="static/image/newsimg/3.png" alt="" class="small1 small">
             <img src="static/image/newsimg/huawaibig.webp" alt="" class="big3 big">
-        </a>
+        </a> -->
     </div>
     <img class="side__img1 wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="1s" src="static/image/index/index(4).png" alt="shit">
 </div>
 
-<section class="new">
+<div class="new">
     <div class="news__tab wow fadeInUp" data-wow-duration="1s">
         <h3>
             更新资讯
@@ -303,7 +297,7 @@
         <div class="col-md-4 col-sm-6">
             <h2 style="color: #000000;">原神脚本声明</h2>
             <p style="color: gray;">
-                本软件自发布后所有用户均可免费使用。用户应当遵守各项法律法规，禁止篡改、出售、二次修改本软件。软件版权归 GenshinAutomata 团队所有。
+                本软件自发布后所有用户均可免费使用，用户禁止出售本软件。
             </p>
             <p class="copyright-text" style="color: gray;">&copy 2022 GenshinAutomata 版权所有 <a
                     href="https://beian.miit.gov.cn/" target="_blank"
@@ -321,7 +315,7 @@
             </p>
         </div>
     </div>
-</section>
+</div>
 
 </body>
 <!-- Swiper JS -->
