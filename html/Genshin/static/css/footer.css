@@ -1,7 +1,7 @@
 .footer {
   position: relative;
-  margin: auto;
-  top: 300px;
+  margin: 100px auto;
+  top: 50px;
   height: 300px;
   width: 1700px;
   background-color: #FFFFFF;
@@ -12,8 +12,8 @@
 }
 .footer:hover{
   transition: .2s;
-  top: 270px;
-  box-shadow: 10px 10px 18px 18px rgba(0, 0, 0, 0.3);
+  top: 20px;
+  box-shadow: 0px 10px 18px 18px rgba(0, 0, 0, 0.3);
 }
 .footer .copyright-text {
     padding-top: 10px;
@@ -25,10 +25,9 @@
     color: #FF6;
 }
 .go-top {
-    background-color: #eee;
+    background-color: #CCCCFF;
     bottom: 2em;
     right: 2em;
-    color: #111112;
     font-size: 22px;
     display: none;
     position: fixed;
@@ -40,6 +39,6 @@
     transition: all 0.2s ease-in-out;
 }
 .go-top:hover {
-    background: #CCCCFF;
-    color: #ffffff;
+    background: #99CCFF;
+    color: #fff;
 }

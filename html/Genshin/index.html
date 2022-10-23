@@ -6,24 +6,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>《原神》脚本</title>
-    <link rel="icon" type="image/x-icon" href="static/image/原神logo.ico"/><!--网页图标-->
+    <title>原神自动机</title>
+    <link rel="icon" type="image/x-icon" href="static/image/goTop.png"/><!--网页图标-->
     <link rel="stylesheet" href="static/css/index.css"/>
     <link rel="stylesheet" href="static/css/font-index..css">
-    <link rel="stylesheet" href="static/css/city.css">
     <link rel="stylesheet" href="static/css/header.css">
     <link rel="stylesheet" href="static/css/footer.css">
     <link rel="stylesheet" href="static/css/login.css">
-    <link rel="stylesheet" href="static/css/tip.css">
-    <link rel="stylesheet" href="static/css/chunk-element.b496abee.css">
-    <link rel="stylesheet" href="static/css/openWindow.css">
 
     <link rel="stylesheet" href="static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://www.fcwqmc.cn/elsta/css/animate.min.css">
-    <link rel="stylesheet" href="https://www.fcwqmc.cn/elsta/css/vegas.min.css">
+    <link rel="stylesheet" href="static/css/animate.min.css">
     <link rel="stylesheet" href="static/css/home.css">
-    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="static/css/home page.css">
 </head>
 <script>
     $(function () {
@@ -56,13 +49,7 @@
             <div class="sk-circle11 sk-child"></div>
             <div class="sk-circle12 sk-child"></div>
         </div>
-    </section>
-    <div role="alert" class="el-message el-message--warning tip" style="z-index: 2112;">
-        <!--    <i class="el-message__icon el-icon-warning">-->
-        <!--        已经添加到控制台-->
-        <!--    </i>-->
-        <p class="el-message__content">已经添加到控制台</p>
-    </div>
+    </section>  
     <div class="header">
         <div class="header__logo--cut">
             <img src="static/image/原神主页logo.png">
@@ -82,7 +69,6 @@
                 <li onclick="renew()">续订邮箱推送</li>
             </div>
         </div>
-
         <div class="mhy-account-flow mhy-account-flow-dialog ys-theme is-pc" style="display: none;" id="login">
             <div class="mhy-account-flow-dialog-content" id="login1">
                 <div class="mhy-account-flow-login">
@@ -122,7 +108,6 @@
                 </div>
             </div>
         </div>
-
         <div class="mhy-account-flow mhy-account-flow-dialog ys-theme is-pc" style="display: none;" id="resister">
             <div class="mhy-account-flow-dialog-content" id="login2">
                 <div class="mhy-account-flow-login">
@@ -167,132 +152,116 @@
             </div>
         </div>
     </div>
-
-
-<div class="bgWrap">
-    <img class="poster__concept wow fadeInUp" src="static/image/index/final.png" alt="Head background">
-    <span class="poster__text wow swing">
-        <h2>原神自动机</h2>
-        <h4>项目简介</h4>
-    </span>
-</div>
-
-<div class="king">
-    <div class="wow slideInLeft row row1" data-wow-offset="-100">
-<!--         <a href="#">
-            <img src="static/image/newsimg/12.png" alt="" class="small1 small">
-            <img src="static/image/newsimg/youyoubig.webp" alt="" class="big1 big">
-        </a> -->
+    <div class="bgWrap">
+        <img class="poster__concept wow fadeInUp" src="static/image/index/final.png" alt="Head background">
+        <span class="poster__text wow swing">
+            <h2>原神自动机</h2>
+            <h4>项目简介</h4>
+        </span>
     </div>
-    <img class="side__img1 wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="1s" src="static/image/index/index(1).png" alt="shit">
-    <div class="wow slideInRight row row2" data-wow-offset="-100">
-<!--         <a href="#">
-            <img src="static/image/newsimg/13.png" alt="" class="small2 small">
-            <img src="static/image/newsimg/zhengjingbig.webp" alt="" class="big2 big">
-        </a> -->
+    <div class="king">
+        <div class="wow slideInLeft row row1" data-wow-offset="-100">
+        </div>
+        <img class="side__img1 wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="1s" src="static/image/index/index(1).png" alt="shit">
+        <div class="wow slideInRight row row2" data-wow-offset="-100">
+        </div>
+        <img class="side__img2 wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="1s" src="static/image/index/index(3).png" alt="shit">
+        <div class="wow slideInLeft row row1" data-wow-offset="-100">
+        </div>
+        <img class="side__img1 wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="1s" src="static/image/index/index(4).png" alt="shit">
     </div>
-    <img class="side__img2 wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="1s" src="static/image/index/index(3).png" alt="shit">
-    <div class="wow slideInLeft row row1" data-wow-offset="-100">
-<!--         <a href="#">
-            <img src="static/image/newsimg/3.png" alt="" class="small1 small">
-            <img src="static/image/newsimg/huawaibig.webp" alt="" class="big3 big">
-        </a> -->
-    </div>
-    <img class="side__img1 wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="1s" src="static/image/index/index(4).png" alt="shit">
-</div>
-
-<div class="new">
-    <div class="news__tab wow fadeInUp" data-wow-duration="1s">
-        <h3>
-            更新资讯
-        </h3>
-        <div class="news__tab__list">
-            <ul class="news__tab__list__ul">
-                <li class="currenters">最新</li>
-                <li>更新</li>
-                <li>修复</li>
-                <li>计划</li>
-            </ul>
-            <div class="tab_con">
-                <div>
-                    <!-- 最新 -->
-                    <li>
-                        <a><p class="item_p">【更新】完成前后端联查</p>
-                        <p class="item_p2">2022/9/30</p></a>
-                    </li>
-                    <li>
-                        <a><p class="item_p">【更新】完成控制台开发</p>
-                        <p class="item_p2">2022/9/30</p></a>
-                    </li>
-                    <li>
-                        <a><p class="item_p">【更新】完成网页服务器部署</p>
-                        <p class="item_p2">2022/9/20</p></a>
-                    </li>
-                    <li>
-                        <a><p class="item_p">【更新】完成副本1怪物的神经网络二分类识别</p>
-                        <p class="item_p2">2022/7/30</p></a>
-                    </li>
-                </div>
-                <div class="item" style="display: none;">
-                    <!-- 更新 -->
-                    <li>
-                        <a><p class="item_p">【更新】完成控制台开发</p>
-                        <p class="item_p2">2022/9/30</p></a>
-                    </li>
-                    <li>
-                        <a><p class="item_p">【更新】完成网页服务器部署</p>
-                        <p class="item_p2">2022/9/20</p></a>
-                    </li>
-                    <li>
-                        <a><p class="item_p">【更新】完成副本1怪物的神经网络二分类识别</p>
-                        <p class="item_p2">2022/7/30</p></a>
-                    </li>
-                </div>
-                <div class="item" style="display: none;">
-                    <!-- 修复 -->
-                    <li>
-                        <a><p class="item_p">【修复】完成前后端联查</p>
-                        <p class="item_p2">2022/9/30</p></a>
-                    </li>
-                </div>
-                <div class="item" style="display: none;">
-                    <!-- 预告 -->
-                    <li>
-                        <a><p class="item_p">【预告】未来完成全部副本的自动靠近和攻击</p>
-                        <p class="item_p2">2022/10/++</p></a>
-                    </li>
-                    <li>
-                        <a><p class="item_p">【预告】未来完成全部副本的怪物识别</p>
-                        <p class="item_p2">2022/10/++</p></a>
-                    </li>
+    <div class="new">
+        <div class="news__tab wow fadeInUp" data-wow-duration="1s">
+            <h3>
+                更新资讯
+            </h3>
+            <div class="news__tab__list">
+                <ul class="news__tab__list__ul">
+                    <li class="currenters">最新</li>
+                    <li>更新</li>
+                    <li>修复</li>
+                    <li>计划</li>
+                </ul>
+                <div class="tab_con">
+                    <div>
+                        <!-- 最新 -->
+                        <li>
+                            <a><p class="item_p">【更新】完成前后端联查</p>
+                            <p class="item_p2">2022/9/30</p></a>
+                        </li>
+                        <li>
+                            <a><p class="item_p">【更新】完成控制台开发</p>
+                            <p class="item_p2">2022/9/30</p></a>
+                        </li>
+                        <li>
+                            <a><p class="item_p">【更新】完成网页服务器部署</p>
+                            <p class="item_p2">2022/9/20</p></a>
+                        </li>
+                        <li>
+                            <a><p class="item_p">【更新】完成副本1怪物的神经网络二分类识别</p>
+                            <p class="item_p2">2022/7/30</p></a>
+                        </li>
+                    </div>
+                    <div class="item" style="display: none;">
+                        <!-- 更新 -->
+                        <li>
+                            <a><p class="item_p">【更新】完成控制台开发</p>
+                            <p class="item_p2">2022/9/30</p></a>
+                        </li>
+                        <li>
+                            <a><p class="item_p">【更新】完成网页服务器部署</p>
+                            <p class="item_p2">2022/9/20</p></a>
+                        </li>
+                        <li>
+                            <a><p class="item_p">【更新】完成副本1怪物的神经网络二分类识别</p>
+                            <p class="item_p2">2022/7/30</p></a>
+                        </li>
+                    </div>
+                    <div class="item" style="display: none;">
+                        <!-- 修复 -->
+                        <li>
+                            <a><p class="item_p">【修复】完成前后端联查</p>
+                            <p class="item_p2">2022/9/30</p></a>
+                        </li>
+                    </div>
+                    <div class="item" style="display: none;">
+                        <!-- 预告 -->
+                        <li>
+                            <a><p class="item_p">【预告】未来完成全部副本的自动靠近和攻击</p>
+                            <p class="item_p2">2022/10/++</p></a>
+                        </li>
+                        <li>
+                            <a><p class="item_p">【预告】未来完成全部副本的怪物识别</p>
+                            <p class="item_p2">2022/10/++</p></a>
+                        </li>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="footer wow fadeInUp" data-wow-duration="1s">
-        <div class="col-md-4 col-sm-6">
-            <h2 style="color: #000000;">原神脚本声明</h2>
-            <p style="color: gray;">
-                本软件自发布后所有用户均可免费使用，用户禁止出售本软件。
-            </p>
-            <p class="copyright-text" style="color: gray;">&copy 2022 GenshinAutomata 版权所有 <a
-                    href="https://beian.miit.gov.cn/" target="_blank"
-                    style="color: gray;">湘ICP备2022002291号-1</a><br>
-                Software Design by GenshinAutomata<br>
-            </p>
+        <div class="footer wow fadeInUp" data-wow-duration="1s">
+            <div class="col-md-4 col-sm-6">
+                <h2 style="color: #000000;">原神脚本声明</h2>
+                <p style="color: gray;">
+                    本软件自发布后所有用户均可免费使用，用户禁止出售本软件。
+                </p>
+                <p class="copyright-text" style="color: gray;">&copy 2022 GenshinAutomata 版权所有 <a
+                        href="https://beian.miit.gov.cn/" target="_blank"
+                        style="color: gray;">湘ICP备2022002291号-1</a><br>
+                    Software Design by GenshinAutomata<br>
+                </p>
+            </div>
+            <div class="col-md-1 col-sm-1"></div>
+            <div class="col-md-4 col-sm-5">
+                <h2 style="color: #000000;">联系方式</h2>
+                <p style="color: gray;">
+                    QQ群：639227600<br>
+                    合作QQ：1251031190<br>
+                    邮箱：lmq122677@qq.com<br>
+                </p>
+            </div>
         </div>
-        <div class="col-md-1 col-sm-1"></div>
-        <div class="col-md-4 col-sm-5">
-            <h2 style="color: #000000;">联系方式</h2>
-            <p style="color: gray;">
-                QQ群：639227600<br>
-                合作QQ：1251031190<br>
-                邮箱：lmq122677@qq.com<br>
-            </p>
-        </div>
     </div>
-</div>
-
+    <a href="#back-top" class="go-top"><img class="go-top" src="static/image/goTop.png"></a>
 </body>
 <!-- Swiper JS -->
 <script src="static/js/swiper-bundle.min.js"></script>
@@ -301,21 +270,9 @@
 <script src="static/js/index.js"></script>
 <script src="static/js/login.js"></script>
 <script src="static/js/move.js"></script>
-<script src="static/js/jquery.js"></script>
 <script src="static/js/tab_con.js"></script>
 <script src="static/js/movers.js"></script>
-<a href="#back-top" class="go-top"><i class="fa fa-angle-up"></i></a>
-<script src="https://www.fcwqmc.cn/elsta/js/jquery.js"></script>
-<script src="https://www.fcwqmc.cn/elsta/js/bootstrap.min.js"></script>
-<script src="https://www.fcwqmc.cn/elsta/js/vegas.min.js"></script>
-<script src="https://www.fcwqmc.cn/elsta/js/wow.min.js"></script>
-<script src="https://www.fcwqmc.cn/elsta/js/smoothscroll.js"></script>
+<script src="static/js/jquery(2).js"></script>
+<script src="static/js/wow.min.js"></script>
 <script src="static/js/custom.js"></script>
-<script src="static/js/home page.js"></script>
-<script src="static/js/MiJing.js"></script>
-
-<script>
-    new WOW().init();
-</script>
-
 </html>
