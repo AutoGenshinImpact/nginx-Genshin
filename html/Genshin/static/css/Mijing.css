@@ -46,7 +46,7 @@
     align-items: center;
 }
 .arrow {
-    opacity: 0.7;
+    opacity: 1;
     margin-top: 25px;
     width: 70px;
     height: 70px;
@@ -59,6 +59,8 @@
     width: 80px;
     height: 120px;
     margin: 50px;
+    background-color: #99CCFF;
+    box-shadow: 10px 10px 18px rgba(0, 0, 0, 0.3);
 }
 .left_arrow {
     margin-left: 20px;
@@ -74,8 +76,7 @@
 }
 .InsB {
     position: relative;
-    left: -30%;
-    transform: translateX(15px);
+    transform: translateX(-527px);
     width: 55px;
     height: 55px;
     opacity: 0.6;
@@ -89,15 +90,13 @@
     opacity: 0.8;
 }
 .right_arrow {
-    margin-left: -12px;
+    float: right;
+    margin-right: 20px;
     transform: rotate(45deg);
 }
 .arrow_box:hover {
-    background-color: #99CCFF;
+    width: 140px;
     transition: .2s;
-}
-.arrow_box:hover .arrow {
-    opacity: 1;
 }
 .after_B-f {
     position: absolute;

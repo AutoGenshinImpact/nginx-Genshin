@@ -4,11 +4,11 @@
   top: 50px;
   height: 300px;
   width: 1700px;
-  background-color: #FFFFFF;
   border-radius: 30px;
   padding: 40px;
   border: 10px dashed #CCCCFF;
   transition: .2s;
+  background-color: #FFF;
 }
 .footer:hover{
   transition: .2s;

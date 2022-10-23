@@ -1,0 +1,30 @@
+.about_box {
+    position: absolute;
+    margin: auto;
+    top: 13%;
+    left: 23%;
+    width: 50%;
+    height: 500px;
+    border-radius: 50px;
+    border: 15px dashed #FFF;
+    opacity: 0.5;
+}
+.about_org {
+    position: relative;
+    margin: 100px auto;
+    width: 50%;
+    height: 500px;
+    border-radius: 50px;
+    border: 15px dashed #9CF;
+    opacity: 1;
+}
+.info_box {
+    position: relative;
+    left: 3%;
+    top: 3%;
+    width: 90%;
+    height: 85%;
+    background-color: #FFF;
+    opacity: 0.6;
+    border-radius: 30px;
+}
