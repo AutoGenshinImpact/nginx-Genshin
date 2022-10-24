@@ -3,17 +3,12 @@
   白 #FFFFFF
   蓝 #99CCFF
 */
-* {
-  margin: 0;
-  padding: 0;
-}
 li {
   list-style: none;
 }
 a {
   text-decoration: none;
 }
-
 .bgWrap {
   position: relative;
   top: 60px;
@@ -181,8 +176,8 @@ a {
   float: left;
 }
 .currenters {
-  color: #ffd49f;
-  border-bottom: 3px solid #ffd49f;
+  color: #9CF;
+  border-bottom: 3px solid #9CF;
 }
 .tab_con {
   position: relative;
@@ -205,9 +200,4 @@ a {
   height: 20px;
   line-height: 20px;
   padding-left: 44px;
-}
-.error-text {
-  color: #f96149;
-  font-size: 12px;
-  line-height: 22px;
 }

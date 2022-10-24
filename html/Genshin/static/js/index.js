@@ -55,20 +55,6 @@ window.addEventListener('load', function () {
 
   })
 
-
-  // mimaloginer.addEventListener('click',function(){
-  //   mimalogin.style.display = 'block'
-  //   login1.style.display = 'none'
-  // })
-  // yzmloginer.addEventListener('click',function(){
-  //   mimalogin.style.display = 'none'
-  // })
-  // x2.addEventListener('click',function(){
-  //   login.style.display = 'none'
-  // })
-
-
-
   	//判断用户在输入手机号格式是否正确
   // var myforms = document.forms;
   // var myemail = myforms[0].email.value;
@@ -117,10 +103,6 @@ window.addEventListener('load', function () {
       mhy_toast.style.display = 'none'
     },5000)
 
-
-
-
-
   //footer
   let socialitemImg1 = this.document.getElementById('socialitemImg1')
   let socialitemImg2 = this.document.getElementById('socialitemImg2')
@@ -128,36 +110,4 @@ window.addEventListener('load', function () {
   let socialitemImg4 = this.document.getElementById('socialitemImg4')
   let share__wrap = this.document.querySelector('.share__wrap')
   let qxtc = this.document.querySelector('.qxtc')
-
-  // socialitemImg1.addEventListener('mousemove',function(){
-  //   socialitemImg1.src = 'static/image/新浪微博 (2).png'
-  // })
-  // socialitemImg1.addEventListener('mouseout',function(){
-  //   socialitemImg1.src = 'static/image/新浪微博1..png'
-  // })
-  // socialitemImg2.addEventListener('mousemove',function(){
-  //   socialitemImg2.src = 'static/image/微信 (5).png'
-  // })
-  // socialitemImg2.addEventListener('mouseout',function(){
-  //   socialitemImg2.src = 'static/image/微信 (2).png'
-  // })
-  // socialitemImg3.addEventListener('mousemove',function(){
-  //   socialitemImg3.src = 'static/image/qq (1).png'
-  // })
-  // socialitemImg3.addEventListener('mouseout',function(){
-  //   socialitemImg3.src = 'static/image/qq.png'
-  // })
-  // socialitemImg4.addEventListener('mousemove',function(){
-  //   socialitemImg4.src = 'static/image/分享方式 (1).png'
-  //   share__wrap.style.display = 'block'
-  // })
-  // socialitemImg4.addEventListener('mouseout',function(){
-  //   socialitemImg4.src = 'static/image/分享方式.png'
-  // })
-  // qxtc.addEventListener('mouseout',function(){
-  //   share__wrap.style.display = 'none'
-  // })
-
-
-
 })

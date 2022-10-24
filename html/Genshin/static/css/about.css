@@ -28,6 +28,7 @@
 .about_header .header_text h1 {
     color: #9CF;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+    font-size: 65px;
 }
 .about_header:hover {
     margin: 40px auto;
