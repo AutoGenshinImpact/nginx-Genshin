@@ -1,18 +1,19 @@
 .footer {
   position: relative;
   margin: 100px auto;
-  top: 50px;
-  height: 300px;
-  width: 1700px;
+  top: 0;
+  width: 90%;
   border-radius: 30px;
   padding: 40px;
   border: 10px dashed #CCCCFF;
   transition: .2s;
   background-color: #FFF;
+  display: flex;
+  justify-content: left;
 }
 .footer:hover{
   transition: .2s;
-  top: 20px;
+  top: -20px;
   box-shadow: 0px 10px 18px 18px rgba(0, 0, 0, 0.3);
 }
 .footer .copyright-text {
@@ -21,8 +22,17 @@
 .footer a {
     color: #fff;
 }
-.footer a:hover {
-    color: #FF6;
+.footer:after{
+    clear: both;
+    content: "";
+    width: 0;
+    height: 0;
+    display: block;
+    visibility: hidden;
+}
+.footer_text {
+    padding-right: 20%;
+    padding-left: 15px;
 }
 .go-top {
     background-color: #CCCCFF;

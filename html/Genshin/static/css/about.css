@@ -10,10 +10,10 @@
     align-items: center;
     flex-direction: column;
     transition: .2s;
-    object-fit: cover;
+    overflow: hidden;
 }
 .about_header img {
-    position: absolute;
+    position: relative;
     height: 100%;
     border-radius: 30px;
 }
@@ -90,9 +90,9 @@
 }
 .info_box:hover {
     top: 490px;
-    width: 870px;
+    width: 48%;
     height: 462px;
-    transform: translateX(475px);
+    transform: translateX(54%);
 }
 .info_box:hover ~ .about_box {
     transform: translateX(50%);

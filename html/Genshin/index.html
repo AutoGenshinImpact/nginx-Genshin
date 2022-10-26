@@ -17,21 +17,6 @@
     <link rel="stylesheet" href="static/css/animate.min.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </head>
-<script>
-    $(function () {
-        var system = {};
-        var p = navigator.platform;
-        system.win = p.indexOf("Win") == 0;
-        system.mac = p.indexOf("Mac") == 0;
-        system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
-        if (system.win || system.mac || system.xll) {//如果是电脑跳转到
-            //电脑登录
-        } else {  //如果是手机,跳转到
-            window.alert("当前暂时支持电脑使用，请使用电脑打开!")
-            window.location.href = "#";
-        }
-    });
-</script>
 <body>
     <section class="preloader">
         <div class="sk-circle">
@@ -238,27 +223,26 @@
                 </div>
             </div>
         </div>
-        <div class="footer wow fadeInUp" data-wow-duration="1s">
-            <div class="col-md-4 col-sm-6">
-                <h2 style="color: #000000;">原神脚本声明</h2>
-                <p style="color: gray;">
-                    本软件自发布后所有用户均可免费使用，用户禁止出售本软件。
-                </p>
-                <p class="copyright-text" style="color: gray;">&copy 2022 GenshinAutomata 版权所有 <a
-                        href="https://beian.miit.gov.cn/" target="_blank"
-                        style="color: gray;">湘ICP备2022002291号-1</a><br>
-                    Software Design by GenshinAutomata<br>
-                </p>
-            </div>
-            <div class="col-md-1 col-sm-1"></div>
-            <div class="col-md-4 col-sm-5">
-                <h2 style="color: #000000;">联系方式</h2>
-                <p style="color: gray;">
-                    QQ群：639227600<br>
-                    合作QQ：1251031190<br>
-                    邮箱：lmq122677@qq.com<br>
-                </p>
-            </div>
+    </div>
+    <div class="footer wow fadeInUp" data-wow-duration="1s">
+        <div class="footer_text">
+            <h2 style="color: #000000;">原神脚本声明</h2>
+            <p style="color: gray;">
+                本软件自发布后所有用户均可免费使用，用户禁止出售本软件。
+            </p>
+            <p class="copyright-text" style="color: gray;">&copy 2022 GenshinAutomata 版权所有 <a
+                    href="https://beian.miit.gov.cn/" target="_blank"
+                    style="color: gray;">湘ICP备2022002291号-1</a><br>
+                Software Design by GenshinAutomata<br>
+            </p>
+        </div>
+        <div class="footer_text">
+            <h2 style="color: #000000;">联系方式</h2>
+            <p style="color: gray;">
+                QQ群：639227600<br>
+                合作QQ：1251031190<br>
+                邮箱：lmq122677@qq.com<br>
+            </p>
         </div>
     </div>
     <a href="#back-top" class="go-top"><img class="go-top" src="static/image/goTop.png"></a>

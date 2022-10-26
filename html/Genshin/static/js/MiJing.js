@@ -102,7 +102,7 @@ var names = [
     "岩中幽谷",
     "缘觉塔",
 ]
-$(".left_arrow").click(function () {
+$(".box_left").click(function () {
     light_index = (light_index - 1) % 11;
     if (light_index < 0) {
         light_index = light_index + 11;
@@ -113,7 +113,7 @@ $(".left_arrow").click(function () {
     }
 
 });
-$(".right_arrow").click(function () {
+$(".box_right").click(function () {
     light_index = (light_index + 1) % 11;
     if (light_index%1==0) {
         change(light_index);

@@ -27,24 +27,7 @@
 
     <!-- Link Swiper's CSS -->
     <!-- <link rel="stylesheet" href="../package/swiper-bundle.min.css"/> -->
-
-
 </head>
-<script>
-    $(function () {
-        var system = {};
-        var p = navigator.platform;
-        system.win = p.indexOf("Win") == 0;
-        system.mac = p.indexOf("Mac") == 0;
-        system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
-        if (system.win || system.mac || system.xll) {//如果是电脑跳转到
-            //电脑登录
-        } else {  //如果是手机,跳转到
-            window.alert("当前暂时支持电脑使用，请使用电脑打开!")
-            window.location.href = "#";
-        }
-    });
-</script>
 <body>
     <section class="preloader">
         <div class="sk-circle">
@@ -184,11 +167,11 @@
                 <img src="static/image/Mijing/reward1-0.png">
                 <img src="static/image/Mijing/reward1-1.png">
             </div>
-            <div class="arrow_box"><div class="left_arrow arrow"></div></div>
+            <div class="arrow_box box_left"><div class="left_arrow arrow"></div></div>
             <div class="InsB" style="opacity: 0;"></div>
             <img class="light"  src="static/image/MiJing/bg1.png">
             <div class="InsB"></div>
-            <div class="arrow_box"><div class="right_arrow arrow"></div></div>
+            <div class="arrow_box box_right"><div class="right_arrow arrow"></div></div>
             <div class="fucking_block"></div>
             <div class="rewards">
                 <img id="reward1" src="static/image/Mijing/reward1-0.png">
@@ -197,7 +180,7 @@
         </div>
     </div>
     <div class="footer wow fadeInUp" data-wow-duration="1s">
-        <div class="col-md-4 col-sm-6">
+        <div class="footer_text">
             <h2 style="color: #000000;">原神脚本声明</h2>
             <p style="color: gray;">
                 本软件自发布后所有用户均可免费使用，用户禁止出售本软件。
@@ -208,8 +191,7 @@
                 Software Design by GenshinAutomata<br>
             </p>
         </div>
-        <div class="col-md-1 col-sm-1"></div>
-        <div class="col-md-4 col-sm-5">
+        <div class="footer_text">
             <h2 style="color: #000000;">联系方式</h2>
             <p style="color: gray;">
                 QQ群：639227600<br>
