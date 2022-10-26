@@ -1,30 +1,11 @@
-
 /* jQuery Pre loader
  -----------------------------------------------*/
 $(window).load(function(){
     $('.preloader').fadeOut(1000); // set duration in brackets
 });
 
-
 $(document).ready(function() {
-
-    /* Home Slideshow Vegas
-    -----------------------------------------------*/
-    $(function() {
-        $('body').vegas({
-            slides: [
-                { src: 'static/images/home-bg2.jpg' },
-                { src: 'static/images/home-bg1.jpg' },
-                { src: 'static/images/home-bg3.jpg' },
-            ],
-            timer: false,
-            transition: [ 'zoomOut', ]
-        });
-    });
-
-
-    /* Back top
-   -----------------------------------------------*/
+    /* Back top*/
     $(window).scroll(function() {
         if ($(this).scrollTop() > 200) {
             $('.go-top').fadeIn(200);
@@ -38,9 +19,19 @@ $(document).ready(function() {
         $('html, body').animate({scrollTop: 0}, 300);
     })
 
-
-    /* wow
-    -------------------------------*/
     new WOW({ mobile: false }).init();
+});
 
+$(function () {
+    var system = {};
+    var p = navigator.platform;
+    system.win = p.indexOf("Win") == 0;
+    system.mac = p.indexOf("Mac") == 0;
+    system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+    if (system.win || system.mac || system.xll) {//如果是电脑跳转到
+        //电脑登录
+    } else {  //如果是手机,跳转到
+        window.alert("当前暂时支持电脑使用，请使用电脑打开!")
+        window.location.href = "#";
+    }
 });

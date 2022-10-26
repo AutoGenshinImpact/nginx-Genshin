@@ -1,35 +1,61 @@
-
-.shell{
-  display: flex;
-  justify-content: center;
-}
-.button{
-  /*background-color: #50536e;*/
-  width: 196px;
+.login {
+  position: absolute;
+  width: 147px;
+  left: 83%;
   height: 65px;
-  text-align: center;
-  line-height: 65px;
-  transition: .3s;
+  z-index: 100;
+}
+.login__header {
+
+  position: absolute;
+  font-size: 19px;
+  background: none;
+  margin: 0 !important;
+  z-index: 100;
   cursor: pointer;
 }
-
-.button:hover{
-  /*background-color: #d15a39;*/
+.login__img {
+  position: absolute;
+  left: 120px;
+  top: 20px;
+  width: 27px;
+  height: 27px;
+  opacity: 0.6;
 }
-.button li:hover{
-  background-color: #ffb29d;
-}
-.button ul li{
-  height: 0;
+.login__sub{
+  position: absolute;
+  top: 65px;
+  left: 83%;
+  height: 50px;
+  width: 150px;
   transition: .2s;
   opacity: 0;
-  transform: translateY(-65px);
-  background-color: #464430;
+  transform: translateY(-100px);
+  border-radius: 10px;
+  background-color: #CCCCFF;
+  z-index: 90;
 }
-.shell:hover li{
-  height: 65px;
+.login__sub li {
+    line-height: 50px;
+    letter-spacing: 0px;
+    color: #FFF;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 10px;
+    list-style-type: none;
+}
+.login:hover + .login__sub, .login__sub:hover {
+  height: 100px;
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(5px);
+}
+.login__sub li:hover {
+  cursor: pointer;
+  transition: box-shadow .2s ease-in-out;
+  box-shadow: 0px 0px 0px rgba(100,100,100,0.1),
+  0px 0px 0px #CCCCFF,
+  inset 18px 18px 30px rgba(100,100,100,0.1),
+  inset -18px -18px 30px #CCCCFF;
 }
 .mhy-account-flow-dialog {
   position: fixed;
@@ -58,20 +84,16 @@
   width: 400px;
   height: 346px;
   background-color: #fff;
-  border-radius: 4px;
+  border-radius: 20px;
+  border: 10px solid #99CCFF;
   padding: 20px 25px;
   position: relative;
   top: 100px;
   left: 38.5%;
-  margin-top: 58px;
-
-  /*margin:0 auto*/
+  margin-top: 100px;
 }
 .mhy-account-flow-login {
   background-color: #fff;
-
-  /* width: 500px;
-  height: 500px; */
 }
 .mhy-account-flow-login .logo {
   width: 107px;
@@ -83,18 +105,27 @@
   margin: auto;
 }
 .mhy-account-flow.is-pc .close-icon {
-  transform: translateX(370px);
+  position: absolute;
+  z-index: 100;
+  top: 10px;
+  transform: translateX(310px);
   width: 16px;
   height: 16px;
   margin: 10px;
   cursor: pointer;
+  transition: .2s;
+  border-radius: 4px;
+}
+.mhy-account-flow.is-pc .close-icon:hover {
+  transition: .2s;
+  background-color: rgba(204, 204, 255, .5);
 }
 .mhy-account-flow.is-pc .mhy-account-flow-tabs {
   font-size: 18px;
 }
 .mhy-account-flow-tabs .tab-item.active {
   font-weight: 700;
-  color: #3c4044;
+  color: #CCCCFF;
 }
 .mhy-account-flow-tabs .tab-item {
   text-align: center;
@@ -105,7 +136,7 @@
   position: relative;
 }
 .mhy-account-flow-form-input {
-  padding-top: 15px;
+  padding-top: 5px;
   font-size: 12px;
   position: relative;
 }
@@ -114,8 +145,8 @@
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  border-radius: 4px;
-  border: 1px solid #ebebeb;
+  border-radius: 30px;
+  border: 3px solid #CCCCFF;
 }
 .mhy-account-flow.is-pc .mhy-account-flow-form-input .input-container input {
   font-size: 16px;
@@ -167,7 +198,7 @@
   color: #7f858a;
 }
 .mhy-account-flow.ys-theme .mhy-account-flow-tabs .tab-item.active:before {
-  background-color: #3b4354;
+  background-color: #CCCCFF;
 }
 .mhy-account-flow-form-input .input-container input {
   position: relative;
@@ -217,26 +248,32 @@
   cursor: pointer;
 }
 .login-btn {
-  transform: translateY(20px);
-  margin-bottom: 30px;
+  margin-top: 25px;
+  transition: .2s;
+}
+.login-btn:hover {
+  box-shadow: 0px 0px 0px rgba(100,100,100,0.1),
+  0px 0px 0px #CCCCFF,
+  inset 18px 18px 30px rgba(100,100,100,0.1),
+  inset -18px -18px 30px #CCCCFF;
 }
 .mhy-account-flow.ys-theme button {
-  border-color: #3b4354;
-  background-color: #3b4354;
+  border: none;
+  background-color: #CCCCFF;
+  border-radius: 30px;
+  height: 52px;
 }
 .mhy-account-flow button {
   display: block;
   width: 100%;
-  border: 1px solid #19a3ff;
-  background-color: #19a3ff;
   color: #fff;
-  border-radius: 4px;
   line-height: 38px;
   text-align: center;
   font-size: 14px;
   outline: none;
 }
 .register-bar {
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 .login-tip {
@@ -323,4 +360,9 @@
   color: #fff;
   z-index: 9999;
   font-size: 14px;
+}
+.error-text {
+  color: #f96149;
+  font-size: 12px;
+  line-height: 22px;
 }

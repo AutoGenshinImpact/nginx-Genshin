@@ -11,16 +11,22 @@ var imgs = [
     "static/image/MiJing/bg9.png",
     "static/image/MiJing/bg10.png",
     "static/image/MiJing/bg11.png",
-    "static/image/MiJing/bg12.png",
-    "static/image/MiJing/bg13.png",
-    "static/image/MiJing/bg14.png",
-    "static/image/MiJing/bg15.png",
-    "static/image/MiJing/bg16.png",
-    "static/image/MiJing/bg17.png",
-    "static/image/MiJing/bg18.png",
-    "static/image/MiJing/bg19.png",
 ];
 var reward1 = [
+    "static/image/MiJing/reward1-0.png",
+    "static/image/MiJing/reward2-0.png",
+    "static/image/MiJing/reward3-0.png",
+    "static/image/MiJing/reward4-0.png",
+    "static/image/MiJing/reward5-0.png",
+    "static/image/MiJing/reward6-0.png",
+    "static/image/MiJing/reward7-0.png",
+    "static/image/MiJing/reward8-0.png",
+    "static/image/MiJing/reward9-0.png",
+    "static/image/MiJing/reward10-0.png",
+    "static/image/MiJing/reward11-0.png",
+
+];
+var reward2 = [
     "static/image/MiJing/reward1-1.png",
     "static/image/MiJing/reward2-1.png",
     "static/image/MiJing/reward3-1.png",
@@ -32,36 +38,6 @@ var reward1 = [
     "static/image/MiJing/reward9-1.png",
     "static/image/MiJing/reward10-1.png",
     "static/image/MiJing/reward11-1.png",
-    "static/image/MiJing/reward12-1.png",
-    "static/image/MiJing/reward13-1.png",
-    "static/image/MiJing/reward14-1.png",
-    "static/image/MiJing/reward15-1.png",
-    "static/image/MiJing/reward16-1.png",
-    "static/image/MiJing/reward17-1.png",
-    "static/image/MiJing/reward18-1.png",
-    "static/image/MiJing/reward19-1.png",
-
-];
-var reward2 = [
-    "static/image/MiJing/reward1-2.png",
-    "static/image/MiJing/reward2-2.png",
-    "static/image/MiJing/reward3-2.png",
-    "static/image/MiJing/reward4-2.png",
-    "static/image/MiJing/reward5-2.png",
-    "static/image/MiJing/reward6-2.png",
-    "static/image/MiJing/reward7-2.png",
-    "static/image/MiJing/reward8-2.png",
-    "static/image/MiJing/reward9-2.png",
-    "static/image/MiJing/reward10-2.png",
-    "static/image/MiJing/reward11-2.png",
-    "static/image/MiJing/reward12-2.png",
-    "static/image/MiJing/reward13-2.png",
-    "static/image/MiJing/reward14-2.png",
-    "static/image/MiJing/reward15-2.png",
-    "static/image/MiJing/reward16-2.png",
-    "static/image/MiJing/reward17-2.png",
-    "static/image/MiJing/reward18-2.png",
-    "static/image/MiJing/reward19-2.png",
 ];
 var reward3 = [
     "",
@@ -112,76 +88,24 @@ var hasThird = [
     true,
     false,
 ]
-var textLong = [
-    false,
-    true,
-    true,
-    false,
-    true,
 
-    true,
-    false,
-    false,
-    "",
-    true,
-
-    false,
-    false,
-    false,
-    false,
-    false,
-
-    false,
-    "",
-    "",
-    "",
-]
-var texts = [
-    "static/image/MiJing/text1.png",
-    "static/image/MiJing/text2.png",
-    "static/image/MiJing/text3.png",
-    "static/image/MiJing/text4.png",
-    "static/image/MiJing/text5.png",
-    "static/image/MiJing/text6.png",
-    "static/image/MiJing/text7.png",
-    "static/image/MiJing/text8.png",
-    "static/image/MiJing/text9.png",
-    "static/image/MiJing/text10.png",
-    "static/image/MiJing/text11.png",
-    "static/image/MiJing/text12.png",
-    "static/image/MiJing/text13.png",
-    "static/image/MiJing/text14.png",
-    "static/image/MiJing/text15.png",
-    "static/image/MiJing/text16.png",
-    "static/image/MiJing/text17.png",
-    "static/image/MiJing/text18.png",
-    "static/image/MiJing/text19.png",
-]
 var names = [
     "仲夏庭院",
-    "塞西莉亚苗圃",
-    "震雷连山密宫",
     "铭记之谷",
     "孤云凌霄之处",
     "无妄引咎密宫",
     "华池岩岫",
-    "忘却之峡",
-    "太山府",
     "芬德尼尔之顶",
     "山脊守望",
-    "砂流之庭",
-    "堇色之庭",
     "椛染之庭",
     "沉眠之庭",
     "岩中幽谷",
-    "昏识塔",
     "缘觉塔",
-    "有顶塔",
 ]
-$("#btn").click(function () {
-    light_index = (light_index - 0.5) % 19;
+$(".left_arrow").click(function () {
+    light_index = (light_index - 1) % 11;
     if (light_index < 0) {
-        light_index = light_index + 19;
+        light_index = light_index + 11;
     }
     if (light_index%1==0) {
         change(light_index);
@@ -189,8 +113,8 @@ $("#btn").click(function () {
     }
 
 });
-$("#jk").click(function () {
-    light_index = (light_index + 0.5) % 19;
+$(".right_arrow").click(function () {
+    light_index = (light_index + 1) % 11;
     if (light_index%1==0) {
         change(light_index);
         close(false);
@@ -212,91 +136,39 @@ $(".bu").hover(function () {
     $(".bu").attr("src", "static/image/MiJing/bu2.png");
 
 });
-$(".bu").click(function () {
+
+function clickAddToCmd(){
+
     if (!checkIsStarting()) {
         tipIn();
     } else {
         execTip("当前脚本正在进行，请结束脚本并重试!");
     }
-});
+}
 var isFadeOut = true;
 
-function close(flag) {
-    let srcs = $(".open").attr("src");
-    if (flag !== false || isFadeOut) {
-        $(".open").fadeOut(300);
-        $(".light2").fadeOut(200);
-        $(".light3").fadeOut(200);
-        $(".light4").fadeOut(200);
-        $(".bu").fadeOut(200);
-        isFadeOut = true;
 
-
-    } else {
-        lightClick();
-    }
-
-}
 
 function change(index) {
+    let text = $(".Ins_name");
     $(".light").attr("src", imgs[index]);
-    $(".light5").attr("src", texts[index]);
-    if (textLong[index]) {
-        $(".light5").attr("width", "10%");
-        $(".light5").css("left", "45.2%");
-        $(".light5").css("top", "86.5%");
-
-    } else if (textLong[index] === "") {
-        $(".light5").attr("width", "8%");
-        $(".light5").css("left", "46.3%");
-        $(".light5").css("top", "88.2%");
-    } else {
-        $(".light5").attr("width", "7%");
-        $(".light5").css("left", "46.5%");
-        $(".light5").css("top", "88.5%");
-
-
+    text.text(names[index]);
+    $("#reward1").attr("src",reward1[index]);
+    $("#reward2").attr("src",reward2[index]);
+    if (names[index].length===6){
+        $(".Ins_name").css("left","43%");
     }
+    if (names[index].length===4){
+        $(".Ins_name").css("left","45%");
+    }
+    if (names[index].length===3){
+        $(".Ins_name").css("left","46%");
+    }
+
+
 }
 
-function lightClick() {
-    isFadeOut = false;
-    $(".open").attr("src", "static/image/MiJing/background.png");
-    $(".open").fadeIn(500);
-    $(".light2").attr("src", reward1[light_index]);
-    $(".light2").fadeIn(1000);
-    $(".light3").attr("src", reward2[light_index]);
-    $(".light3").fadeIn(1000);
-    $(".bu").attr("src", "static/image/MiJing/bu2.png");
-    $(".bu").fadeIn(1000);
 
-    if (hasThird[light_index]) {
-        $(".light2").css("top", "39.2%");
-        $(".light3").css("top", "39.2%");
-        $(".light4").attr("src", reward3[light_index]);
-        $(".light4").fadeIn(1000);
-
-    } else {
-        $(".light2").css("top", "44.2%");
-        $(".light3").css("top", "44.2%");
-        $(".light4").attr("src", "");
-        $(".light4").fadeOut(200);
-
-    }
-}
-
-$(function () {
-    $(".tip").css("visibility", "visible");
-    $(".tip").fadeOut(1);
-    $(".open").css("visibility", "visible");
-    $(".open").fadeOut(1);
-    $(".light2").css("visibility", "visible");
-    $(".light2").fadeOut(1);
-    $(".light3").css("visibility", "visible");
-    $(".light3").fadeOut(1);
-
-
-});
 var tipFlag = 0;
 
 function tipIn() {
@@ -305,6 +177,7 @@ function tipIn() {
     tipFlag = 0;
     $(".tip").fadeIn(200);
     let long = $(".tip").css("top");
+    $(".tip").css("visibility","visible");
     long = long + "";
     long = long.replace("px", "");
     long = long.trim();
@@ -342,10 +215,10 @@ function setCookie(index) {
     let number;
     if (getCookie(names[index]) !== "") {
         number = getCookie(names[index]);
-        $.cookie(names[index], Number(number) + 0.5);
+        $.cookie(names[index], Number(number) + 1);
         return true;
     } else {
-        $.cookie(names[index], 0.5);
+        $.cookie(names[index], 1);
     }
 }
 

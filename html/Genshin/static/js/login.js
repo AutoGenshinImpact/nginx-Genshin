@@ -19,6 +19,9 @@ function toLoginFirst() {
                 $("#login").css("display", "none");
                 $("#user").text(email);
                 $(".popup2").addClass("show");
+                $(".login__header").css("width","200px");
+                $(".login__header").css("transform","translateX(-50%)");
+
 
             } else if (data.code === 401) {
                 execTip(data.message);
@@ -54,6 +57,9 @@ function toLoginSecond() {
                 $("#login").css("display", "none");
                 $("#user").text(email);
                 $(".popup2").addClass("show");
+                $(".login__header").css("width","200px");
+                $(".login__header").css("transform","translateX(-50%)");
+
 
             } else if (data.code === 401) {
                 execTip(data.message);
@@ -111,7 +117,10 @@ function toRegister() {
                             $("#user").text(username);
 
                             $(".close-icon").click();
-                            $(".popup2").addClass("show");
+                            $(".popup2").addClass("show")
+                            $(".login__header").css("width","200px");
+                            $(".login__header").css("transform","translateX(-50%)");
+
 
 
                         } else if (data.code === 401) {
@@ -163,6 +172,8 @@ $(function () {
                     success: function (data) {
                         if (data.code === 200) {
                             username = data.data.username;
+                            $(".login__header").css("width","200px");
+                            $(".login__header").css("transform","translateX(-50%)");
                             $("#user").text(username);
                         } else if (data.code === 401) {
 
@@ -266,6 +277,9 @@ function logOut() {
             if (data.code === 200) {
                 execTip("退出登录成功!");
                 $("#user").text("登录");
+                $(".login__header").css("width","100px");
+                $(".login__header").css("transform","translateX(0%)");
+
 
 
             } else if (data.code === 401) {
