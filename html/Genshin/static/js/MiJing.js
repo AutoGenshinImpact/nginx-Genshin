@@ -148,7 +148,6 @@ function clickAddToCmd(){
 var isFadeOut = true;
 
 
-
 function change(index) {
     let text = $(".Ins_name");
     $(".light").attr("src", imgs[index]);
@@ -164,8 +163,6 @@ function change(index) {
     if (names[index].length===3){
         $(".Ins_name").css("left","46%");
     }
-
-
 }
 
 
@@ -451,26 +448,14 @@ function getStatus() {
                     },500);
 
                 },500);
-
-
-
-
-
             } else if (data.code === 401) {
                 // execTip("请先登录!");
-
-
             } else if (data.code !== 200) {
                 // execTip(data.message);
                 setTimeout(function () {
                     //判断是否结束
                     checkIsFinish();
-
-
-
                 },500);
-
-
             }
         },
         error: function () {
@@ -488,8 +473,6 @@ function checkIsStarting() {
         return true;
     }
     return false;
-
-
 }
 
 function checkIsFinish() {
@@ -833,12 +816,10 @@ function getFrontList() {
                                                     //添加到cookie
                                                     setCookieKeyAndValue(names[value], numberList[index] - cookie);
                                                     console.info(names[value] + "减少了" + cookie);
-
                                                 }
                                             }
                                         });
                                     }
-
                                 });
                                 names.forEach(function (nameValue) {
                                     if (getCookie(nameValue.concat("doing")) !== null && getCookie(nameValue.concat("doing")) !== undefined && getCookie(nameValue.concat("finish")) !== "") {
@@ -852,19 +833,11 @@ function getFrontList() {
                                                 } else {
                                                     //添加到cookie
                                                     setCookieKeyAndValue(names[value], cookie - 1);
-
                                                 }
                                             }
                                         });
                                     }
-
                                 });
-
-                                // list.forEach(function (value, index, array) {
-                                //     //添加到cookie
-                                //     setCookieKeyAndValue(names[value], numberList[index]);
-                                // });
-
                                 refrushTask()
 
                             } else if (data.code === 401) {
@@ -872,7 +845,6 @@ function getFrontList() {
 
                             } else if (data.code !== 200) {
                                 execTip(data.message);
-
                             }
                         },
                         error: function () {
@@ -881,11 +853,8 @@ function getFrontList() {
                     });
                 }
             } else if (data.code === 401) {
-
-
             } else if (data.code !== 200) {
                 execTip(data.message);
-
             }
         },
     });
