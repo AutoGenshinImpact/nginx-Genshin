@@ -163,20 +163,6 @@ header .close:hover{
   margin-left: 20%;
 
 }
-/*.icons .open-a:nth-child(2){*/
-/*  color: #8BEBC1;*/
-/*  border-color: #9AF2D1;*/
-/*}*/
-/*.icons .open-a:nth-child(2):hover{*/
-/*  background: #5DFF99;*/
-/*}*/
-/*.icons .open-a:nth-child(3){*/
-/*  color: #6C6C6C;*/
-/*  border-color: #9D9D9D;*/
-/*}*/
-/*.icons .open-a:nth-child(3):hover{*/
-/*  background: #000000;*/
-/*}*/
 .icons .open-a:nth-child(2){
   color: #FF4668;
   border-color: #FFAEA2;
@@ -229,9 +215,9 @@ header .close:hover{
 .field .open-button{
   color: #fff;
   padding: 4px 15px;
-  background: #7d2ae8;
+  background: #9CF;
  
 }
 .field .open-button:hover{
-  background: #8d39fa;
+  background: #CCF;
 }

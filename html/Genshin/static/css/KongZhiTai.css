@@ -2,11 +2,12 @@
   background: url(../image/global/back2.jpg);
   max-width: 800px;
   margin: 80px auto 0;
-  padding: 10px 50px 10px;
+  padding: 10px 40px 10px;
   border-radius: 30px;
   border: 10px dashed #99CCFF;
 }
 .container h3 {
+  margin-top: 40px;
   color: #FFF;
   cursor: pointer;
 }
@@ -33,6 +34,7 @@ h3{
   padding: 18px;
   margin: 6px 0;
   overflow: hidden;
+  border-radius: 10px;
 }
 .task::after {
   display: block;
