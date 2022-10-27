@@ -235,22 +235,18 @@ function openRegister() {
     $(".close-icon").click();
     $("#resister").css("display", "block");
     $(".captcha-login-inner-btn").css("display", "block");
-    $("input").css("padding", "5px 6px");
+    $("input").css("padding", "10px 12px");
     $(".error-text").css("margin","0");
-    $(".mhy-account-flow-dialog-content").css("height", "376px");
-
-
+    /*$(".mhy-account-flow-dialog-content").css("height", "376px");*/
 }
 function openLogin() {
     $(".header__login").click();
     $("#resister").css("display", "none");
     $(".captcha-login-inner-btn").css("display", "none");
     $("input").css("padding", "10px 12px");
-    $(".mhy-account-flow-dialog-content").css("height", "346px");
+    /*$(".mhy-account-flow-dialog-content").css("height", "346px");*/
     $("#LoginFirst").attr("onclick", "toLoginFirst()");
-
 }
-
 $(".close-icon").click(function () {
     $("#resister").css("display", "none");
     $("input").css("padding", "10px 12px");
@@ -260,10 +256,7 @@ $(".close-icon").click(function () {
     $(".register-bar").css("display", "none");
     $(".captcha-login-inner-btn").css("display", "block");
     $("#mimaInput").attr("placeholder", "验证码");
-
-
 });
-
 function logOut() {
     $.ajax({  //验证身份
         type: "get",
@@ -279,15 +272,11 @@ function logOut() {
                 $("#user").text("登录");
                 $(".login__header").css("width","100px");
                 $(".login__header").css("transform","translateX(0%)");
-
-
-
             } else if (data.code === 401) {
                 execTip("请先登录!");
 
             } else if (data.code !== 200) {
                 execTip(data.message);
-
             }
         },
         error: function () {

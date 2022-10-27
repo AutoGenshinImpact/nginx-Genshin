@@ -1,3 +1,7 @@
+::selection{
+  color: #fff;
+  background: #CCF;
+}
 ::-webkit-scrollbar {
     width: 10px;
     background-color: #99CCFF;
