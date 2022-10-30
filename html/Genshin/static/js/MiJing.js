@@ -730,14 +730,8 @@ function refrushTask() {
                 console.log(index + ": " + numbers[index]);
                 demo = demo+1;
             } else {
-                // $(this).attr("class", "doingTask");
             }
-            // console.info(index + ": " + numbers[index]);
         });
-        // $(".comp").each(function (index) {
-        //         $(this).attr("data-num", numbers[demo]);
-        //         console.log(index + ": " + numbers[demo]);
-        // });
     },500);
 }
 

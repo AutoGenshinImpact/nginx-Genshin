@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -9,20 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>原神自动机</title>
     <link rel="icon" type="image/x-icon" href="static/image/goTop.png"/>
-     <link rel="stylesheet" href="static/css/font-index..css">
     <link rel="stylesheet" href="static/css/home.css">
     <link rel="stylesheet" href="static/css/KongZhiTai.css">
     <link rel="stylesheet" href="static/css/header.css">
     <link rel="stylesheet" href="static/css/footer.css">
     <link rel="stylesheet" href="static/css/login.css">
     <link rel="stylesheet" href="static/css/tip.css">
-    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
 
     <link rel="stylesheet" href="static/css/font.css">
     <link rel="stylesheet" href="static/css/animate.min.css">
 
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
-    <link rel="stylesheet" href="static/css/chunk-element.b496abee.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+    <!-- <link rel="stylesheet" href="static/css/chunk-element.b496abee.css"> -->
     <link rel="stylesheet" href="static/css/openWindow.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
 </head>
@@ -44,9 +42,6 @@
         </div>
     </section>
     <div class="header">
-        <div class="header__logo--cut">
-            <img onclick="window.location='index.html'" src="static/image/原神主页logo.png">
-        </div>
         <div class="header__navbar">
             <div class="box"><a href="index.html">首&nbsp页</a></div>
             <div class="box"><a href="MiJing.html">秘&nbsp境</a></div>
@@ -87,7 +82,6 @@
         <div class="mhy-account-flow mhy-account-flow-dialog ys-theme is-pc" style="display: none;" id="login">
             <div class="mhy-account-flow-dialog-content" id="login1">
                 <div class="mhy-account-flow-login">
-                    <img src="static/image/mihuayouLOGo.png" class="logo">
                     <img src="static/image/X.png" class="close-icon">
                 </div>
                 <div class="mhy-account-flow-tabs tabs-flex">
@@ -123,11 +117,9 @@
                 </div>
             </div>
         </div>
-
         <div class="mhy-account-flow mhy-account-flow-dialog ys-theme is-pc" style="display: none;" id="resister">
             <div class="mhy-account-flow-dialog-content" id="login2">
                 <div class="mhy-account-flow-login">
-                    <img src="static/image/mihuayouLOGo.png" class="logo">
                     <img src="static/image/X.png" class="close-icon">
                 </div>
                 <div class="mhy-account-flow-tabs tabs-flex">
@@ -445,6 +437,8 @@
 
             if (numbers.length === 0) {
                 if (numbers.length === 0) {
+                    getFrontList();
+                /*
                     //如果没有正在进行，再从数据库中拿
                     //当前没有任何秘境，尝试从用户数据库中获取
                     $.ajax({  //验证身份
@@ -457,7 +451,6 @@
                         },
                         success: function (data) {
                             if (data.code === 200) {
-                                // popup2.classList.toggle("show");
 
                                 //先看有没有正在进行中退出了，读取一下上次的进度
                                 getStatus();
@@ -544,7 +537,7 @@
                             }
                         },
                     });
-                }
+                */}
             }
 
             //查看正在执行的秘境

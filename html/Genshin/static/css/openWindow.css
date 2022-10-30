@@ -307,11 +307,9 @@ header .close:hover{
   color: #8BC7FF;
   border-color: #B9E8FF;
   margin-left: 20%;
-  /*transform: translateX(20%);*/
-
 }
 .icons .open-a:nth-child(1):hover{
-  background: #2EDDFF;
+  background: #9CF;
   margin-left: 20%;
 
 }

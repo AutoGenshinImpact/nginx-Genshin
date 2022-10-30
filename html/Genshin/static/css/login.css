@@ -93,15 +93,6 @@
 .mhy-account-flow-login {
   background-color: #fff;
 }
-.mhy-account-flow-login .logo {
-  width: 107px;
-  height: 38px;
-  position: absolute;
-  top: -58px;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
 .mhy-account-flow.is-pc .close-icon {
   position: absolute;
   z-index: 100;

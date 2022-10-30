@@ -133,8 +133,7 @@
     left: -52%;
     transition: .2s;
     background-color: #FFF;
-    width: 138px;
-    height: 80px;
+    width: 118px;
     border-radius: 10px;
     border: 5px solid #CCCCFF;
     padding: 10px;
@@ -143,11 +142,11 @@
     z-index: 998;
 }
 .rewards img {
-    width: 50px;
+    width: 40px;
 }
 .fucking_block {
     position: relative;
-    left: -44%;
+    left: -45%;
     transition: .2s;
     background-color: #CCCCFF;
     width: 30px;
