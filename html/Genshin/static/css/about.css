@@ -35,49 +35,23 @@
     transform: translateX(-10px);
     box-shadow: 20px 20px #FFF;
 }
-.about_header:hover ~ .about_box {
-    top: 448px;
-    opacity: 0.5;
-}
-.about_header:hover ~ .about_org {
-    opacity: 0.5;
-}
 .about_header:hover ~ .info_box {
     top: 515px;
     opacity: 0.5;
 }
-.about_box {
-    transition: .2s;
-    position: absolute;
-    top: 453px;
-    width: 50%;
-    height: 500px;
-    border-radius: 50px;
-    border: 15px dashed #FFF;
-    opacity: 1;
-    transform: translateX(48%);
-}
-.about_org {
-    transition: .2s;
-    position: relative;
-    margin: 75px auto;
-    width: 50%;
-    height: 500px;
-    border-radius: 50px;
-    border: 15px dashed #9CF;
-    opacity: 1;
-    transform: translateX(2%);
-}
 .info_box {
     transition: .2s;
-    position: absolute;
-    top: 535px;
-    width: 43%;
-    height: 372px;
+    margin: 50px auto;
+    width: 50%;
     background-color: #FFF;
     border-radius: 30px;
-    transform: translateX(66%);
-    z-index: 100;
+    padding-top: 20px;
+    padding-bottom: 70px;
+    opacity: 0.9;
+    box-shadow: 0px 0px 0px rgba(0,0,0,0.1),
+    0px 0px 0px rgba(255,255,255,1),
+    inset 18px 18px 30px rgba(0,0,0,0.1),
+    inset -18px -18px 30px rgba(255,255,255,1);
 }
 .info_box h2 {
     text-align: center;
@@ -87,20 +61,6 @@
     border-bottom: 1px solid lightgray;
     font-size: 25px;
     padding-bottom: 5px;
-}
-.info_box:hover {
-    top: 490px;
-    width: 48%;
-    height: 462px;
-    transform: translateX(54%);
-}
-.info_box:hover ~ .about_box {
-    transform: translateX(50%);
-    top: 471px;
-}
-.info_box:hover ~ .about_org {
-    transform: translateX(0%);
-    margin: 56px auto;
 }
 .info_box .detail_box {
     display: flex;
@@ -143,7 +103,7 @@
     text-decoration: none;
     cursor: pointer;
 }
-.detail {
+.member {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -151,7 +111,7 @@
 .people {
     height: 55px;
     width: 55px;
-    margin: 51px 30px 0px;
+    margin: 50px 40px 0px;
     background-color: #FFF;
     border-radius: 10px;
     box-shadow: 18px 18px 30px rgba(0,0,0,0.1), -18px -18px 30px rgba(255,255,255,1);
@@ -164,6 +124,7 @@
 }
 .people:hover {
     width: 170px;
+    margin: 50px 0 0;
     box-shadow: 0px 0px 0px rgba(0,0,0,0.1),
     0px 0px 0px rgba(255,255,255,1),
     inset 18px 18px 30px rgba(0,0,0,0.1),
