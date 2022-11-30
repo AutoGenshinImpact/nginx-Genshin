@@ -158,10 +158,10 @@ function change(index) {
         $(".Ins_name").css("left","43%");
     }
     if (names[index].length===4){
-        $(".Ins_name").css("left","45%");
+        $(".Ins_name").css("left","43%");
     }
     if (names[index].length===3){
-        $(".Ins_name").css("left","46%");
+        $(".Ins_name").css("left","45%");
     }
 }
 

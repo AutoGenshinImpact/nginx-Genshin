@@ -3,7 +3,7 @@
   background: #CCF;
 }
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 0;
     background-color: #99CCFF;
 }
 ::-webkit-scrollbar-thumb {

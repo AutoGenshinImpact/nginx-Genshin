@@ -1,19 +1,22 @@
-.before_B-f {
+._B-f {
     position: absolute;
-    left: 410px;
-    top: 215px;
-    margin: auto;
-    width: 1000px;
-    height: 200px;
+    left: 23%;
+    width: 54%;
+    height: 22%;
     background-color: #FFF;
     z-index: 100;
     opacity: 0;
 }
+
+.before_B-f {
+    top: 215px;
+    /* margin: auto; */
+}
 .Ins_name {
     position: absolute;
     top: 270px;
-    left: 810px;
-    text-align: center;
+    left: 43%;
+    /*text-align: center;*/
     font-size: 50px;
     color: #FFF;
     text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
@@ -99,21 +102,13 @@
     transition: .2s;
 }
 .after_B-f {
-    position: absolute;
-    left: 410px;
     top: 615px;
-    margin: auto;
-    width: 1000px;
-    height: 200px;
-    background-color: #FFF;
-    z-index: 100;
-    opacity: 0;
 }
 .add_to_cmd {
     position: absolute;
     text-align: center;
     top: 690px;
-    left: 760px;
+    left: 40%;
     font-size: 50px;
     color: #FFF;
     text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
