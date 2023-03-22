@@ -5,7 +5,7 @@
   top: 20px;
   z-index: 200;
   transform:translateX(-50%);
-  background-color: #FFF;
+  background-color: #ECECEC;
   transition: opacity .3s,top .4s,-webkit-transform .4s;
   transition: opacity .3s,transform .4s,top .4s;
   transition: opacity .3s,transform .4s,top .4s,-webkit-transform .4s;

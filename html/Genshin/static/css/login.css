@@ -81,7 +81,7 @@
 }
 .mhy-account-flow-dialog-content {
     width: 4rem;
-    background-color: #fff;
+    background-color: #ECECEC;
     border-radius: .2rem;
     border: .1rem solid #99CCFF;
     padding: .2rem .25rem .3rem;
@@ -90,7 +90,7 @@
     margin: auto;
 }
 .mhy-account-flow-login {
-  background-color: #fff;
+  background-color: #ECECEC;
 }
 .mhy-account-flow.is-pc .close-icon {
   position: absolute;
@@ -258,7 +258,7 @@
 .mhy-account-flow button {
   display: block;
   width: 100%;
-  color: #fff;
+  color: #ECECEC;
   line-height: .38rem;
   text-align: center;
   font-size: .14rem;
@@ -319,7 +319,7 @@
 }
 
 .mihoyo-cn-footer .footer-info a.protocol {
-  color: #fff;
+  color: #ECECEC;
 }
 .footer a,
 .footer a:link,
@@ -348,7 +348,7 @@
   line-height: 1.5;
   max-width: 60%;
   border-radius: .04rem;
-  color: #fff;
+  color: #ECECEC;
   z-index: 9999;
   font-size: .14rem;
 }

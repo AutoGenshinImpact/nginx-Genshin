@@ -1,6 +1,6 @@
 /*色卡：
   紫 #CCCCFF
-  白 #FFFFFF
+  白 #ECECEC
   蓝 #99CCFF
 */
 li {
@@ -19,6 +19,7 @@ a {
     object-fit: cover;
     box-shadow: .1rem .1rem .1rem .1rem rgb(0 0 0 / 10%);
     background: url(../image/index/final_back.jpg);
+    background-size: contain;
 }
 .poster__concept {
   height: 7.5rem;
@@ -32,7 +33,7 @@ a {
   height: 6rem;
   width: 4rem;
   border-radius: .3rem;
-  background-color: #FFFFFF;
+  background-color: #ECECEC;
   padding: .3rem;
   transition: .2s;
 }
@@ -75,7 +76,7 @@ a {
   width: 45%;
   height: 28%;
   border-radius: .5rem;
-  background-color: #FFFFFF;
+  background-color: #ECECEC;
   border: .3rem double #CCCCFF;
   transition: .2s;
 }
@@ -121,40 +122,36 @@ a {
     position: relative;
 }
 .new h3 {
-  color: gray;
-  position: relative;
-  margin: auto;
-  top: .5rem;
-  font-size: .5rem;
-  font-weight: 400;
-  text-align: center;
+    color: gray;
+    position: relative;
+    margin: 0 1rem;
+    padding: .1rem;
+    top: .3rem;
+    font-size: .5rem;
+    font-weight: 400;
+    text-align: center;
+    box-shadow: .05rem .05rem .1rem rgba(0,0,0,0.15), -0.05rem -0.05rem .15rem rgba(255,255,255,1);
+    border-radius: .1rem;
 }
 .news__tab {
   position: relative;
   margin: auto;
   top: 0;
-  height: 4.7rem;
+  height: 6.3rem;
   width: 6rem;
-  background-color: #FFFFFF;
+  background-color: #ECECEC;
   border-radius: .5rem;
-  border: .1rem dashed #99CCFF;
+  /*border: .1rem dashed #99CCFF;*/
   transition: .2s;
 }
-.item li:hover {
-  background: rgba(153, 204, 255, 0.5);
-  cursor: pointer;
-}
-.item li:hover a {
-  text-decoration: none;
-}
-.news__tab:hover {
+/*.news__tab:hover {
   transition: .2s;
   top: -0.2rem;
   box-shadow: 0px .1rem .18rem .18rem rgba(0, 0, 0, 0.3);
-}
+}*/
 .news__tab__list {
   position: relative;
-  top: .8rem;
+  top: .7rem;
   width: 5.8rem;
   height: 3.2rem;
 }
@@ -162,17 +159,28 @@ a {
   position: relative;
   height: .4rem;
   width: 6rem;
-  padding: 0 .4rem;
+  padding: 0 .3rem;
   border-bottom: 0.03rem solid rgba(255, 255, 255, 0.1);
   margin-bottom: 0.05rem;
 }
 .news__tab__list__ul li {
-  position: relative;
-  padding: .1rem 0.19rem 0.02rem;
-  font-size: 0.18rem;
-  text-align: center;
-  cursor: pointer;
-  float: left;
+    position: relative;
+    padding: .05rem 0.19rem 0.05rem;
+    border-radius: .1rem;
+    margin-right: .2rem;
+    font-size: 0.18rem;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+    box-shadow: .05rem .05rem .1rem rgba(0,0,0,0.15), -0.05rem -0.05rem .15rem rgba(255,255,255,1);
+    transition: box-shadow .2s ease-in-out;
+}
+.news__tab__list__ul li:hover {
+    box-shadow: 0px 0px 0px rgba(0,0,0,0),
+    0px 0px 0px rgba(255,255,255,0),
+    inset .05rem .05rem .1rem rgba(0,0,0,0.15),
+    inset -0.1rem -0.1rem .1rem rgba(255,255,255,1);
+    transition: box-shadow .2s ease-in-out;
 }
 .currenters {
   color: #9CF;
@@ -182,7 +190,7 @@ a {
     position: relative;
     width: 5.4rem;
     height: 2.65rem;
-    margin: 0 .2rem 0;
+    margin: 0 .3rem 0;
 }
 .tab_con a {
   position: relative;
@@ -202,5 +210,20 @@ a {
   padding-left: .24rem;
 }
 .item li {
-  border-radius: .3rem;
+    background-color: #ECECEC;
+    border-radius: .1rem;
+    margin-top: .3rem;
+    box-shadow: .05rem .05rem .1rem rgba(0,0,0,0.15), -0.05rem -0.05rem .15rem rgba(255,255,255,1);
+    transition: box-shadow .2s ease-in-out;
+}
+.item li:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 0px rgba(0,0,0,0),
+    0px 0px 0px rgba(255,255,255,0),
+    inset .05rem .05rem .1rem rgba(0,0,0,0.15),
+    inset -0.1rem -0.1rem .1rem rgba(255,255,255,1);
+    transition: box-shadow .2s ease-in-out;
+}
+.item li:hover a {
+    text-decoration: none;
 }

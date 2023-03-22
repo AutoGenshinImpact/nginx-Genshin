@@ -53,7 +53,7 @@ strong {
 #about,
 #feature,
 #contact {
-    background: #ffffff;
+    background: #ECECEC;
 }
 
 #about,
@@ -89,7 +89,7 @@ strong {
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    background: none repeat scroll 0 0 #ffffff;
+    background: none repeat scroll 0 0 #ECECEC;
 }
 
 .sk-circle {
@@ -289,7 +289,7 @@ strong {
 
 #feature .btn {
     background: transparent;
-    border: 3px solid #ffffff;
+    border: 3px solid #ECECEC;
     border-radius: 0px;
     color: #ffffff;
     font-size: 18px;
@@ -303,7 +303,7 @@ strong {
 }
 
 #feature .btn:hover {
-    background: #ffffff;
+    background: #ECECEC;
     color: #333;
     border-color: transparent;
 }
@@ -330,7 +330,7 @@ strong {
 #contact input[type='submit'] {
     background: #242424;
     border: none;
-    color: #ffffff;
+    color: #ECECEC;
     font-size: 15px;
     font-weight: 400;
     letter-spacing: 2px;
@@ -384,7 +384,7 @@ strong {
     position: absolute;
     top: 40px;
     right: 40px;
-    border: 2px solid #ffffff;
+    border: 2px solid #ECECEC;
     border-radius: 100px;
     width: 36px;
     height: 36px;
@@ -413,7 +413,7 @@ strong {
 }
 
 .modal-dialog form input[type="submit"] {
-    background: #ffffff;
+    background: #ECECEC;
     color: #242424;
     text-transform: uppercase;
     margin-top: 30px;
@@ -421,7 +421,7 @@ strong {
 .modal-dialog form input[type="submit"]:hover {
     background: #f1c11a;
     border-color: transparent;
-    color: #ffffff;
+    color: #ECECEC;
 }
 
 /* social icon section  */
@@ -450,7 +450,7 @@ strong {
 }
 
 .social-icon li a:hover {
-    background-color: #ffffff;
+    background-color: #ECECEC;
     color: #111112;
 }
 
