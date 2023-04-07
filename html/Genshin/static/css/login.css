@@ -6,21 +6,21 @@
   z-index: 100;
 }
 .login__header {
-
   position: absolute;
   font-size: .19rem;
   background: none;
-  margin: 0 !important;
+  margin: .22rem 0 !important;
   z-index: 100;
   cursor: pointer;
 }
 .login__img {
-  position: absolute;
-  left: 1.2rem;
-  top: .2rem;
-  width: .27rem;
-  height: .27rem;
-  opacity: 0.6;
+    position: absolute;
+    left: 1.2rem;
+    top: .15rem;
+    width: .27rem;
+    height: .27rem;
+    opacity: 0.6;
+    margin-top: .22rem;
 }
 .login__sub{
   position: absolute;
@@ -32,13 +32,13 @@
   opacity: 0;
   transform: translateY(-100px);
   border-radius: .1rem;
-  background-color: #CCCCFF;
+  background-color: #ECECEC;
   z-index: 90;
 }
 .login__sub li {
     line-height: .5rem;
     letter-spacing: 0px;
-    color: #FFF;
+    color: #CCCCFF;
     text-align: center;
     font-size: .15rem;
     border-radius: .1rem;
@@ -47,15 +47,14 @@
 .login:hover + .login__sub, .login__sub:hover {
   height: 1rem;
   opacity: 1;
-  transform: translateY(.05rem);
+  transform: translateY(.35rem);
 }
 .login__sub li:hover {
   cursor: pointer;
   transition: box-shadow .2s ease-in-out;
-  box-shadow: 0px 0px 0px rgba(100,100,100,0.1),
-  0px 0px 0px #CCCCFF,
-  inset .18rem .18rem .3rem rgba(100,100,100,0.1),
-  inset -0.18rem -0.18rem .3rem #CCCCFF;
+  box-shadow: 
+  inset .18rem .18rem .3rem rgba(0, 0, 0, .1),
+  inset -0.18rem -0.18rem .3rem rgba(255,255,255,1);
 }
 .mhy-account-flow-dialog {
   position: fixed;

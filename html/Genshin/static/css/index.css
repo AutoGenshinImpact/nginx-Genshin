@@ -1,8 +1,3 @@
-/*色卡：
-  紫 #CCCCFF
-  白 #ECECEC
-  蓝 #99CCFF
-*/
 li {
   list-style: none;
 }
@@ -13,11 +8,11 @@ a {
     position: relative;
     height: 7.5rem;
     width: 14.5rem;
-    margin: .6rem auto;
-    border: .3rem solid #99CCFF;
+    margin: .3rem auto;
+    border: .3rem solid #ECECEC;
     border-radius: .7rem;
     object-fit: cover;
-    box-shadow: .1rem .1rem .1rem .1rem rgb(0 0 0 / 10%);
+    box-shadow: 0.2rem 0.2rem 0.2rem rgba(0,0,0,0.1), -0.2rem -0.2rem 0.2rem rgba(255,255,255,.8);
     background: url(../image/index/final_back.jpg);
     background-size: contain;
 }
@@ -26,7 +21,7 @@ a {
   margin-left: 6.6rem;
 }
 .poster__text {
-  opacity: 0.7;
+  opacity: 0.9;
   position: absolute;
   top: .45rem;
   left: 1.3rem;
@@ -41,21 +36,10 @@ a {
   text-align: center;
   padding-bottom: .3rem;
 }
-.poster__text:hover {
-  top: .55rem;
-  left: 1.4rem;
-  box-shadow: 0px 0px 0px rgba(0,0,0,0.1),
-  0px 0px 0px rgba(255,255,255,0.3),
-  inset .18rem .18rem .2rem rgba(0,0,0,0.1),
-  inset -0.18rem -0.18rem .2rem rgba(255,255,255,0.3);
-  transition: .2s;
-}
 .king {
   margin-top: 1rem;
-  padding-top: .9rem;
   position: relative;
-  height: 19.8rem;
-  background: url(../image/back2.jpg);
+  height: 18rem;
 }
 .king li {
   position: relative;
@@ -69,29 +53,20 @@ a {
   height: 5.3rem;
 }
 .king li.current .big {
-  display: block;
+    display: block;
 }
 .row {
-  margin-bottom: .7rem;
-  width: 45%;
-  height: 28%;
-  border-radius: .5rem;
-  background-color: #ECECEC;
-  border: .3rem double #CCCCFF;
-  transition: .2s;
-}
-.row:hover {
-  transition: .2s;
-  width: 47%;
-  height: 30%;
-  box-shadow: .1rem .1rem .18rem .18rem rgba(0, 0, 0, 0.3);
+    margin-bottom: .7rem;
+    width: 45%;
+    height: 28%;
+    border-radius: .5rem;
+    background-color: #ECECEC;
+    transition: .2s;
+    box-shadow: .2rem .2rem .3rem rgba(0,0,0,.1), -0.2rem -0.2rem .3rem rgba(255,255,255,.8);
 }
 .row1 {
   float: left;
   margin-left: 15%;
-}
-.row1:hover {
-  margin-left: 14%;
 }
 .side__img1 {
   float: left;
@@ -111,12 +86,7 @@ a {
   height: 5rem;
   box-shadow: -0.1rem .15rem rgba(0, 0, 0, 0.1);
 }
-.row2:hover {
-  margin-right: 14%;
-}
 .new {
-    background: url(../image/index/news.jpg);
-    padding-top: 1rem;
     padding-bottom: .01rem;
     width: 100%;
     position: relative;
@@ -130,8 +100,6 @@ a {
     font-size: .5rem;
     font-weight: 400;
     text-align: center;
-    box-shadow: .05rem .05rem .1rem rgba(0,0,0,0.15), -0.05rem -0.05rem .15rem rgba(255,255,255,1);
-    border-radius: .1rem;
 }
 .news__tab {
   position: relative;
@@ -141,14 +109,11 @@ a {
   width: 6rem;
   background-color: #ECECEC;
   border-radius: .5rem;
-  /*border: .1rem dashed #99CCFF;*/
   transition: .2s;
+  box-shadow: 
+    inset .05rem .05rem .1rem rgba(0,0,0,0.15),
+    inset -0.1rem -0.1rem .1rem rgba(255,255,255,1);
 }
-/*.news__tab:hover {
-  transition: .2s;
-  top: -0.2rem;
-  box-shadow: 0px .1rem .18rem .18rem rgba(0, 0, 0, 0.3);
-}*/
 .news__tab__list {
   position: relative;
   top: .7rem;
@@ -160,7 +125,6 @@ a {
   height: .4rem;
   width: 6rem;
   padding: 0 .3rem;
-  border-bottom: 0.03rem solid rgba(255, 255, 255, 0.1);
   margin-bottom: 0.05rem;
 }
 .news__tab__list__ul li {
@@ -211,7 +175,7 @@ a {
 }
 .item li {
     background-color: #ECECEC;
-    border-radius: .1rem;
+    border-radius: .2rem;
     margin-top: .3rem;
     box-shadow: .05rem .05rem .1rem rgba(0,0,0,0.15), -0.05rem -0.05rem .15rem rgba(255,255,255,1);
     transition: box-shadow .2s ease-in-out;
